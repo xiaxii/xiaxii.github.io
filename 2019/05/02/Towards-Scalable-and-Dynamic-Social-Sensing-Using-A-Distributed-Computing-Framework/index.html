@@ -93,7 +93,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.6.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.7.png">
-<meta property="og:updated_time" content="2019-05-07T17:56:19.787Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.9.png">
+<meta property="og:updated_time" content="2019-05-08T03:33:54.181Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework">
 <meta name="twitter:description" content="Reference: Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework  This paper developed a Scalable Streaming Truth Discovery (SSTD) solution to address the problems of tr">
@@ -381,8 +383,12 @@
 <h3 id="For-the-deployed-system"><a href="#For-the-deployed-system" class="headerlink" title="For the deployed system"></a>For the deployed system</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.3.png" alt="Problem Formulation"></p>
 <h2 id="Scalable-and-Streaming-Truth-Discovery"><a href="#Scalable-and-Streaming-Truth-Discovery" class="headerlink" title="Scalable and Streaming Truth Discovery"></a>Scalable and Streaming Truth Discovery</h2><p>The Scalable and Streaming Truth Discovery (SSTD) scheme based on a Hidden Markov Model (HMM) is developed to decode the streaming social sensing date and output the corresponding truth values o claims in real time.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.4.png" alt="HMM"><br>This solution can be implemented in <strong>a distributed system</strong> where <strong>multiple truth discovery jobs can run in parallel</strong> to address the scalability challenge in social sensing applications.</p>
 <h3 id="Deriving-Hidden-States-and-Observation-Sequence"><a href="#Deriving-Hidden-States-and-Observation-Sequence" class="headerlink" title="Deriving Hidden States and Observation Sequence"></a>Deriving Hidden States and Observation Sequence</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.5.png" alt="HMM"></p>
-<h3 id="Estimating-Parameters-of-the-HMM-Model"><a href="#Estimating-Parameters-of-the-HMM-Model" class="headerlink" title="Estimating Parameters of the HMM Model"></a>Estimating Parameters of the HMM Model</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.6.png" alt="HMM"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.7.png" alt="HMM"><br>this problem is solved by an expectation maximization <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm" target="_blank" rel="noopener">(EM)</a> based algorithm.</p>
-<h3 id="Decoding-State-Sequence"><a href="#Decoding-State-Sequence" class="headerlink" title="Decoding State Sequence"></a>Decoding State Sequence</h3>
+<h3 id="Estimating-Parameters-of-the-HMM-Model"><a href="#Estimating-Parameters-of-the-HMM-Model" class="headerlink" title="Estimating Parameters of the HMM Model"></a>Estimating Parameters of the HMM Model</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.6.png" alt="Define HMM parameters"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.7.png" alt="Goal of Estimating"><br>this estimating problem is solved by an expectation maximization <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm" target="_blank" rel="noopener">(EM)</a> based algorithm.</p>
+<h3 id="Decoding-State-Sequence"><a href="#Decoding-State-Sequence" class="headerlink" title="Decoding State Sequence"></a>Decoding State Sequence</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.8.png" alt="Goal of decoding"></p>
+<p>This decoding problem is solved by the <a href="https://en.wikipedia.org/wiki/Viterbi_algorithm" target="_blank" rel="noopener">Viterbi Algorithm</a>.</p>
+<p>By the esitimatied \lambda_u of HMM model and the given observation sequence F(u), we can infer the corresponding hidden true value sequence VT_u that is most likely to generate the observations. It is solved recursively as follows:</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.9.png" alt="Decoding"></p>
+
       
     </div>
     
