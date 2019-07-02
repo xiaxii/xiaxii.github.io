@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="Google tech guide — Former Coding Interview Question: Word Squares">
+<meta name="description" content="Google tech guide — Former Coding Interview Question: Word Squares  1234567891011public boolean checkIfWordSquare(String str)&amp;#123;        int len = (int)Math.sqrt((double)str.length());        char[">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Former Coding Interview Question: Word Squares">
 <meta property="og:url" content="https://xiaxii.github.io/2019/07/03/Former-Coding-Interview-Question-Word-Squares/index.html">
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
-<meta property="og:description" content="Google tech guide — Former Coding Interview Question: Word Squares">
+<meta property="og:description" content="Google tech guide — Former Coding Interview Question: Word Squares  1234567891011public boolean checkIfWordSquare(String str)&amp;#123;        int len = (int)Math.sqrt((double)str.length());        char[">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-02T16:49:01.055Z">
+<meta property="og:updated_time" content="2019-07-02T17:05:01.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Former Coding Interview Question: Word Squares">
-<meta name="twitter:description" content="Google tech guide — Former Coding Interview Question: Word Squares">
+<meta name="twitter:description" content="Google tech guide — Former Coding Interview Question: Word Squares  1234567891011public boolean checkIfWordSquare(String str)&amp;#123;        int len = (int)Math.sqrt((double)str.length());        char[">
 
 
 
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-03T00:49:01+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-03T01:05:01+08:00">
                 2019-07-03
               </time>
             
@@ -352,7 +352,7 @@
         <blockquote>
 <p><a href="https://techdevguide.withgoogle.com/resources/former-coding-interview-question-word-squares/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Word Squares</a></p>
 </blockquote>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkIfWordSquare</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = (<span class="keyword">int</span>)Math.sqrt((<span class="keyword">double</span>)str.length());</span><br><span class="line">        <span class="keyword">char</span>[] x = str.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; x.length; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> n = ((k%len) * len) + (<span class="keyword">int</span>)k/len; <span class="comment">//calculate compare position</span></span><br><span class="line">            <span class="keyword">if</span>(x[k]!=x[n])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
