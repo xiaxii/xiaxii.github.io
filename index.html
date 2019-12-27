@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T19:41:30+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T21:02:07+08:00">
                 2019-12-27
               </time>
             
@@ -350,8 +350,7 @@
 
       
         
-          
-            <p>Login to my server: </p>
+          <p>Login to my server: </p>
 <pre><code class="lang-bash">ssh xx306@login.student.eecs.qmul.ac.uk -A
 </code></pre>
 <h1 id="Installations"><a href="#Installations" class="headerlink" title="Installations"></a>Installations</h1><h2 id="Download-Anoconda"><a href="#Download-Anoconda" class="headerlink" title="Download Anoconda"></a>Download Anoconda</h2><pre><code class="lang-bash">wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)
@@ -363,43 +362,13 @@
 </code></pre>
 <h2 id="Install-Jupyter"><a href="#Install-Jupyter" class="headerlink" title="Install Jupyter"></a>Install Jupyter</h2><pre><code class="lang-bash">conda install jupyter notebook
 </code></pre>
-<h1 id="Configure-Jupyter"><a href="#Configure-Jupyter" class="headerlink" title="Configure Jupyter"></a>Configure Jupyter</h1><pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --generate-config
-Overwrite /homes/xx306/.jupyter/jupyter_notebook_config.py with default config? [y/N]y
-Writing default config to: /homes/xx306/.jupyter/jupyter_notebook_config.py
-</code></pre>
-<h2 id="set-password"><a href="#set-password" class="headerlink" title="set password"></a>set password</h2><pre><code class="lang-bash">(base) -bash-4.2$ python
-Python 3.7.4 (default, Aug 13 2019, 20:35:49) 
-[GCC 7.3.0] :: Anaconda, Inc. on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-</code></pre>
-<pre><code class="lang-python">&gt;&gt;&gt; from notebook.auth import passwd 
-&gt;&gt;&gt; passwd()
-Enter password: 
-Verify password: 
-&#39;sha1:407794932d60:299643a831496a74d6140bbf5bdcdea0fb8707ec&#39;
-</code></pre>
-<h2 id="copy-this-key-exit-python-then"><a href="#copy-this-key-exit-python-then" class="headerlink" title="copy this key, exit () python, then:"></a>copy this key, exit () python, then:</h2><pre><code class="lang-bash">bash vim /homes/xx306/.jupyter/jupyter_notebook_config.py
-</code></pre>
-<h2 id="modify-the-following-lines"><a href="#modify-the-following-lines" class="headerlink" title="modify the following lines:"></a>modify the following lines:</h2><pre><code class="lang-bash">c.NotebookApp.ip=&#39;*&#39; 
-#设置访问notebook的ip，*表示所有IP
-
-c.NotebookApp.password = u&#39;sha1:xxx&#39; 
-#填写刚刚复制的密钥 
-
-c.NotebookApp.open_browser = False 
-# 禁止notebook启动时自动打开浏览器
-
-c.NotebookApp.port =8889 
-#指定访问的端口，默认是8888。
-</code></pre>
-<h1 id="Start-Jupyter"><a href="#Start-Jupyter" class="headerlink" title="Start Jupyter"></a>Start Jupyter</h1><pre><code class="lang-bash">jupyter notebook --config /homes/xx306/.jupyter/jupyter_notebook_config.py --allow-root
-</code></pre>
-<p>or</p>
-<pre><code class="lang-bash">jupyter notebook --no-browser --port=8889
-</code></pre>
-<p>stuck here :(</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/27/Environment-on-server/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
