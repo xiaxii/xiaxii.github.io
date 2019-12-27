@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="Download Anoconda  wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)  Note: anoconda version xxx see Anaconda installer archive  Install Anoconda  bash anoconda version xxx.sh   Source">
+<meta name="description" content="InstallationsDownload Anocondawget https://repo.anaconda.com/archive/(anoconda version xxx.sh)  Note: anoconda version xxx see Anaconda installer archive Install Anocondabash anoconda version xxx.sh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Environment on server">
 <meta property="og:url" content="https://xiaxii.github.io/2019/12/27/Environment-on-server/index.html">
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
-<meta property="og:description" content="Download Anoconda  wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)  Note: anoconda version xxx see Anaconda installer archive  Install Anoconda  bash anoconda version xxx.sh   Source">
+<meta property="og:description" content="InstallationsDownload Anocondawget https://repo.anaconda.com/archive/(anoconda version xxx.sh)  Note: anoconda version xxx see Anaconda installer archive Install Anocondabash anoconda version xxx.sh">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-27T09:52:21.533Z">
+<meta property="og:updated_time" content="2019-12-27T11:32:58.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Environment on server">
-<meta name="twitter:description" content="Download Anoconda  wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)  Note: anoconda version xxx see Anaconda installer archive  Install Anoconda  bash anoconda version xxx.sh   Source">
+<meta name="twitter:description" content="InstallationsDownload Anocondawget https://repo.anaconda.com/archive/(anoconda version xxx.sh)  Note: anoconda version xxx see Anaconda installer archive Install Anocondabash anoconda version xxx.sh">
 
 
 
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T17:52:21+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T19:32:58+08:00">
                 2019-12-27
               </time>
             
@@ -327,49 +327,33 @@
       
 
       
-        <ol>
-<li>Download Anoconda</li>
-</ol>
-<pre><code class="lang-bash">wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)
+        <h1 id="Installations"><a href="#Installations" class="headerlink" title="Installations"></a>Installations</h1><h2 id="Download-Anoconda"><a href="#Download-Anoconda" class="headerlink" title="Download Anoconda"></a>Download Anoconda</h2><pre><code class="lang-bash">wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)
 </code></pre>
 <p>Note: anoconda version xxx see <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">Anaconda installer archive</a></p>
-<ol>
-<li>Install Anoconda</li>
-</ol>
-<pre><code class="lang-bash">bash anoconda version xxx.sh
+<h2 id="Install-Anoconda"><a href="#Install-Anoconda" class="headerlink" title="Install Anoconda"></a>Install Anoconda</h2><pre><code class="lang-bash">bash anoconda version xxx.sh
 </code></pre>
-<ol>
-<li>Source bash file</li>
-</ol>
-<pre><code class="lang-bash">source ~/.bashrc
+<h2 id="Source-bash-file"><a href="#Source-bash-file" class="headerlink" title="Source bash file"></a>Source bash file</h2><pre><code class="lang-bash">source ~/.bashrc
 </code></pre>
-<ol>
-<li>Install Jupyter</li>
-</ol>
-<pre><code class="lang-bash">conda install jupyter notebook
+<h2 id="Install-Jupyter"><a href="#Install-Jupyter" class="headerlink" title="Install Jupyter"></a>Install Jupyter</h2><pre><code class="lang-bash">conda install jupyter notebook
 </code></pre>
-<ol>
-<li>Configure Jupyter</li>
-</ol>
-<pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --generate-config
+<h1 id="Configure-Jupyter"><a href="#Configure-Jupyter" class="headerlink" title="Configure Jupyter"></a>Configure Jupyter</h1><pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --generate-config
 Overwrite /homes/xx306/.jupyter/jupyter_notebook_config.py with default config? [y/N]y
 Writing default config to: /homes/xx306/.jupyter/jupyter_notebook_config.py
 </code></pre>
-<pre><code class="lang-bash">(base) -bash-4.2$ python
+<h2 id="set-password"><a href="#set-password" class="headerlink" title="set password"></a>set password</h2><pre><code class="lang-bash">(base) -bash-4.2$ python
 Python 3.7.4 (default, Aug 13 2019, 20:35:49) 
 [GCC 7.3.0] :: Anaconda, Inc. on linux
 Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; from notebook.auth import passwd 
+</code></pre>
+<pre><code class="lang-python">&gt;&gt;&gt; from notebook.auth import passwd 
 &gt;&gt;&gt; passwd()
 Enter password: 
 Verify password: 
 &#39;sha1:407794932d60:299643a831496a74d6140bbf5bdcdea0fb8707ec&#39;
 </code></pre>
-<p>copy this password, exit () python, then: </p>
-<pre><code class="lang-bash">vim /homes/xx306/.jupyter/jupyter_notebook_config.py
+<h2 id="copy-this-key-exit-python-then"><a href="#copy-this-key-exit-python-then" class="headerlink" title="copy this key, exit () python, then:"></a>copy this key, exit () python, then:</h2><pre><code class="lang-bash">bash vim /homes/xx306/.jupyter/jupyter_notebook_config.py
 </code></pre>
-<p>modify the following lines:</p>
-<pre><code class="lang-bash">c.NotebookApp.ip=&#39;*&#39; 
+<h2 id="modify-the-following-lines"><a href="#modify-the-following-lines" class="headerlink" title="modify the following lines:"></a>modify the following lines:</h2><pre><code class="lang-bash">c.NotebookApp.ip=&#39;*&#39; 
 #设置访问notebook的ip，*表示所有IP
 
 c.NotebookApp.password = u&#39;sha1:xxx&#39; 
@@ -381,10 +365,7 @@ c.NotebookApp.open_browser = False
 c.NotebookApp.port =8889 
 #指定访问的端口，默认是8888。
 </code></pre>
-<ol>
-<li>Start Jupyter</li>
-</ol>
-<pre><code class="lang-bash">jupyter notebook --config /homes/xx306/.jupyter/jupyter_notebook_config.py --allow-root
+<h1 id="Start-Jupyter"><a href="#Start-Jupyter" class="headerlink" title="Start Jupyter"></a>Start Jupyter</h1><pre><code class="lang-bash">jupyter notebook --config /homes/xx306/.jupyter/jupyter_notebook_config.py --allow-root
 </code></pre>
 <p>or</p>
 <pre><code class="lang-bash">jupyter notebook --no-browser --port=8889
@@ -474,8 +455,17 @@ c.NotebookApp.port =8889
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -544,6 +534,22 @@ c.NotebookApp.port =8889
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Installations"><span class="nav-number">1.</span> <span class="nav-text">Installations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anoconda"><span class="nav-number">1.1.</span> <span class="nav-text">Download Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Anoconda"><span class="nav-number">1.2.</span> <span class="nav-text">Install Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-bash-file"><span class="nav-number">1.3.</span> <span class="nav-text">Source bash file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Jupyter"><span class="nav-number">1.4.</span> <span class="nav-text">Install Jupyter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-Jupyter"><span class="nav-number">2.</span> <span class="nav-text">Configure Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-password"><span class="nav-number">2.1.</span> <span class="nav-text">set password</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy-this-key-exit-python-then"><span class="nav-number">2.2.</span> <span class="nav-text">copy this key, exit () python, then:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modify-the-following-lines"><span class="nav-number">2.3.</span> <span class="nav-text">modify the following lines:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Jupyter"><span class="nav-number">3.</span> <span class="nav-text">Start Jupyter</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
