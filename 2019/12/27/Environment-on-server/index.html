@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
 <meta property="og:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-27T14:01:42.926Z">
+<meta property="og:updated_time" content="2019-12-27T14:03:39.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Environment on server">
 <meta name="twitter:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T22:01:42+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T22:03:39+08:00">
                 2019-12-27
               </time>
             
@@ -415,17 +415,17 @@ c.NotebookApp.port =8889
 <pre><code class="lang-bash">ssh -N -f -L localhost:8888:localhost:8889 xx306@login.student.eecs.qmul.ac.uk
 </code></pre>
 <p>Now open web browser (google chrome, firefox, …) and type <code>localhost:8888</code><br>We can see the Jupyter Application Site.</p>
-<p>Then we see on the server terminal ```<br>[I 12:10:06.006 NotebookApp] 302 GET / (::1) 1.09ms<br>…<br>…<br>…</p>
-<pre><code>
-Login to Jupyter Notebook with the token shown in the Server Terminal
-
-
-# Usage Routine
-
-Login to server:
-``` bash
-ssh xx306@login.student.eecs.qmul.ac.uk -A
-</code></pre><p>Start Jupyter Notebook on server:</p>
+<p>Then we see on the server terminal </p>
+<pre><code class="lang-bash">[I 12:10:06.006 NotebookApp] 302 GET / (::1) 1.09ms
+...
+...
+...
+</code></pre>
+<p>Login to Jupyter Notebook with the token shown in the Server Terminal</p>
+<h1 id="Usage-Routine"><a href="#Usage-Routine" class="headerlink" title="Usage Routine"></a>Usage Routine</h1><p>Login to server:</p>
+<pre><code class="lang-bash">ssh xx306@login.student.eecs.qmul.ac.uk -A
+</code></pre>
+<p>Start Jupyter Notebook on server:</p>
 <pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --no-browser --port=8889
 </code></pre>
 <p>open a local Terminal and type in </p>
@@ -605,7 +605,7 @@ ssh xx306@login.student.eecs.qmul.ac.uk -A
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Installations"><span class="nav-number">1.</span> <span class="nav-text">Installations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anoconda"><span class="nav-number">1.1.</span> <span class="nav-text">Download Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Anoconda"><span class="nav-number">1.2.</span> <span class="nav-text">Install Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-bash-file"><span class="nav-number">1.3.</span> <span class="nav-text">Source bash file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Jupyter"><span class="nav-number">1.4.</span> <span class="nav-text">Install Jupyter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-Jupyter"><span class="nav-number">2.</span> <span class="nav-text">Configure Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-password"><span class="nav-number">2.1.</span> <span class="nav-text">set password</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy-this-key-exit-python-then"><span class="nav-number">2.2.</span> <span class="nav-text">copy this key, exit () python, then:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modify-the-following-lines"><span class="nav-number">2.3.</span> <span class="nav-text">modify the following lines:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Jupyter"><span class="nav-number">3.</span> <span class="nav-text">Start Jupyter</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Installations"><span class="nav-number">1.</span> <span class="nav-text">Installations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anoconda"><span class="nav-number">1.1.</span> <span class="nav-text">Download Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Anoconda"><span class="nav-number">1.2.</span> <span class="nav-text">Install Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-bash-file"><span class="nav-number">1.3.</span> <span class="nav-text">Source bash file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Jupyter"><span class="nav-number">1.4.</span> <span class="nav-text">Install Jupyter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-Jupyter"><span class="nav-number">2.</span> <span class="nav-text">Configure Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-password"><span class="nav-number">2.1.</span> <span class="nav-text">set password</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy-this-key-exit-python-then"><span class="nav-number">2.2.</span> <span class="nav-text">copy this key, exit () python, then:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modify-the-following-lines"><span class="nav-number">2.3.</span> <span class="nav-text">modify the following lines:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Jupyter"><span class="nav-number">3.</span> <span class="nav-text">Start Jupyter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage-Routine"><span class="nav-number">4.</span> <span class="nav-text">Usage Routine</span></a></li></ol></div>
             
 
           </div>
