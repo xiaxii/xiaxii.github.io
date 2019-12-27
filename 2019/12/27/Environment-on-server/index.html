@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
 <meta property="og:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-27T13:06:09.292Z">
+<meta property="og:updated_time" content="2019-12-27T13:36:17.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Environment on server">
 <meta name="twitter:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T21:06:09+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T21:36:17+08:00">
                 2019-12-27
               </time>
             
@@ -415,11 +415,19 @@ c.NotebookApp.port =8889
 <pre><code class="lang-bash">ssh -N -f -L localhost:8888:localhost:8889 xx306@login.student.eecs.qmul.ac.uk
 </code></pre>
 <p>Now open web browser (google chrome, firefox, …) and type <code>localhost:8888</code><br>We can see the Jupyter Application Site.</p>
-<p>Then we see on the server terminal <code>[I 12:10:06.006 NotebookApp] 302 GET / (::1) 1.09ms
-...
-...
-...</code> </p>
-<p>Login to Jupyter Notebook with the token shown in the Server Terminal</p>
+<p>Then we see on the server terminal ```<br>[I 12:10:06.006 NotebookApp] 302 GET / (::1) 1.09ms<br>…<br>…<br>…</p>
+<pre><code>
+Login to Jupyter Notebook with the token shown in the Server Terminal
+
+
+# Usage Routine
+Login to server:
+``` bash
+ssh xx306@login.student.eecs.qmul.ac.uk -A
+</code></pre><p>Start Jupyter Notebook on server:</p>
+<pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --no-browser --port=8889
+</code></pre>
+<p>Open <code>localhost:8888</code>  on browser and login to the Jypyter Notebook with the randomly generated tocken.</p>
 
       
     </div>
