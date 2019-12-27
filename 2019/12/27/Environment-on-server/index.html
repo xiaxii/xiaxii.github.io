@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
 <meta property="og:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-27T13:36:17.095Z">
+<meta property="og:updated_time" content="2019-12-27T13:44:36.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Environment on server">
 <meta name="twitter:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
@@ -293,7 +293,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T21:36:17+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T21:44:36+08:00">
                 2019-12-27
               </time>
             
@@ -426,6 +426,9 @@ Login to server:
 ssh xx306@login.student.eecs.qmul.ac.uk -A
 </code></pre><p>Start Jupyter Notebook on server:</p>
 <pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --no-browser --port=8889
+</code></pre>
+<p>open a local Terminal and type in </p>
+<pre><code class="lang-bash">ssh -N -f -L localhost:8888:localhost:8889 xx306@login.student.eecs.qmul.ac.uk
 </code></pre>
 <p>Open <code>localhost:8888</code>  on browser and login to the Jypyter Notebook with the randomly generated tocken.</p>
 
