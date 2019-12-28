@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
 <meta property="og:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-27T14:21:45.512Z">
+<meta property="og:updated_time" content="2019-12-28T14:59:16.479Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Environment on server">
 <meta name="twitter:description" content="Login to my server:  ssh xx306@login.student.eecs.qmul.ac.uk -A">
@@ -293,8 +293,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-27T22:21:45+08:00">
-                2019-12-27
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-28T22:59:16+08:00">
+                2019-12-28
               </time>
             
           </span>
@@ -353,10 +353,10 @@
 <pre><code class="lang-bash">ssh xx306@login.student.eecs.qmul.ac.uk -A
 </code></pre>
 <a id="more"></a>
-<h1 id="Installations"><a href="#Installations" class="headerlink" title="Installations"></a>Installations</h1><h2 id="Download-Anoconda"><a href="#Download-Anoconda" class="headerlink" title="Download Anoconda"></a>Download Anoconda</h2><pre><code class="lang-bash">wget https://repo.anaconda.com/archive/(anoconda version xxx.sh)
+<h1 id="Installations"><a href="#Installations" class="headerlink" title="Installations"></a>Installations</h1><h2 id="Download-Anoconda"><a href="#Download-Anoconda" class="headerlink" title="Download Anoconda"></a>Download Anoconda</h2><pre><code class="lang-bash">wget https://repo.anaconda.com/Anaconda2-2019.10-Linux-x86_64.sh
 </code></pre>
 <p>Note: anoconda version xxx see <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">Anaconda installer archive</a></p>
-<h2 id="Install-Anoconda"><a href="#Install-Anoconda" class="headerlink" title="Install Anoconda"></a>Install Anoconda</h2><pre><code class="lang-bash">bash anoconda version xxx.sh
+<h2 id="Install-Anoconda"><a href="#Install-Anoconda" class="headerlink" title="Install Anoconda"></a>Install Anoconda</h2><pre><code class="lang-bash">bash Anaconda2-2019.10-Linux-x86_64.sh
 </code></pre>
 <h2 id="Source-bash-file"><a href="#Source-bash-file" class="headerlink" title="Source bash file"></a>Source bash file</h2><pre><code class="lang-bash">source ~/.bashrc
 </code></pre>
@@ -375,14 +375,14 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 &gt;&gt;&gt; passwd()
 Enter password: 
 Verify password: 
-&#39;sha1:3195480eb0ba:4554f44ff41a2dc98d5553e8a0e33619b0ebf8f8&#39;
+&#39;sha1:eb021e5e0da0:57be9ff1fe2075e2afc8591cea27c286f75190d0&#39;
 </code></pre>
 <h2 id="copy-this-key-exit-python-then"><a href="#copy-this-key-exit-python-then" class="headerlink" title="copy this key, exit () python, then:"></a>copy this key, exit () python, then:</h2><pre><code class="lang-bash">vim /homes/xx306/.jupyter/jupyter_notebook_config.py
 </code></pre>
 <h2 id="modify-the-following-lines"><a href="#modify-the-following-lines" class="headerlink" title="modify the following lines:"></a>modify the following lines:</h2><pre><code class="lang-bash">c.NotebookApp.ip=&#39;*&#39; 
 #设置访问notebook的ip，*表示所有IP
 
-c.NotebookApp.password = u&#39;sha1:3195480eb0ba:4554f44ff41a2dc98d5553e8a0e33619b0ebf8f8&#39; 
+c.NotebookApp.password = u&#39;sha1:eb021e5e0da0:57be9ff1fe2075e2afc8591cea27c286f75190d0&#39; 
 #填写刚刚复制的密钥 
 
 c.NotebookApp.open_browser = False 
@@ -422,16 +422,34 @@ c.NotebookApp.port =8889
 ...
 </code></pre>
 <p>Login to Jupyter Notebook with the token shown in the Server Terminal</p>
+<h1 id="Change-Jupyter-Kernel"><a href="#Change-Jupyter-Kernel" class="headerlink" title="Change Jupyter Kernel"></a>Change Jupyter Kernel</h1><h2 id="list-current-kernels"><a href="#list-current-kernels" class="headerlink" title="list current kernels"></a>list current kernels</h2><pre><code class="lang-bash">jupyter kernelspec list
+</code></pre>
+<h2 id="New-environment"><a href="#New-environment" class="headerlink" title="New environment"></a>New environment</h2><pre><code class="lang-bash">conda create -n py27 python=2.7.
+</code></pre>
+<h2 id="Activate"><a href="#Activate" class="headerlink" title="Activate"></a>Activate</h2><pre><code class="lang-bash">source activate py27
+</code></pre>
+<h2 id="Install-the-kernel"><a href="#Install-the-kernel" class="headerlink" title="Install the kernel"></a>Install the kernel</h2><pre><code class="lang-bash">conda install ipykernel
+</code></pre>
+<h1 id="Install-Packages"><a href="#Install-Packages" class="headerlink" title="Install Packages"></a>Install Packages</h1><pre><code class="lang-bash">conda install pandas
+</code></pre>
+<p>or do </p>
+<pre><code class="lang-bash">conda config --append channels conda-forge
+</code></pre>
+<p>before installing with </p>
+<pre><code class="lang-bash">conda install pandas
+</code></pre>
 <h1 id="Usage-Routine"><a href="#Usage-Routine" class="headerlink" title="Usage Routine"></a>Usage Routine</h1><p>Login to server:</p>
 <pre><code class="lang-bash">ssh xx306@login.student.eecs.qmul.ac.uk -A
+source activate py27
 </code></pre>
 <p>Start Jupyter Notebook on server:</p>
-<pre><code class="lang-bash">(base) -bash-4.2$ jupyter notebook --no-browser --port=8889
+<pre><code class="lang-bash">jupyter notebook --no-browser --port=8889
 </code></pre>
 <p>open a local Terminal and type in </p>
 <pre><code class="lang-bash">ssh -N -f -L localhost:8888:localhost:8889 xx306@login.student.eecs.qmul.ac.uk
 </code></pre>
 <p>Open <code>localhost:8888</code>  on browser and login to the Jypyter Notebook with the randomly generated tocken.</p>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><p><a href="https://www.jianshu.com/p/a85bc2a8fa56" target="_blank" rel="noopener">Jupyter-NoteBook-你应该知道的N个小技巧</a></p>
 
       
     </div>
@@ -605,7 +623,7 @@ c.NotebookApp.port =8889
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Installations"><span class="nav-number">1.</span> <span class="nav-text">Installations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anoconda"><span class="nav-number">1.1.</span> <span class="nav-text">Download Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Anoconda"><span class="nav-number">1.2.</span> <span class="nav-text">Install Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-bash-file"><span class="nav-number">1.3.</span> <span class="nav-text">Source bash file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Jupyter"><span class="nav-number">1.4.</span> <span class="nav-text">Install Jupyter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-Jupyter"><span class="nav-number">2.</span> <span class="nav-text">Configure Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-password"><span class="nav-number">2.1.</span> <span class="nav-text">set password</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy-this-key-exit-python-then"><span class="nav-number">2.2.</span> <span class="nav-text">copy this key, exit () python, then:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modify-the-following-lines"><span class="nav-number">2.3.</span> <span class="nav-text">modify the following lines:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Jupyter"><span class="nav-number">3.</span> <span class="nav-text">Start Jupyter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage-Routine"><span class="nav-number">4.</span> <span class="nav-text">Usage Routine</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Installations"><span class="nav-number">1.</span> <span class="nav-text">Installations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Anoconda"><span class="nav-number">1.1.</span> <span class="nav-text">Download Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Anoconda"><span class="nav-number">1.2.</span> <span class="nav-text">Install Anoconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-bash-file"><span class="nav-number">1.3.</span> <span class="nav-text">Source bash file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Jupyter"><span class="nav-number">1.4.</span> <span class="nav-text">Install Jupyter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-Jupyter"><span class="nav-number">2.</span> <span class="nav-text">Configure Jupyter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-password"><span class="nav-number">2.1.</span> <span class="nav-text">set password</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#copy-this-key-exit-python-then"><span class="nav-number">2.2.</span> <span class="nav-text">copy this key, exit () python, then:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modify-the-following-lines"><span class="nav-number">2.3.</span> <span class="nav-text">modify the following lines:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Start-Jupyter"><span class="nav-number">3.</span> <span class="nav-text">Start Jupyter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Change-Jupyter-Kernel"><span class="nav-number">4.</span> <span class="nav-text">Change Jupyter Kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#list-current-kernels"><span class="nav-number">4.1.</span> <span class="nav-text">list current kernels</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#New-environment"><span class="nav-number">4.2.</span> <span class="nav-text">New environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activate"><span class="nav-number">4.3.</span> <span class="nav-text">Activate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-the-kernel"><span class="nav-number">4.4.</span> <span class="nav-text">Install the kernel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Packages"><span class="nav-number">5.</span> <span class="nav-text">Install Packages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usage-Routine"><span class="nav-number">6.</span> <span class="nav-text">Usage Routine</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tips"><span class="nav-number">7.</span> <span class="nav-text">Tips</span></a></li></ol></div>
             
 
           </div>
