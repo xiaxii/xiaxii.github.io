@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
 <meta property="og:description" content="Link: 1. Two Sum Problem DescriptionGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-17T14:40:24.795Z">
+<meta property="og:updated_time" content="2020-03-17T15:05:32.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode #1 Two Sum">
 <meta name="twitter:description" content="Link: 1. Two Sum Problem DescriptionGiven an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solu">
@@ -354,7 +354,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-03-17T22:40:24+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-03-17T23:05:32+08:00">
                 2020-03-17
               </time>
             
@@ -424,14 +424,15 @@
 <h1 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h1><p>If we use the Brute Force method to have a double loop – for each element <code>x</code> in the array, find another element <code>target-x</code>, the time complexity would be <code>O(n^2)</code>.</p>
 <p>HashMap would help to save time.</p>
 <p><strong>Cases</strong>:<br>generate a HashMap for the array <code>nums</code><br>for <code>i</code> in <code>nums</code><br>if <code>target-i</code> in HashMap<br>return the two indeces</p>
-<p><strong>Data structures &amp; Physical definitions</strong><br><code>Hashmap&lt;Integer, Integer&gt; map</code> -&gt; array of the nums<br><code>&lt;Integer, Integer&gt;</code> -&gt; <code>&lt;value, index&gt;</code> in the array</p>
+<p><strong>Data structures &amp; Physical definitions</strong><br><code>Hashmap&lt;Integer, Integer&gt; map</code> -&gt; array of the nums<br><code>&lt;key, value&gt;</code> in the map -&gt; <code>&lt;value, index&gt;</code> in the array</p>
 <h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><ul>
 <li>Time <code>O(n)</code></li>
 <li>Space <code>O(n)</code></li>
 </ul>
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><p>two-pass hash table - get the last answer<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>one-pass hashtable - get the first answer<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="Follow-ups"><a href="#Follow-ups" class="headerlink" title="Follow-ups"></a>Follow-ups</h1><p><a href="https://www.jianshu.com/p/8c5b7a596105" target="_blank" rel="noopener">LeetCode中HashTable章节</a></p>
+<h1 id="Follow-ups"><a href="#Follow-ups" class="headerlink" title="Follow-ups"></a>Follow-ups</h1><p><a href="https://www.jianshu.com/p/8c5b7a596105" target="_blank" rel="noopener">LeetCode中HashTable章节</a><br><a href="https://www.cnblogs.com/heyonggang/p/9112731.html" target="_blank" rel="noopener">面试必备：HashMap、Hashtable、ConcurrentHashMap的原理与区别</a></p>
+<p>Relative posts:<br><a href>HashMap</a></p>
 
       
     </div>
@@ -473,6 +474,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/17/HashMap/" rel="prev" title="HashMap">
+                HashMap <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -551,7 +556,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
