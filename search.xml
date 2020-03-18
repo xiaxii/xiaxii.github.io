@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HashMap</title>
-    <url>/2020/03/17/HashMap/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
     <title>LeetCode #1 Two Sum</title>
     <url>/2020/03/16/LeetCode-1-Two-Sum/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Link: <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">1. Two Sum</a></p>
@@ -15,7 +10,7 @@
 <h1 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h1><p><strong>Clarification</strong></p>
 <ul>
 <li><code>indices</code> not the position, start from 0</li>
-<li><code>exactly one solution</code> any pair that matches requirements, not need a full solution</li>
+<li><code>exactly one solution</code> any pair that matches requirements, not need a full solution; every test cases should have at least one answer (can be ignored)</li>
 <li><code>not use the same element twice</code> the result indeces are different from each other</li>
 </ul>
 <p><strong>Assumption</strong><br>Throw exception when no such an answer</p>
@@ -30,7 +25,14 @@
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><p>two-pass hash table - get the last answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>one-pass hashtable - get the first answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="Follow-ups"><a href="#Follow-ups" class="headerlink" title="Follow-ups"></a>Follow-ups</h1><p><a href="https://www.jianshu.com/p/8c5b7a596105" target="_blank" rel="noopener">LeetCode中HashTable章节</a><br><a href="https://www.cnblogs.com/heyonggang/p/9112731.html" target="_blank" rel="noopener">面试必备：HashMap、Hashtable、ConcurrentHashMap的原理与区别</a></p>
-<p>will discuss more about HashMap</p>
+<p>HashMap maps values to keys <code>&lt;key ← value&gt;</code><br>Time complexity of HashMap: <code>O(1)</code></p>
+<h2 id="Methods-in-HashMap"><a href="#Methods-in-HashMap" class="headerlink" title="Methods in HashMap"></a>Methods in HashMap</h2><p><strong>init</strong><br>HashMap<string, integer> hash_map = new HashMap<string, integer>();<br>HashMap<integer, string> hash_map = new HashMap<integer, string>(); </integer,></integer,></string,></string,></p>
+<p><strong>set &amp; get</strong><br>Hash_Map.put(key, value)</p>
+<p>Hash_Map.get(Object key_element)</p>
+<p>Object get(Object key): It is used to retrieve or fetch the value mapped by a particular key.<br>Set keySet(): It is used to return a set view of the keys.</p>
+<p><strong>remove</strong><br>Hash_Map.remove(Object key)</p>
+<p><strong>copy</strong><br>new_hash_map.putAll(exist_hash_map)</p>
+<p><strong>conditions</strong><br>boolean containsKey(Object key): Used to return True if for a specified key, mapping is present in the map.<br>boolean containsValue(Object value): Used to return true if one or more key is mapped to a specified value.</p>
 ]]></content>
       <categories>
         <category>LeetCode</category>
