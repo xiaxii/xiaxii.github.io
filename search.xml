@@ -1,98 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>LeetCode #1 Two Sum</title>
-    <url>/2020/03/16/LeetCode-1-Two-Sum/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Link: <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">1. Two Sum</a></p>
-<h1 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-<h1 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h1><p><strong>Clarification</strong></p>
-<ul>
-<li><code>indices</code> not the position, start from 0</li>
-<li><code>exactly one solution</code> any pair that matches requirements, not need a full solution; every test cases should have at least one answer (can be ignored)</li>
-<li><code>not use the same element twice</code> the result indeces are different from each other</li>
-</ul>
-<p><strong>Assumption</strong><br>Throw exception when no such an answer</p>
-<a id="more"></a>
-<h1 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h1><p>If we use the Brute Force method to have a double loop – for each element <code>x</code> in the array, find another element <code>target-x</code>, the time complexity would be <code>O(n^2)</code>.</p>
-<p>Brute force<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, j &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>HashMap would help to save time.</p>
-<p><strong>Cases</strong>:<br>generate a HashMap for the array <code>nums</code><br>for <code>i</code> in <code>nums</code><br>if <code>target-i</code> in HashMap<br>return the two indeces</p>
-<p><strong>Data structures &amp; Physical definitions</strong><br><code>Hashmap&lt;Integer, Integer&gt; map</code> -&gt; array of the nums<br><code>&lt;key, value&gt;</code> in the map -&gt; <code>&lt;value, index&gt;</code> in the array</p>
-<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><ul>
-<li>Time <code>O(n)</code></li>
-<li>Space <code>O(n)</code></li>
-</ul>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><p>Two-pass hash table - get the last answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>One-pass hashtable - get the first answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="Follow-ups"><a href="#Follow-ups" class="headerlink" title="Follow-ups"></a>Follow-ups</h1><p><a href="https://www.jianshu.com/p/8c5b7a596105" target="_blank" rel="noopener">LeetCode中HashTable章节</a><br><a href="https://www.cnblogs.com/heyonggang/p/9112731.html" target="_blank" rel="noopener">面试必备：HashMap、Hashtable、ConcurrentHashMap的原理与区别</a></p>
-<p>HashMap maps values to keys <code>&lt;key ← value&gt;</code><br>Time complexity of HashMap: <code>O(1)</code></p>
-<h2 id="Methods-in-HashMap"><a href="#Methods-in-HashMap" class="headerlink" title="Methods in HashMap"></a>Methods in HashMap</h2><p><strong>init</strong><br>HashMap<string, integer> hash_map = new HashMap<string, integer>();<br>HashMap<integer, string> hash_map = new HashMap<integer, string>(); </integer,></integer,></string,></string,></p>
-<p><strong>set &amp; get</strong><br>Hash_Map.put(key, value)</p>
-<p>Hash_Map.get(Object key_element)</p>
-<p>Object get(Object key): It is used to retrieve or fetch the value mapped by a particular key.<br>Set keySet(): It is used to return a set view of the keys.</p>
-<p><strong>remove</strong><br>Hash_Map.remove(Object key)</p>
-<p><strong>copy</strong><br>new_hash_map.putAll(exist_hash_map)</p>
-<p><strong>conditions</strong><br>boolean containsKey(Object key): Used to return True if for a specified key, mapping is present in the map.<br>boolean containsValue(Object value): Used to return true if one or more key is mapped to a specified value.</p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Array</tag>
-        <tag>Hashtable</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Templet</title>
-    <url>/2020/03/16/Templet/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>With the Ebbinghaus curve, this templet has 3 stages: <em>First Ocurrence</em>, the <em>72h</em> and <em>1week</em> revision.</p>
-<ul>
-<li>Start with the top 100 Liked Questions, in the order of question number.</li>
-<li>Record <em>mistakes, difficulty, feelings and time</em> every time</li>
-</ul>
-<h1 id="First-Occurrence"><a href="#First-Occurrence" class="headerlink" title="First Occurrence"></a>First Occurrence</h1><p>Link: <a href>n. xxx</a></p>
-<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h2><p><strong>Clarification</strong>:</p>
-<p><strong>Assumption</strong>:</p>
-<h2 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h2><p><strong>Cases</strong>:<br>if<br>if<br>…<br>else</p>
-<p><strong>Data structures &amp; Physical definitions</strong></p>
-<h2 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h2><ul>
-<li>Time <code>O(logn)</code></li>
-<li>Space <code>O(1)</code></li>
-</ul>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>()</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Follow-Ups"><a href="#Follow-Ups" class="headerlink" title="Follow-Ups"></a>Follow-Ups</h2><p>(relative questions… what if some assumptions are changed?)</p>
-<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>these are in my notes (app: auditory for mac)</p>
-<h3 id="72h"><a href="#72h" class="headerlink" title="72h"></a>72h</h3><p>72小时后再做一遍，录制语音，语音中交代以下信息：一句话的high-level idea, 数据结构和物理意义， 数据结构的开闭区间定义，初始化，每一步干什么，终止条件，是否需要判重</p>
-<h3 id="1week"><a href="#1week" class="headerlink" title="1week"></a>1week</h3><p>一周后再做一遍，边写边说</p>
-<h1 id="Memo"><a href="#Memo" class="headerlink" title="Memo"></a>Memo</h1><p>(the way to memorize)</p>
-<h1 id="Acknowledge"><a href="#Acknowledge" class="headerlink" title="Acknowledge"></a>Acknowledge</h1><p>This idea was partly borrowed from 榛子’s templet on Trello <a href="https://trello.com/b/zAEZhbrD/ace-in-algorithm-interviews/xiaxi9889/recommend" target="_blank" rel="noopener">Ace in Algorithm Interviews</a>. And she posted a Wechat article about time management <a href="https://mp.weixin.qq.com/s/TMD4AsZCalyxGqYX6ImjCA" target="_blank" rel="noopener">“在家办公”五年，总结出五个时间管理秘诀</a></p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>The Eagle Project Review</title>
-    <url>/2020/01/21/The-Eagle-Project-Review/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="“The-Eagle”-Remote-Sensing-Reconnaissance-System"><a href="#“The-Eagle”-Remote-Sensing-Reconnaissance-System" class="headerlink" title="“The Eagle” Remote Sensing Reconnaissance System"></a>“The Eagle” Remote Sensing Reconnaissance System</h1><p><strong>2018 Google - China MoE University-Industry Collaboration Program</strong></p>
-<p>This project intends to adopt a <strong><em>light-weight compression deep learning algorithm</em></strong>, based on Google open source artificial intelligence learning system <strong>TensorFlow</strong>, to propose and implement a set of intelligent processing solutions for mobile remote sensing images (<strong>target detection and semantic segmentation</strong>) on the mobile artificial intelligence computing platform. </p>
-<p>The mobile platform can be carried on the satellite to realize on-orbit <strong>real-time remote sensing</strong> image information extraction, which provides a basis for subsequent data classification and efficient retrieval, and can filter the target <strong>data of interest</strong> according to user instructions for downlink transmission, thereby greatly reducing data. The transmission volume, alleviating the bandwidth pressure of the network link, reducing the energy consumption of data transmission, improving the targeting of the downlink data and the timeliness of information acquisition.</p>
-<p>Video Preview:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C8QW7MbQf-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<a id="more"></a>
-<h2 id="Outcomes"><a href="#Outcomes" class="headerlink" title="Outcomes"></a>Outcomes</h2><p><strong>2018.05</strong> Project Started<br><strong>2018.06</strong> Attending in 2018 Internet+ Innovation &amp; Start-up Competition<br><strong>2018.07</strong> Won the Third-class award in 2018 Internet+ Innovation &amp; Start-up Competition<br><strong>2018.09</strong> Attending in 2018 AI+ Innovation &amp; Start-up Competition (report accessable on <a href="https://github.com/xiaxii/MarkdownMedia/blob/master/Project%20Report_%22Internet%2B%22%20Competition.pdf" target="_blank" rel="noopener">GitHub</a>)<br><strong>2018.10</strong> Won the Third-Class Most Innovative Award in 2018 AI+ Innovation &amp; Start-up Competition<br><strong>2019.05</strong> Won the National Second-Class Award in 2019 National College Student Innovation and Entrepreneurship Competition<br><strong>2019.08.02</strong> Oral presentation on <a href="https://igarss2019.org/Papers/ViewPapers.asp?PaperNum=4321" target="_blank" rel="noopener">IGARSS19</a><br><strong>2019.11.14</strong> Paper “Efficient Multi-Class Semantic Segmentation of High Resolution Aerial Imagery with Dilated LinkNet” was added to <a href="https://ieeexplore.ieee.org/document/8900281" target="_blank" rel="noopener">IEEE Xplore</a></p>
-<p><strong>Code on <a href="https://github.com/QT-Zhu/Eagle_System" target="_blank" rel="noopener">GitHub</a></strong> (managed by <a href="https://qt-zhu.github.io/" target="_blank" rel="noopener">Qingtian Zhu</a>)</p>
-<h2 id="Group-members"><a href="#Group-members" class="headerlink" title="Group members"></a>Group members</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/The%20Eagle%20Group%20Pic.JPG" alt="Group"><br><strong>Xi XIA</strong>, Junli Yang(Supervisor), Xingyi Li, Qingtian Zhu(Leader), Haoran Cui, Yulai Jiang, Yuming Zheng (happen to be absent)</p>
-<p>This photo was taken in the Innovation Center of Beijing University of Posts and Telecommunications.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Environment on server</title>
-    <url>/2019/12/27/Environment-on-server/</url>
+    <url>/2020/04/04/Environment-on-server/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Login to my server: </p>
 <pre><code class="lang-bash">ssh xx306@login.student.eecs.qmul.ac.uk -A
 </code></pre>
@@ -197,46 +107,82 @@ jupyter notebook --no-browser --port=8889
       </categories>
   </entry>
   <entry>
-    <title>Former Coding Interview Question: Word Squares</title>
-    <url>/2019/07/03/Former-Coding-Interview-Question-Word-Squares/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p><a href="https://techdevguide.withgoogle.com/resources/former-coding-interview-question-word-squares/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Word Squares</a></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkIfWordSquare</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = (<span class="keyword">int</span>)Math.sqrt((<span class="keyword">double</span>)str.length());</span><br><span class="line">        <span class="keyword">char</span>[] x = str.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; x.length; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> n = ((k%len) * len) + (<span class="keyword">int</span>)k/len; <span class="comment">//calculate compare position</span></span><br><span class="line">            <span class="keyword">if</span>(x[k]!=x[n])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>2019 Google NEXT</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Former Coding Interview Question: Trapping Rain Water [Dynamic Programming]</title>
-    <url>/2019/06/30/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<ol>
-<li><a href="https://techdevguide.withgoogle.com/resources/volume-of-water/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Trapping Rain Water</a></li>
-<li><a href="https://leetcode.com/articles/trapping-rain-water/" target="_blank" rel="noopener">LeetCode — 42.Trapping Rain Water</a></li>
-<li><a href="https://www.geeksforgeeks.org/trapping-rain-water/" target="_blank" rel="noopener">geeksforgeeks — Trapping Rain Water</a></li>
-<li><a href="https://youtu.be/8BHqSdwyODs" target="_blank" rel="noopener">Youtube</a></li>
-<li><a href="https://aaronice.gitbooks.io/lintcode/two_pointers/trapping_rain_water.html" target="_blank" rel="noopener">gitbook</a></li>
-</ol>
-</blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8BHqSdwyODs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+    <title>LeetCode #1 Two Sum</title>
+    <url>/2020/03/24/LeetCode-1-Two-Sum/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Link: <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">1. Two Sum</a></p>
+<h1 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
+<h1 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h1><p><strong>Clarification</strong></p>
+<ul>
+<li><code>indices</code> not the position, start from 0</li>
+<li><code>exactly one solution</code> any pair that matches requirements, not need a full solution; every test cases should have at least one answer (can be ignored)</li>
+<li><code>not use the same element twice</code> the result indeces are different from each other</li>
+</ul>
+<p><strong>Assumption</strong><br>Throw exception when no such an answer</p>
 <a id="more"></a>
-<p>Use two array to record</p>
-<ol>
-<li><strong>left[ ]</strong>: the highest left bar for this index</li>
-<li><strong>right[ ]</strong>the highest right bar for this index</li>
-</ol>
-<p>For each index, the water can be traped is min{left[i], right[j]}-height[i]</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JAVA Code For Trapping Rain Water </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> heights: an array of integers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: a integer</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trapRainWater</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (heights == <span class="keyword">null</span> || heights.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = heights.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">        <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> trapped = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// For heights[0] or heights[length - 1], the max left/right height is 0</span></span><br><span class="line">        left[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        right[length - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Keep track of the max height on the left of height[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</span><br><span class="line">            left[i] = Math.max(left[i - <span class="number">1</span>], heights[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Keep track of the max height on the right of height[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = length - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            right[j] = Math.max(right[j + <span class="number">1</span>], heights[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Calculate the total trapped water</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; length; k++) &#123;</span><br><span class="line">            trapped += Math.max(Math.min(left[k], right[k]) - heights[k], <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> trapped;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h1><p>If we use the Brute Force method to have a double loop – for each element <code>x</code> in the array, find another element <code>target-x</code>, the time complexity would be <code>O(n^2)</code>.</p>
+<p>Brute force<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, j &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>HashMap would help to save time.</p>
+<p><strong>Cases</strong>:<br>generate a HashMap for the array <code>nums</code><br>for <code>i</code> in <code>nums</code><br>if <code>target-i</code> in HashMap<br>return the two indeces</p>
+<p><strong>Data structures &amp; Physical definitions</strong><br><code>Hashmap&lt;Integer, Integer&gt; map</code> -&gt; array of the nums<br><code>&lt;key, value&gt;</code> in the map -&gt; <code>&lt;value, index&gt;</code> in the array</p>
+<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><ul>
+<li>Time <code>O(n)</code></li>
+<li>Space <code>O(n)</code></li>
+</ul>
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><p>Two-pass hash table - get the last answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>One-pass hashtable - get the first answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Follow-ups"><a href="#Follow-ups" class="headerlink" title="Follow-ups"></a>Follow-ups</h1><p><a href="https://www.jianshu.com/p/8c5b7a596105" target="_blank" rel="noopener">LeetCode中HashTable章节</a><br><a href="https://www.cnblogs.com/heyonggang/p/9112731.html" target="_blank" rel="noopener">面试必备：HashMap、Hashtable、ConcurrentHashMap的原理与区别</a></p>
+<p>HashMap maps values to keys <code>&lt;key ← value&gt;</code><br>Time complexity of HashMap: <code>O(1)</code></p>
+<h2 id="Methods-in-HashMap"><a href="#Methods-in-HashMap" class="headerlink" title="Methods in HashMap"></a>Methods in HashMap</h2><p><strong>init</strong><br>HashMap<string, integer> hash_map = new HashMap<string, integer>();<br>HashMap<integer, string> hash_map = new HashMap<integer, string>(); </integer,></integer,></string,></string,></p>
+<p><strong>set &amp; get</strong><br>Hash_Map.put(key, value)</p>
+<p>Hash_Map.get(Object key_element)</p>
+<p>Object get(Object key): It is used to retrieve or fetch the value mapped by a particular key.<br>Set keySet(): It is used to return a set view of the keys.</p>
+<p><strong>remove</strong><br>Hash_Map.remove(Object key)</p>
+<p><strong>copy</strong><br>new_hash_map.putAll(exist_hash_map)</p>
+<p><strong>conditions</strong><br>boolean containsKey(Object key): Used to return True if for a specified key, mapping is present in the map.<br>boolean containsValue(Object value): Used to return true if one or more key is mapped to a specified value.</p>
 ]]></content>
       <categories>
-        <category>2019 Google NEXT</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>Hashtable</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Templet</title>
+    <url>/2020/03/17/Templet/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>With the Ebbinghaus curve, this templet has 3 stages: <em>First Ocurrence</em>, the <em>72h</em> and <em>1week</em> revision.</p>
+<ul>
+<li>Start with the top 100 Liked Questions, in the order of question number.</li>
+<li>Record <em>mistakes, difficulty, feelings and time</em> every time</li>
+</ul>
+<h1 id="First-Occurrence"><a href="#First-Occurrence" class="headerlink" title="First Occurrence"></a>First Occurrence</h1><p>Link: <a href>n. xxx</a></p>
+<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h2><p><strong>Clarification</strong>:</p>
+<p><strong>Assumption</strong>:</p>
+<h2 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h2><p><strong>Cases</strong>:<br>if<br>if<br>…<br>else</p>
+<p><strong>Data structures &amp; Physical definitions</strong></p>
+<h2 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h2><ul>
+<li>Time <code>O(logn)</code></li>
+<li>Space <code>O(1)</code></li>
+</ul>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>()</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Follow-Ups"><a href="#Follow-Ups" class="headerlink" title="Follow-Ups"></a>Follow-Ups</h2><p>(relative questions… what if some assumptions are changed?)</p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>these are in my notes (app: auditory for mac)</p>
+<h3 id="72h"><a href="#72h" class="headerlink" title="72h"></a>72h</h3><p>72小时后再做一遍，录制语音，语音中交代以下信息：一句话的high-level idea, 数据结构和物理意义， 数据结构的开闭区间定义，初始化，每一步干什么，终止条件，是否需要判重</p>
+<h3 id="1week"><a href="#1week" class="headerlink" title="1week"></a>1week</h3><p>一周后再做一遍，边写边说</p>
+<h1 id="Memo"><a href="#Memo" class="headerlink" title="Memo"></a>Memo</h1><p>(the way to memorize)</p>
+<h1 id="Acknowledge"><a href="#Acknowledge" class="headerlink" title="Acknowledge"></a>Acknowledge</h1><p>This idea was partly borrowed from 榛子’s templet on Trello <a href="https://trello.com/b/zAEZhbrD/ace-in-algorithm-interviews/xiaxi9889/recommend" target="_blank" rel="noopener">Ace in Algorithm Interviews</a>. And she posted a Wechat article about time management <a href="https://mp.weixin.qq.com/s/TMD4AsZCalyxGqYX6ImjCA" target="_blank" rel="noopener">“在家办公”五年，总结出五个时间管理秘诀</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
       </categories>
   </entry>
   <entry>
     <title>Former Coding Interview Question: Compression and Decompression</title>
-    <url>/2019/06/14/Former-Coding-Interview-Question-Compression-and-Decompression/</url>
+    <url>/2020/03/17/Former-Coding-Interview-Question-Compression-and-Decompression/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <ol>
 <li><a href="https://techdevguide.withgoogle.com/paths/advanced/compress-decompression/#code-challenge" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Compression and Decompression</a></li>
@@ -260,179 +206,24 @@ jupyter notebook --no-browser --port=8889
       </categories>
   </entry>
   <entry>
-    <title>Is Social Media Hurting Your Mental Health?</title>
-    <url>/2019/06/06/Is-Social-Media-Hurting-Your-Mental-Health/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe width="560" height="315" src="https://www.youtube.com/embed/Czg_9C7gw0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <title>The Eagle Project Review</title>
+    <url>/2020/02/09/The-Eagle-Project-Review/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="“The-Eagle”-Remote-Sensing-Reconnaissance-System"><a href="#“The-Eagle”-Remote-Sensing-Reconnaissance-System" class="headerlink" title="“The Eagle” Remote Sensing Reconnaissance System"></a>“The Eagle” Remote Sensing Reconnaissance System</h1><p><strong>2018 Google - China MoE University-Industry Collaboration Program</strong></p>
+<p>This project intends to adopt a <strong><em>light-weight compression deep learning algorithm</em></strong>, based on Google open source artificial intelligence learning system <strong>TensorFlow</strong>, to propose and implement a set of intelligent processing solutions for mobile remote sensing images (<strong>target detection and semantic segmentation</strong>) on the mobile artificial intelligence computing platform. </p>
+<p>The mobile platform can be carried on the satellite to realize on-orbit <strong>real-time remote sensing</strong> image information extraction, which provides a basis for subsequent data classification and efficient retrieval, and can filter the target <strong>data of interest</strong> according to user instructions for downlink transmission, thereby greatly reducing data. The transmission volume, alleviating the bandwidth pressure of the network link, reducing the energy consumption of data transmission, improving the targeting of the downlink data and the timeliness of information acquisition.</p>
+<p>Video Preview:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C8QW7MbQf-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<h2 id="four-of-the-most-common-stressors-on-social-media"><a href="#four-of-the-most-common-stressors-on-social-media" class="headerlink" title="four of the most common stressors on social media"></a>four of the most common stressors on social media</h2><a id="more"></a>
-<h3 id="1-the-Highlight-Reel"><a href="#1-the-Highlight-Reel" class="headerlink" title="1. the Highlight Reel."></a>1. the Highlight Reel.</h3><p>Just like in sports, the highlight reel is a collection of the best and brightest moments. Social media is our personal highlight reel. It’s where we put up our wins, or when we look great, or when we are out with friends and family. But we struggle with insecurity because we compare our behind-the-scenes with everyone else’s highlight reels. We are constantly comparing ourselves to others.</p>
-<p>Yes, this was happening before social media, with TV and celebrity, but now it’s happening all the time, and it’s directly linked to you. A perfect example I came across in preparation for this talk is my friend on vacation: ‘brb, nap’. ‘Wait, why can’t I afford a vacation? Why am I just sitting here in my PJ’s watching Netflix? I want to be on a beach.’</p>
-<p>Here’s the thing, I know her very well. I knew this was out of the ordinary for her. I knew she was typically drowning in schoolwork. But we think, ‘Who wants to see that?’ The highlights are what people want to see. In fact, when your highlights do well, you encounter the second stressor on social media.</p>
-<h3 id="2-Social-Currency"><a href="#2-Social-Currency" class="headerlink" title="2. Social Currency."></a>2. Social Currency.</h3><p>Just like the dollar, a currency is literally something we use to attribute value to a good or service. In social media, these likes, the comments, the shares have become this form of social currency by which we attribute value to something. In marketing, we call it the ‘Economy of Attention’. Everything is competing for your attention, and when you give something a like or a piece of that finite attention, it becomes a recorded transaction attributing value.</p>
-<p>Which is great if you are selling albums or clothing. The problem is that in our social media, [WE are the product] We are letting others attribute value to us. You know someone or are someone that has taken down a photo because it didn’t take as many likes as you thought it would. I’ll admit, I’ve been right there with you.</p>
-<p>We took our product off the shelf because it wasn’t selling fast enough. This is changing our sense of identity. We are tying up our self-worth of what others think about us and then we are quantifying it for everyone to see. And we are obsessed. We have to get that selfie just right, and we will take 300 photos to make sure.</p>
-<p>Then we will wait for the perfect time to post. We are so obsessed we have biological responses when we can’t participate.</p>
-<h3 id="3-FOMO"><a href="#3-FOMO" class="headerlink" title="3. FOMO"></a>3. FOMO</h3><p>It’s a light phrase we’ve all thrown around FOMO, or the ‘fear of missing out’, is an actual social anxiety from the fear that you are missing a potential connection, event, or opportunity. A collection of Canadian Universities found that 7/10 students said they would get rid of their social networking accounts if it were not for fear of being left ‘out of the loop’. Out of curiosity, how many people here have, or have considered deactivating your social.</p>
-<p>That’s almost everyone. That FOMO you feel, the highlight reels, the social currency, those are all results of a relatively ‘normal’ social media experience. But what if going on social every day was a terrifying experience? Where you not just question your self-worth but you question your safety?</p>
-<h3 id="4-Online-Harassment"><a href="#4-Online-Harassment" class="headerlink" title="4. Online Harassment"></a>4. Online Harassment</h3><p>40% of online adults have experienced online harassment. 73% have witnessed it. The unfortunate reality is that it is much worse and much more likely if you are a woman, LGBTQ, a person of color, muslim – I think you get the point.</p>
-<p>The problem is that in the news we are seeing these big stories: The 18-year-old Tyler Clementi, who took his life after his roommate secretly filmed him kissing another guy and outed him on Twitter. We see women like Anita Sarkeesian being close to shamed of the internet and sent death and rape threats for sharing their feminism.</p>
-<p>We see these stories once it is too late. What about the everyday online harassment? What about that ugly snapchat you sent your friend with the intention of it being private, and now it is up on Facebook? ‘And so? It’s just one photo, it’s funny’ ‘Just one mean comment, not a big deal.’</p>
-<p>But when these micro moments happen over and over again, over time, that’s when we have a macro problem. We have to recognize these everyday instances as well. Because if they go unchecked and the effects unnoticed, we are going to have many more Tyler Clementis. The effects are not always easy to recognize.</p>
-<h2 id="How-to-solve-this-problem"><a href="#How-to-solve-this-problem" class="headerlink" title="How to solve this problem"></a>How to solve this problem</h2><p><strong>Recognizing a problem</strong> is the first step to fixing it. So hearing this talk is just that, step one: recognize the problem. You know the power of suggestion, when someone tells you about something and you start seeing it everywhere.</p>
-<p>That’s why awareness is critical. Because now you will at least be better able to recognize these effects if and when they happen to you.</p>
-<p>The second thing you are going to do is <strong>audit your social media diet</strong>. The same way we monitor what goes into our mouth, monitor whatever goes into your head and heart. Ask yourself: ‘Did that Facebook scroll make me feel better or worse off?’ ‘How many times do I actually check likes?’ ‘Why am I responding this way to that photo?’ Then ask yourself if you are happy with the results.</p>
-<p>You might be and that’s OK! But if you’re not, move on to step three. <strong>Create a better online experience.</strong> After my partner did his audit, he realized his self-worth was too tied up in social media, but particularly celebrities reminding him of the things he didn’t have. So he unfollowed all brands and all celebrities. That worked for him.</p>
-<p>But it might not be celebrities for you. For me, I had to purge other people off my timeline. Let me tell you a secret. You do not have to follow your ‘friends’. The truth is that sometimes our friends, or the people we have on Facebook as a courtesy, they just suck online! You find yourself in this passive-aggressive status war you didn’t even know was happening.</p>
-<p>Or you are looking at 50 photos of the same concert from the same angle. If you want to follow artists, or comedians, or cats, you can do that.</p>
-<p>The last thing you will do is <strong>model good behavior</strong>. Offline we are taught not to bully other kids in the playground. We are taught to respect others and treat them how they deserve.</p>
-<p>We are taught not to kick others when they are down, or take pleasure in their downfalls. Social media is a tool. A tool that can be used for good, for more positive groups, for revolutions, for putting grumpy cat in Disney movies. Internet is a weird place.</p>
-<p>Is social media hurting your mental health? The answer is: it doesn’t have to. Social can tear you down, yes, or it can lift you up, where you leave feeling better off, or have an actual laugh-out-loud.</p>
-<p>Finally, I have 24 hours in a day, if I spend two of those hours on social media, then I want my experiences to be full of inspiration, laughs, motivation, and a whole lot of grumpy cat in Disney movies.</p>
-]]></content>
-      <categories>
-        <category>TED</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Bloggers that I am following</title>
-    <url>/2019/05/18/Bloggers-that-I-am-following/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Eric-Jang"><a href="#Eric-Jang" class="headerlink" title="Eric Jang"></a><a href="http://evjang.com/" target="_blank" rel="noopener">Eric Jang</a></h2><p>He is a research engineer on the Google Brain team.</p>
-<p>Here are some of his articles about internship:</p>
-<ol>
-<li><a href="https://blog.evjang.com/2016/07/how-to-get-internship.html" target="_blank" rel="noopener">How to Get an Internship</a></li>
-<li><a href="https://blog.evjang.com/2016/06/my-internship-experiences-at-pixar.html" target="_blank" rel="noopener">My Internship Experiences at Pixar, Google, and Two Sigma</a></li>
-</ol>
-<h2 id="Bozhao（Joshua）Li"><a href="#Bozhao（Joshua）Li" class="headerlink" title="Bozhao（Joshua）Li"></a><a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">Bozhao（Joshua）Li</a></h2><p>He is a Software Engineer at Google. </p>
-<p>His <a href="http://www.bozhaoli.info/" target="_blank" rel="noopener">presentation page</a> is well-designed and he has a fantastic group projects:<br><a href="http://www.bozhaoli.info/project/" target="_blank" rel="noopener">ENERGY IN U.S. - Consumption and impact of different type of energy</a></p>
-]]></content>
-      <categories>
-        <category>Experience</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>13 Things Mentally Strong People Don&#39;t Do</title>
-    <url>/2019/05/02/13-Things-Mentally-Strong-People-Don-t-Do/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>By Amy Morin</p>
-<p>Mentally strong people have healthy habits. They manage their emotions, thoughts, and behaviors in ways that set them up for success in life. Check out these things that mentally strong people don’t do so that you too can become more mentally strong.</p>
 <a id="more"></a>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TFbv757kup4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<ol>
-<li><p>They Don’t Waste Time Feeling Sorry for Themselves<br>Mentally strong people don’t sit around feeling sorry about their circumstances or how others have treated them. Instead, they take responsibility for their role in life and understand that life isn’t always easy or fair.</p>
-</li>
-<li><p>They Don’t Give Away Their Power<br>They don’t allow others to control them, and they don’t give someone else power over them. They don’t say things like, “My boss makes me feel bad,” because they understand that they are in control over their own emotions and they have a choice in how they respond.</p>
-</li>
-<li><p>They Don’t Shy Away from Change<br>Mentally strong people don’t try to avoid change. Instead, they welcome positive change and are willing to be flexible. They understand that change is inevitable and believe in their abilities to adapt.</p>
-</li>
-<li><p>They Don’t Waste Energy on Things They Can’t Control<br>You won’t hear a mentally strong person complaining over lost luggage or traffic jams. Instead, they focus on what they can control in their lives. They recognize that sometimes, the only thing they can control is their attitude.</p>
-</li>
-<li><p>They Don’t Worry About Pleasing Everyone<br>Mentally strong people recognize that they don’t need to please everyone all the time. They’re not afraid to say no or speak up when necessary. They strive to be kind and fair, but can handle other people being upset if they didn’t make them happy.</p>
-</li>
-<li><p>They Don’t Fear Taking Calculated Risks<br>They don’t take reckless or foolish risks, but don’t mind taking calculated risks. Mentally strong people spend time weighing the risks and benefits before making a big decision, and they’re fully informed of the potential downsides before they take action.</p>
-</li>
-<li><p>They Don’t Dwell on the Past<br>Mentally strong people don’t waste time dwelling on the past and wishing things could be different. They acknowledge their past and can say what they’ve learned from it. However, they don’t constantly relive bad experiences or fantasize about the glory days. Instead, they live for the present and plan for the future.</p>
-</li>
-<li><p>They Don’t Make the Same Mistakes Over and Over<br>Mentally strong people accept responsibility for their behavior and learn from their past mistakes. As a result, they don’t keep repeating those mistakes over and over. Instead, they move on and make better decisions in the future.</p>
-</li>
-<li><p>They Don’t Resent Other People’s Success<br>Mentally strong people can appreciate and celebrate other people’s success in life. They don’t grow jealous or feel cheated when others surpass them. Instead, they recognize that success comes with hard work, and they are willing to work hard for their own chance at success.</p>
-</li>
-<li><p>They Don’t Give Up After the First Failure<br>Mentally strong people don’t view failure as a reason to give up. Instead, they use failure as an opportunity to grow and improve. They are willing to keep trying until they get it right.</p>
-</li>
-<li><p>They Don’t Fear Alone Time<br>Mentally strong people can tolerate being alone and they don’t fear silence. They aren’t afraid to be alone with their thoughts and they can use downtime to be productive. They enjoy their own company and aren’t dependent on others for companionship and entertainment all the time but instead can be happy alone.</p>
-</li>
-<li><p>They Don’t Feel the World Owes Them Anything<br>Mentally strong people don’t feel entitled to things in life. They weren’t born with a mentality that others would take care of them or that the world must give them something. Instead, they look for opportunities based on their own merits.</p>
-</li>
-<li><p>They Don’t Expect Immediate Results<br>Whether they are working on improving their health or getting a new business off the ground, mentally strong people don’t expect immediate results. Instead, they apply their skills and time to the best of their ability and understand that real change takes time.﻿</p>
-</li>
-</ol>
+<h2 id="Outcomes"><a href="#Outcomes" class="headerlink" title="Outcomes"></a>Outcomes</h2><p><strong>2018.05</strong> Project Started<br><strong>2018.06</strong> Attending in 2018 Internet+ Innovation &amp; Start-up Competition<br><strong>2018.07</strong> Won the Third-class award in 2018 Internet+ Innovation &amp; Start-up Competition<br><strong>2018.09</strong> Attending in 2018 AI+ Innovation &amp; Start-up Competition (report accessable on <a href="https://github.com/xiaxii/MarkdownMedia/blob/master/Project%20Report_%22Internet%2B%22%20Competition.pdf" target="_blank" rel="noopener">GitHub</a>)<br><strong>2018.10</strong> Won the Third-Class Most Innovative Award in 2018 AI+ Innovation &amp; Start-up Competition<br><strong>2019.05</strong> Won the National Second-Class Award in 2019 National College Student Innovation and Entrepreneurship Competition<br><strong>2019.08.02</strong> Oral presentation on <a href="https://igarss2019.org/Papers/ViewPapers.asp?PaperNum=4321" target="_blank" rel="noopener">IGARSS19</a><br><strong>2019.11.14</strong> Paper “Efficient Multi-Class Semantic Segmentation of High Resolution Aerial Imagery with Dilated LinkNet” was added to <a href="https://ieeexplore.ieee.org/document/8900281" target="_blank" rel="noopener">IEEE Xplore</a></p>
+<p><strong>Code on <a href="https://github.com/QT-Zhu/Eagle_System" target="_blank" rel="noopener">GitHub</a></strong> (managed by <a href="https://qt-zhu.github.io/" target="_blank" rel="noopener">Qingtian Zhu</a>)</p>
+<h2 id="Group-members"><a href="#Group-members" class="headerlink" title="Group members"></a>Group members</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/The%20Eagle%20Group%20Pic.JPG" alt="Group"><br><strong>Xi XIA</strong>, Junli Yang(Supervisor), Xingyi Li, Qingtian Zhu(Leader), Haoran Cui, Yulai Jiang, Yuming Zheng (happen to be absent)</p>
+<p>This photo was taken in the Innovation Center of Beijing University of Posts and Telecommunications.</p>
 ]]></content>
-      <categories>
-        <category>TED</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>What makes a good life? - lesson from the Harvard Study of Adult Development</title>
-    <url>/2019/05/02/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This TedTalk by Robert Waldinger describes a study that began in 1938 and followed the lives of 724 men from their adolescence to their death (60% of them were still alive and participating in the study when the talk is given).<br>The Harvard Study of Adult Development is one of the longest studies of adult life which follows two groups of men: </p>
-<ol>
-<li>men who were <strong>sophomores at Harvard</strong></li>
-<li>boys in the lower socioeconomic group/disadvantaged families in <strong>Boston’s poorest neighborhood</strong>.</li>
-</ol>
-<p>Each participant was medically examined, interviewed in their homes and had their families also interviewed. Every two years, the participants would answer another set of questions about their life (work, home, health…), complete a face-to-face interview, and a multitude of other data submissions.<br>The main conclusion of this 75-year study is this: <strong><em>Good relationships keep us happier and healthier.</em></strong></p>
-<a id="more"></a>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8KkKuTCFvzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<p>This study found that the impact of relationships on our happiness and health is broken down into 3 main lessons:</p>
-<ol>
-<li><strong><em>Social connections are really good for us</em></strong>: The more social connections one has, the happier, healthier, and longer that individual will live. These connections can be with <strong>family, friends, or community</strong>.</li>
-<li><strong><em>The quality of relationships is greater than the quantity</em></strong>: Having poor or conflict-ridden relationships significantly impacts physical health and mental well-being (e.g. High-conflict marriage without much affection). The people who are most satisfied with their relationships at the age of 50 are the healthiest when they are 80.</li>
-<li><strong><em>Quality relationships protect our bodies and our brains</em></strong>: This study found that individuals who were in a securely attached relationship in their 80s maintained <strong>sharper memories</strong>longer than those who were not in a relationship. Our relationships, protect our brain and maintain <strong>our brain’s cognitive functioning</strong>.</li>
-</ol>
-<p>People ignored these points because managing relationship is a messy and complex work. It’s lifelong and the possibilities are practical endless. Young adults tend to believe that fame, wealth and high achievements are what they need to go after to have a good life. However, as the study has shown, the people who fared best are the people who leaned into relationships with families, with friends, with community.<br>We can’t predict what will it be like if we lean into relationships for now. But we can <strong>live up the relationships by doing something new together</strong>, like long walks and date nights, or even reaching out to that family member who you haven’t spoken to in years, because those all-too-common family feuds take a terrible toll on people who hold the grudges.</p>
-]]></content>
-      <categories>
-        <category>TED</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework</title>
-    <url>/2019/05/02/Towards-Scalable-and-Dynamic-Social-Sensing-Using-A-Distributed-Computing-Framework/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p>Reference: <a href="https://www3.nd.edu/~sslab/pdf/icdcs17.pdf" target="_blank" rel="noopener">Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework</a><br>2nd paper review for 2019 <a href="https://international.nd.edu/students-scholars/global-engagement-programs/summer-programs/isure/" target="_blank" rel="noopener">iSURE</a> @ <a href="https://www3.nd.edu/~sslab/" target="_blank" rel="noopener">Social Sensing Lab at University of Notre Dame</a>.</p>
-</blockquote>
-<p>This paper developed a <strong>Scalable Streaming Truth Discovery (SSTD)</strong> solution to address the problems of <strong><em>truth discovery</em></strong>: dynamic truth, scalability and heterogeneity of streaming data.</p>
-<ol>
-<li><strong>Dynamic</strong> truth discovery: the ground truth of claims changes over time.</li>
-<li>Scalability to large-scale social sensing events.</li>
-<li>The heterogeneity and unpredictability of the social sensing data traffic. And additional challenges to the <strong>resource allocation</strong> and system responsiveness.</li>
-</ol>
-<p>Methods in the solution:</p>
-<ol>
-<li><a href="https://en.wikipedia.org/wiki/Hidden_Markov_model" target="_blank" rel="noopener">Hidden Markov Models(HMM)</a> help the <strong>dynamic</strong> truth discovery scheme effectively infer the evolving truth of reported claims.</li>
-<li>A distributed framework implements the <strong>dynamic</strong> truth discovery scheme using Work Queue in <a href="https://research.cs.wisc.edu/htcondor/description.html" target="_blank" rel="noopener">HTCcondor</a> system.</li>
-<li>the SSTD scheme intergraded with an optimal <strong>workload allocation</strong> mechanism .</li>
-</ol>
-<p>Evaluation using Twitter data feeds: Boston Bombing, Paris Shooting and College Football</p>
-<a id="more"></a>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong>Goal of truth discovery</strong>: to identify the reliability of the sources and the truthfulness of claims they make without the prior knowl edge.</p>
-<h3 id="Three-challenges"><a href="#Three-challenges" class="headerlink" title="Three challenges"></a>Three challenges</h3><h4 id="The-dynamic-truth-challenge"><a href="#The-dynamic-truth-challenge" class="headerlink" title="The dynamic truth challenge"></a>The dynamic truth challenge</h4><p>two critical tasks:</p>
-<ol>
-<li>to capture the transition of truth in <strong>a timely manner</strong></li>
-<li>to be <strong>robust against noisy data</strong> that may lead to the incorrect detection of the truth transition.</li>
-</ol>
-<h4 id="The-Scalability-aspect-of-the-truth-discovery-problem"><a href="#The-Scalability-aspect-of-the-truth-discovery-problem" class="headerlink" title="The Scalability aspect of the truth discovery problem"></a>The Scalability aspect of the truth discovery problem</h4><p>Current centralized truth discovery solutions are incapable of handling large volume of social sensing data due to the resource limitation on a single computing device.<br>A distributed solution based on Hadoop system is not very good, bucause:</p>
-<ol>
-<li>its a heavy-weight solution which requires a long time to start</li>
-<li>it is suitable for data of very large volume (far more large than we need for social sensing network)</li>
-<li>it ignores the heterogenity of the computational resources.</li>
-</ol>
-<h4 id="The-heterogenity-and-unpredictability-of-the-streaming-data-traffic"><a href="#The-heterogenity-and-unpredictability-of-the-streaming-data-traffic" class="headerlink" title="The heterogenity and unpredictability of the streaming data traffic"></a>The heterogenity and unpredictability of the streaming data traffic</h4><ol>
-<li>different topics or evens generate different amounts i social sensing data</li>
-<li>the traffic volume of the same event is noy constant over time.</li>
-</ol>
-<h3 id="Solution-of-this-paper"><a href="#Solution-of-this-paper" class="headerlink" title="Solution of this paper"></a>Solution of this paper</h3><ol>
-<li>a Hidden Markov Model based solution to <strong>dynamically</strong> estimate the true value of claims based on the observations reported by social sensors. </li>
-<li>a light-weight distributed framework that is both <strong>scalable</strong> and efficient to solve the truth discovery problem using Work Queue and HTCondor system. </li>
-<li>integrated the SSTD scheme with an optimal workload allocation mechanism using feedback control (i.e., Proportional Integral Derivative (PID) controller) to dynamically <strong>allocate the resources</strong> (e.g., cores, memories) to the truth discovery tasks. </li>
-</ol>
-<h2 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h2><h3 id="For-the-soicial-media"><a href="#For-the-soicial-media" class="headerlink" title="For the soicial media"></a>For the soicial media</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.1.png" alt="Problem Formulation"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.2.png" alt="Problem Formulation"></p>
-<h3 id="For-the-deployed-system"><a href="#For-the-deployed-system" class="headerlink" title="For the deployed system"></a>For the deployed system</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.3.png" alt="Problem Formulation"></p>
-<h2 id="Scalable-and-Streaming-Truth-Discovery"><a href="#Scalable-and-Streaming-Truth-Discovery" class="headerlink" title="Scalable and Streaming Truth Discovery"></a>Scalable and Streaming Truth Discovery</h2><p>The Scalable and Streaming Truth Discovery (SSTD) scheme based on a Hidden Markov Model (HMM) is developed to decode the streaming social sensing date and output the corresponding truth values o claims in real time.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.4.png" alt="HMM"><br>This solution can be implemented in <strong>a distributed system</strong> where <strong>multiple truth discovery jobs can run in parallel</strong> to address the scalability challenge in social sensing applications.</p>
-<h3 id="Deriving-Hidden-States-and-Observation-Sequence"><a href="#Deriving-Hidden-States-and-Observation-Sequence" class="headerlink" title="Deriving Hidden States and Observation Sequence"></a>Deriving Hidden States and Observation Sequence</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.5.png" alt="HMM"></p>
-<h3 id="Estimating-Parameters-of-the-HMM-Model"><a href="#Estimating-Parameters-of-the-HMM-Model" class="headerlink" title="Estimating Parameters of the HMM Model"></a>Estimating Parameters of the HMM Model</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.6.png" alt="Define HMM parameters"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.7.png" alt="Goal of Estimating"><br>this estimating problem is solved by an expectation maximization <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm" target="_blank" rel="noopener">(EM)</a> based algorithm.</p>
-<h3 id="Decoding-State-Sequence"><a href="#Decoding-State-Sequence" class="headerlink" title="Decoding State Sequence"></a>Decoding State Sequence</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.8.png" alt="Goal of decoding"></p>
-<p>This decoding problem is solved by the <a href="https://en.wikipedia.org/wiki/Viterbi_algorithm" target="_blank" rel="noopener">Viterbi Algorithm</a>.</p>
-<p>By the esitimatied ${\lambda}_u$ of HMM model and the given observation sequence $F(u)$, we can infer the corresponding hidden true value sequence $VT_u$ that is most likely to generate the observations. It is solved recursively as follows:</p>
-<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.9.png" alt="Decoding"></p>
-<h2 id="Implimentation-on-a-Distributed-Computer-Framework"><a href="#Implimentation-on-a-Distributed-Computer-Framework" class="headerlink" title="Implimentation on a Distributed Computer Framework"></a>Implimentation on a Distributed Computer Framework</h2><p>(to be continued…)</p>
-]]></content>
-      <categories>
-        <category>Literature review</category>
-      </categories>
   </entry>
   <entry>
     <title>The Age of Social Sensing</title>
-    <url>/2019/04/27/The-Age-of-Social-Sensing/</url>
+    <url>/2020/01/22/The-Age-of-Social-Sensing/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>Reference: <a href="https://www3.nd.edu/~sslab/pdf/computer-18.pdf" target="_blank" rel="noopener">The Age of Social Sensing</a><br>1st paper review for 2019 <a href="https://international.nd.edu/students-scholars/global-engagement-programs/summer-programs/isure/" target="_blank" rel="noopener">iSURE</a> @ <a href="https://www3.nd.edu/~sslab/" target="_blank" rel="noopener">Social Sensing Lab at University of Notre Dame</a>.</p>
 </blockquote>
@@ -512,8 +303,161 @@ jupyter notebook --no-browser --port=8889
       </categories>
   </entry>
   <entry>
+    <title>Is Social Media Hurting Your Mental Health?</title>
+    <url>/2020/01/22/Is-Social-Media-Hurting-Your-Mental-Health/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe width="560" height="315" src="https://www.youtube.com/embed/Czg_9C7gw0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h2 id="four-of-the-most-common-stressors-on-social-media"><a href="#four-of-the-most-common-stressors-on-social-media" class="headerlink" title="four of the most common stressors on social media"></a>four of the most common stressors on social media</h2><a id="more"></a>
+<h3 id="1-the-Highlight-Reel"><a href="#1-the-Highlight-Reel" class="headerlink" title="1. the Highlight Reel."></a>1. the Highlight Reel.</h3><p>Just like in sports, the highlight reel is a collection of the best and brightest moments. Social media is our personal highlight reel. It’s where we put up our wins, or when we look great, or when we are out with friends and family. But we struggle with insecurity because we compare our behind-the-scenes with everyone else’s highlight reels. We are constantly comparing ourselves to others.</p>
+<p>Yes, this was happening before social media, with TV and celebrity, but now it’s happening all the time, and it’s directly linked to you. A perfect example I came across in preparation for this talk is my friend on vacation: ‘brb, nap’. ‘Wait, why can’t I afford a vacation? Why am I just sitting here in my PJ’s watching Netflix? I want to be on a beach.’</p>
+<p>Here’s the thing, I know her very well. I knew this was out of the ordinary for her. I knew she was typically drowning in schoolwork. But we think, ‘Who wants to see that?’ The highlights are what people want to see. In fact, when your highlights do well, you encounter the second stressor on social media.</p>
+<h3 id="2-Social-Currency"><a href="#2-Social-Currency" class="headerlink" title="2. Social Currency."></a>2. Social Currency.</h3><p>Just like the dollar, a currency is literally something we use to attribute value to a good or service. In social media, these likes, the comments, the shares have become this form of social currency by which we attribute value to something. In marketing, we call it the ‘Economy of Attention’. Everything is competing for your attention, and when you give something a like or a piece of that finite attention, it becomes a recorded transaction attributing value.</p>
+<p>Which is great if you are selling albums or clothing. The problem is that in our social media, [WE are the product] We are letting others attribute value to us. You know someone or are someone that has taken down a photo because it didn’t take as many likes as you thought it would. I’ll admit, I’ve been right there with you.</p>
+<p>We took our product off the shelf because it wasn’t selling fast enough. This is changing our sense of identity. We are tying up our self-worth of what others think about us and then we are quantifying it for everyone to see. And we are obsessed. We have to get that selfie just right, and we will take 300 photos to make sure.</p>
+<p>Then we will wait for the perfect time to post. We are so obsessed we have biological responses when we can’t participate.</p>
+<h3 id="3-FOMO"><a href="#3-FOMO" class="headerlink" title="3. FOMO"></a>3. FOMO</h3><p>It’s a light phrase we’ve all thrown around FOMO, or the ‘fear of missing out’, is an actual social anxiety from the fear that you are missing a potential connection, event, or opportunity. A collection of Canadian Universities found that 7/10 students said they would get rid of their social networking accounts if it were not for fear of being left ‘out of the loop’. Out of curiosity, how many people here have, or have considered deactivating your social.</p>
+<p>That’s almost everyone. That FOMO you feel, the highlight reels, the social currency, those are all results of a relatively ‘normal’ social media experience. But what if going on social every day was a terrifying experience? Where you not just question your self-worth but you question your safety?</p>
+<h3 id="4-Online-Harassment"><a href="#4-Online-Harassment" class="headerlink" title="4. Online Harassment"></a>4. Online Harassment</h3><p>40% of online adults have experienced online harassment. 73% have witnessed it. The unfortunate reality is that it is much worse and much more likely if you are a woman, LGBTQ, a person of color, muslim – I think you get the point.</p>
+<p>The problem is that in the news we are seeing these big stories: The 18-year-old Tyler Clementi, who took his life after his roommate secretly filmed him kissing another guy and outed him on Twitter. We see women like Anita Sarkeesian being close to shamed of the internet and sent death and rape threats for sharing their feminism.</p>
+<p>We see these stories once it is too late. What about the everyday online harassment? What about that ugly snapchat you sent your friend with the intention of it being private, and now it is up on Facebook? ‘And so? It’s just one photo, it’s funny’ ‘Just one mean comment, not a big deal.’</p>
+<p>But when these micro moments happen over and over again, over time, that’s when we have a macro problem. We have to recognize these everyday instances as well. Because if they go unchecked and the effects unnoticed, we are going to have many more Tyler Clementis. The effects are not always easy to recognize.</p>
+<h2 id="How-to-solve-this-problem"><a href="#How-to-solve-this-problem" class="headerlink" title="How to solve this problem"></a>How to solve this problem</h2><p><strong>Recognizing a problem</strong> is the first step to fixing it. So hearing this talk is just that, step one: recognize the problem. You know the power of suggestion, when someone tells you about something and you start seeing it everywhere.</p>
+<p>That’s why awareness is critical. Because now you will at least be better able to recognize these effects if and when they happen to you.</p>
+<p>The second thing you are going to do is <strong>audit your social media diet</strong>. The same way we monitor what goes into our mouth, monitor whatever goes into your head and heart. Ask yourself: ‘Did that Facebook scroll make me feel better or worse off?’ ‘How many times do I actually check likes?’ ‘Why am I responding this way to that photo?’ Then ask yourself if you are happy with the results.</p>
+<p>You might be and that’s OK! But if you’re not, move on to step three. <strong>Create a better online experience.</strong> After my partner did his audit, he realized his self-worth was too tied up in social media, but particularly celebrities reminding him of the things he didn’t have. So he unfollowed all brands and all celebrities. That worked for him.</p>
+<p>But it might not be celebrities for you. For me, I had to purge other people off my timeline. Let me tell you a secret. You do not have to follow your ‘friends’. The truth is that sometimes our friends, or the people we have on Facebook as a courtesy, they just suck online! You find yourself in this passive-aggressive status war you didn’t even know was happening.</p>
+<p>Or you are looking at 50 photos of the same concert from the same angle. If you want to follow artists, or comedians, or cats, you can do that.</p>
+<p>The last thing you will do is <strong>model good behavior</strong>. Offline we are taught not to bully other kids in the playground. We are taught to respect others and treat them how they deserve.</p>
+<p>We are taught not to kick others when they are down, or take pleasure in their downfalls. Social media is a tool. A tool that can be used for good, for more positive groups, for revolutions, for putting grumpy cat in Disney movies. Internet is a weird place.</p>
+<p>Is social media hurting your mental health? The answer is: it doesn’t have to. Social can tear you down, yes, or it can lift you up, where you leave feeling better off, or have an actual laugh-out-loud.</p>
+<p>Finally, I have 24 hours in a day, if I spend two of those hours on social media, then I want my experiences to be full of inspiration, laughs, motivation, and a whole lot of grumpy cat in Disney movies.</p>
+]]></content>
+      <categories>
+        <category>TED</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>13 Things Mentally Strong People Don&#39;t Do</title>
+    <url>/2020/01/22/13-Things-Mentally-Strong-People-Don-t-Do/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>By Amy Morin</p>
+<p>Mentally strong people have healthy habits. They manage their emotions, thoughts, and behaviors in ways that set them up for success in life. Check out these things that mentally strong people don’t do so that you too can become more mentally strong.</p>
+<a id="more"></a>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TFbv757kup4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<ol>
+<li><p>They Don’t Waste Time Feeling Sorry for Themselves<br>Mentally strong people don’t sit around feeling sorry about their circumstances or how others have treated them. Instead, they take responsibility for their role in life and understand that life isn’t always easy or fair.</p>
+</li>
+<li><p>They Don’t Give Away Their Power<br>They don’t allow others to control them, and they don’t give someone else power over them. They don’t say things like, “My boss makes me feel bad,” because they understand that they are in control over their own emotions and they have a choice in how they respond.</p>
+</li>
+<li><p>They Don’t Shy Away from Change<br>Mentally strong people don’t try to avoid change. Instead, they welcome positive change and are willing to be flexible. They understand that change is inevitable and believe in their abilities to adapt.</p>
+</li>
+<li><p>They Don’t Waste Energy on Things They Can’t Control<br>You won’t hear a mentally strong person complaining over lost luggage or traffic jams. Instead, they focus on what they can control in their lives. They recognize that sometimes, the only thing they can control is their attitude.</p>
+</li>
+<li><p>They Don’t Worry About Pleasing Everyone<br>Mentally strong people recognize that they don’t need to please everyone all the time. They’re not afraid to say no or speak up when necessary. They strive to be kind and fair, but can handle other people being upset if they didn’t make them happy.</p>
+</li>
+<li><p>They Don’t Fear Taking Calculated Risks<br>They don’t take reckless or foolish risks, but don’t mind taking calculated risks. Mentally strong people spend time weighing the risks and benefits before making a big decision, and they’re fully informed of the potential downsides before they take action.</p>
+</li>
+<li><p>They Don’t Dwell on the Past<br>Mentally strong people don’t waste time dwelling on the past and wishing things could be different. They acknowledge their past and can say what they’ve learned from it. However, they don’t constantly relive bad experiences or fantasize about the glory days. Instead, they live for the present and plan for the future.</p>
+</li>
+<li><p>They Don’t Make the Same Mistakes Over and Over<br>Mentally strong people accept responsibility for their behavior and learn from their past mistakes. As a result, they don’t keep repeating those mistakes over and over. Instead, they move on and make better decisions in the future.</p>
+</li>
+<li><p>They Don’t Resent Other People’s Success<br>Mentally strong people can appreciate and celebrate other people’s success in life. They don’t grow jealous or feel cheated when others surpass them. Instead, they recognize that success comes with hard work, and they are willing to work hard for their own chance at success.</p>
+</li>
+<li><p>They Don’t Give Up After the First Failure<br>Mentally strong people don’t view failure as a reason to give up. Instead, they use failure as an opportunity to grow and improve. They are willing to keep trying until they get it right.</p>
+</li>
+<li><p>They Don’t Fear Alone Time<br>Mentally strong people can tolerate being alone and they don’t fear silence. They aren’t afraid to be alone with their thoughts and they can use downtime to be productive. They enjoy their own company and aren’t dependent on others for companionship and entertainment all the time but instead can be happy alone.</p>
+</li>
+<li><p>They Don’t Feel the World Owes Them Anything<br>Mentally strong people don’t feel entitled to things in life. They weren’t born with a mentality that others would take care of them or that the world must give them something. Instead, they look for opportunities based on their own merits.</p>
+</li>
+<li><p>They Don’t Expect Immediate Results<br>Whether they are working on improving their health or getting a new business off the ground, mentally strong people don’t expect immediate results. Instead, they apply their skills and time to the best of their ability and understand that real change takes time.﻿</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>TED</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Former Coding Interview Question: Trapping Rain Water [Dynamic Programming]</title>
+    <url>/2020/01/22/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<ol>
+<li><a href="https://techdevguide.withgoogle.com/resources/volume-of-water/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Trapping Rain Water</a></li>
+<li><a href="https://leetcode.com/articles/trapping-rain-water/" target="_blank" rel="noopener">LeetCode — 42.Trapping Rain Water</a></li>
+<li><a href="https://www.geeksforgeeks.org/trapping-rain-water/" target="_blank" rel="noopener">geeksforgeeks — Trapping Rain Water</a></li>
+<li><a href="https://youtu.be/8BHqSdwyODs" target="_blank" rel="noopener">Youtube</a></li>
+<li><a href="https://aaronice.gitbooks.io/lintcode/two_pointers/trapping_rain_water.html" target="_blank" rel="noopener">gitbook</a></li>
+</ol>
+</blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8BHqSdwyODs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<a id="more"></a>
+<p>Use two array to record</p>
+<ol>
+<li><strong>left[ ]</strong>: the highest left bar for this index</li>
+<li><strong>right[ ]</strong>the highest right bar for this index</li>
+</ol>
+<p>For each index, the water can be traped is min{left[i], right[j]}-height[i]</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JAVA Code For Trapping Rain Water </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> heights: an array of integers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: a integer</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trapRainWater</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (heights == <span class="keyword">null</span> || heights.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = heights.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">        <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> trapped = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// For heights[0] or heights[length - 1], the max left/right height is 0</span></span><br><span class="line">        left[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        right[length - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Keep track of the max height on the left of height[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</span><br><span class="line">            left[i] = Math.max(left[i - <span class="number">1</span>], heights[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Keep track of the max height on the right of height[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = length - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            right[j] = Math.max(right[j + <span class="number">1</span>], heights[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Calculate the total trapped water</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; length; k++) &#123;</span><br><span class="line">            trapped += Math.max(Math.min(left[k], right[k]) - heights[k], <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> trapped;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>2019 Google NEXT</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Former Coding Interview Question: Word Squares</title>
+    <url>/2020/01/22/Former-Coding-Interview-Question-Word-Squares/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p><a href="https://techdevguide.withgoogle.com/resources/former-coding-interview-question-word-squares/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Word Squares</a></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkIfWordSquare</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = (<span class="keyword">int</span>)Math.sqrt((<span class="keyword">double</span>)str.length());</span><br><span class="line">        <span class="keyword">char</span>[] x = str.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; x.length; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> n = ((k%len) * len) + (<span class="keyword">int</span>)k/len; <span class="comment">//calculate compare position</span></span><br><span class="line">            <span class="keyword">if</span>(x[k]!=x[n])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>2019 Google NEXT</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>What makes a good life? - lesson from the Harvard Study of Adult Development</title>
+    <url>/2020/01/22/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This TedTalk by Robert Waldinger describes a study that began in 1938 and followed the lives of 724 men from their adolescence to their death (60% of them were still alive and participating in the study when the talk is given).<br>The Harvard Study of Adult Development is one of the longest studies of adult life which follows two groups of men: </p>
+<ol>
+<li>men who were <strong>sophomores at Harvard</strong></li>
+<li>boys in the lower socioeconomic group/disadvantaged families in <strong>Boston’s poorest neighborhood</strong>.</li>
+</ol>
+<p>Each participant was medically examined, interviewed in their homes and had their families also interviewed. Every two years, the participants would answer another set of questions about their life (work, home, health…), complete a face-to-face interview, and a multitude of other data submissions.<br>The main conclusion of this 75-year study is this: <strong><em>Good relationships keep us happier and healthier.</em></strong></p>
+<a id="more"></a>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8KkKuTCFvzI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>This study found that the impact of relationships on our happiness and health is broken down into 3 main lessons:</p>
+<ol>
+<li><strong><em>Social connections are really good for us</em></strong>: The more social connections one has, the happier, healthier, and longer that individual will live. These connections can be with <strong>family, friends, or community</strong>.</li>
+<li><strong><em>The quality of relationships is greater than the quantity</em></strong>: Having poor or conflict-ridden relationships significantly impacts physical health and mental well-being (e.g. High-conflict marriage without much affection). The people who are most satisfied with their relationships at the age of 50 are the healthiest when they are 80.</li>
+<li><strong><em>Quality relationships protect our bodies and our brains</em></strong>: This study found that individuals who were in a securely attached relationship in their 80s maintained <strong>sharper memories</strong>longer than those who were not in a relationship. Our relationships, protect our brain and maintain <strong>our brain’s cognitive functioning</strong>.</li>
+</ol>
+<p>People ignored these points because managing relationship is a messy and complex work. It’s lifelong and the possibilities are practical endless. Young adults tend to believe that fame, wealth and high achievements are what they need to go after to have a good life. However, as the study has shown, the people who fared best are the people who leaned into relationships with families, with friends, with community.<br>We can’t predict what will it be like if we lean into relationships for now. But we can <strong>live up the relationships by doing something new together</strong>, like long walks and date nights, or even reaching out to that family member who you haven’t spoken to in years, because those all-too-common family feuds take a terrible toll on people who hold the grudges.</p>
+]]></content>
+      <categories>
+        <category>TED</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Bloggers that I am following</title>
+    <url>/2020/01/22/Bloggers-that-I-am-following/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Eric-Jang"><a href="#Eric-Jang" class="headerlink" title="Eric Jang"></a><a href="http://evjang.com/" target="_blank" rel="noopener">Eric Jang</a></h2><p>He is a research engineer on the Google Brain team.</p>
+<p>Here are some of his articles about internship:</p>
+<ol>
+<li><a href="https://blog.evjang.com/2016/07/how-to-get-internship.html" target="_blank" rel="noopener">How to Get an Internship</a></li>
+<li><a href="https://blog.evjang.com/2016/06/my-internship-experiences-at-pixar.html" target="_blank" rel="noopener">My Internship Experiences at Pixar, Google, and Two Sigma</a></li>
+</ol>
+<h2 id="Bozhao（Joshua）Li"><a href="#Bozhao（Joshua）Li" class="headerlink" title="Bozhao（Joshua）Li"></a><a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">Bozhao（Joshua）Li</a></h2><p>He is a Software Engineer at Google. </p>
+<p>His <a href="http://www.bozhaoli.info/" target="_blank" rel="noopener">presentation page</a> is well-designed and he has a fantastic group projects:<br><a href="http://www.bozhaoli.info/project/" target="_blank" rel="noopener">ENERGY IN U.S. - Consumption and impact of different type of energy</a></p>
+]]></content>
+      <categories>
+        <category>Experience</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
-    <url>/2019/04/26/hello-world/</url>
+    <url>/2019/06/14/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This is a previous auto-generated hexo user manual. And I keep adding some new issues.</p>
 <a id="more"></a>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>About <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>: Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. When getting troubles, find answers in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
@@ -566,5 +510,61 @@ jupyter notebook --no-browser --port=8889
 <h2 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h2><h3 id="D3-js"><a href="#D3-js" class="headerlink" title="D3.js"></a><a href="https://d3js.org" target="_blank" rel="noopener">D3.js</a></h3><p>See: <a href="https://curran.github.io/dataviz-course-2018/" target="_blank" rel="noopener">Online course on data visualization analysis, design &amp; construction with D3.js</a></p>
 <h2 id="Interaction"><a href="#Interaction" class="headerlink" title="Interaction"></a>Interaction</h2><h3 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a><a href="https://jquery.com" target="_blank" rel="noopener">JQuery</a></h3><p>JQury can be used to build an interactive table rather than the common HTML table.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework</title>
+    <url>/2019/06/14/Towards-Scalable-and-Dynamic-Social-Sensing-Using-A-Distributed-Computing-Framework/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
+<p>Reference: <a href="https://www3.nd.edu/~sslab/pdf/icdcs17.pdf" target="_blank" rel="noopener">Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework</a><br>2nd paper review for 2019 <a href="https://international.nd.edu/students-scholars/global-engagement-programs/summer-programs/isure/" target="_blank" rel="noopener">iSURE</a> @ <a href="https://www3.nd.edu/~sslab/" target="_blank" rel="noopener">Social Sensing Lab at University of Notre Dame</a>.</p>
+</blockquote>
+<p>This paper developed a <strong>Scalable Streaming Truth Discovery (SSTD)</strong> solution to address the problems of <strong><em>truth discovery</em></strong>: dynamic truth, scalability and heterogeneity of streaming data.</p>
+<ol>
+<li><strong>Dynamic</strong> truth discovery: the ground truth of claims changes over time.</li>
+<li>Scalability to large-scale social sensing events.</li>
+<li>The heterogeneity and unpredictability of the social sensing data traffic. And additional challenges to the <strong>resource allocation</strong> and system responsiveness.</li>
+</ol>
+<p>Methods in the solution:</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Hidden_Markov_model" target="_blank" rel="noopener">Hidden Markov Models(HMM)</a> help the <strong>dynamic</strong> truth discovery scheme effectively infer the evolving truth of reported claims.</li>
+<li>A distributed framework implements the <strong>dynamic</strong> truth discovery scheme using Work Queue in <a href="https://research.cs.wisc.edu/htcondor/description.html" target="_blank" rel="noopener">HTCcondor</a> system.</li>
+<li>the SSTD scheme intergraded with an optimal <strong>workload allocation</strong> mechanism .</li>
+</ol>
+<p>Evaluation using Twitter data feeds: Boston Bombing, Paris Shooting and College Football</p>
+<a id="more"></a>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong>Goal of truth discovery</strong>: to identify the reliability of the sources and the truthfulness of claims they make without the prior knowl edge.</p>
+<h3 id="Three-challenges"><a href="#Three-challenges" class="headerlink" title="Three challenges"></a>Three challenges</h3><h4 id="The-dynamic-truth-challenge"><a href="#The-dynamic-truth-challenge" class="headerlink" title="The dynamic truth challenge"></a>The dynamic truth challenge</h4><p>two critical tasks:</p>
+<ol>
+<li>to capture the transition of truth in <strong>a timely manner</strong></li>
+<li>to be <strong>robust against noisy data</strong> that may lead to the incorrect detection of the truth transition.</li>
+</ol>
+<h4 id="The-Scalability-aspect-of-the-truth-discovery-problem"><a href="#The-Scalability-aspect-of-the-truth-discovery-problem" class="headerlink" title="The Scalability aspect of the truth discovery problem"></a>The Scalability aspect of the truth discovery problem</h4><p>Current centralized truth discovery solutions are incapable of handling large volume of social sensing data due to the resource limitation on a single computing device.<br>A distributed solution based on Hadoop system is not very good, bucause:</p>
+<ol>
+<li>its a heavy-weight solution which requires a long time to start</li>
+<li>it is suitable for data of very large volume (far more large than we need for social sensing network)</li>
+<li>it ignores the heterogenity of the computational resources.</li>
+</ol>
+<h4 id="The-heterogenity-and-unpredictability-of-the-streaming-data-traffic"><a href="#The-heterogenity-and-unpredictability-of-the-streaming-data-traffic" class="headerlink" title="The heterogenity and unpredictability of the streaming data traffic"></a>The heterogenity and unpredictability of the streaming data traffic</h4><ol>
+<li>different topics or evens generate different amounts i social sensing data</li>
+<li>the traffic volume of the same event is noy constant over time.</li>
+</ol>
+<h3 id="Solution-of-this-paper"><a href="#Solution-of-this-paper" class="headerlink" title="Solution of this paper"></a>Solution of this paper</h3><ol>
+<li>a Hidden Markov Model based solution to <strong>dynamically</strong> estimate the true value of claims based on the observations reported by social sensors. </li>
+<li>a light-weight distributed framework that is both <strong>scalable</strong> and efficient to solve the truth discovery problem using Work Queue and HTCondor system. </li>
+<li>integrated the SSTD scheme with an optimal workload allocation mechanism using feedback control (i.e., Proportional Integral Derivative (PID) controller) to dynamically <strong>allocate the resources</strong> (e.g., cores, memories) to the truth discovery tasks. </li>
+</ol>
+<h2 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h2><h3 id="For-the-soicial-media"><a href="#For-the-soicial-media" class="headerlink" title="For the soicial media"></a>For the soicial media</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.1.png" alt="Problem Formulation"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.2.png" alt="Problem Formulation"></p>
+<h3 id="For-the-deployed-system"><a href="#For-the-deployed-system" class="headerlink" title="For the deployed system"></a>For the deployed system</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.3.png" alt="Problem Formulation"></p>
+<h2 id="Scalable-and-Streaming-Truth-Discovery"><a href="#Scalable-and-Streaming-Truth-Discovery" class="headerlink" title="Scalable and Streaming Truth Discovery"></a>Scalable and Streaming Truth Discovery</h2><p>The Scalable and Streaming Truth Discovery (SSTD) scheme based on a Hidden Markov Model (HMM) is developed to decode the streaming social sensing date and output the corresponding truth values o claims in real time.<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.4.png" alt="HMM"><br>This solution can be implemented in <strong>a distributed system</strong> where <strong>multiple truth discovery jobs can run in parallel</strong> to address the scalability challenge in social sensing applications.</p>
+<h3 id="Deriving-Hidden-States-and-Observation-Sequence"><a href="#Deriving-Hidden-States-and-Observation-Sequence" class="headerlink" title="Deriving Hidden States and Observation Sequence"></a>Deriving Hidden States and Observation Sequence</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.5.png" alt="HMM"></p>
+<h3 id="Estimating-Parameters-of-the-HMM-Model"><a href="#Estimating-Parameters-of-the-HMM-Model" class="headerlink" title="Estimating Parameters of the HMM Model"></a>Estimating Parameters of the HMM Model</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.6.png" alt="Define HMM parameters"><br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.7.png" alt="Goal of Estimating"><br>this estimating problem is solved by an expectation maximization <a href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm" target="_blank" rel="noopener">(EM)</a> based algorithm.</p>
+<h3 id="Decoding-State-Sequence"><a href="#Decoding-State-Sequence" class="headerlink" title="Decoding State Sequence"></a>Decoding State Sequence</h3><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.8.png" alt="Goal of decoding"></p>
+<p>This decoding problem is solved by the <a href="https://en.wikipedia.org/wiki/Viterbi_algorithm" target="_blank" rel="noopener">Viterbi Algorithm</a>.</p>
+<p>By the esitimatied ${\lambda}_u$ of HMM model and the given observation sequence $F(u)$, we can infer the corresponding hidden true value sequence $VT_u$ that is most likely to generate the observations. It is solved recursively as follows:</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/PR1.9.png" alt="Decoding"></p>
+<h2 id="Implimentation-on-a-Distributed-Computer-Framework"><a href="#Implimentation-on-a-Distributed-Computer-Framework" class="headerlink" title="Implimentation on a Distributed Computer Framework"></a>Implimentation on a Distributed Computer Framework</h2><p>(to be continued…)</p>
+]]></content>
+      <categories>
+        <category>Literature review</category>
+      </categories>
   </entry>
 </search>
