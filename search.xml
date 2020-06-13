@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Product Questions</title>
-    <url>/2020/05/10/Product-Questions/</url>
+    <url>/2020/05/11/Product-Questions/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Cracking-the-PM-interview-—-Product-Questions"><a href="#Cracking-the-PM-interview-—-Product-Questions" class="headerlink" title="Cracking the PM interview — Product Questions"></a>Cracking the PM interview — Product Questions</h1><p>Good framework have the following characteristics:</p>
 <ol>
 <li>Ask appropriate questions</li>
@@ -84,16 +84,6 @@
       <categories>
         <category>Product Management</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Google Starfish Digital Marketing</title>
-    <url>/2020/05/08/Google-Starfish-Digital-Marketing/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-  </entry>
-  <entry>
-    <title>Final Year Project Review</title>
-    <url>/2020/05/04/Final-Year-Project-Review/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
   </entry>
   <entry>
     <title>Environment on server</title>
@@ -302,7 +292,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>The Eagle Project Review</title>
-    <url>/2020/02/09/The-Eagle-Project-Review/</url>
+    <url>/2020/02/10/The-Eagle-Project-Review/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="“The-Eagle”-Remote-Sensing-Reconnaissance-System"><a href="#“The-Eagle”-Remote-Sensing-Reconnaissance-System" class="headerlink" title="“The Eagle” Remote Sensing Reconnaissance System"></a>“The Eagle” Remote Sensing Reconnaissance System</h1><p><strong>2018 Google - China MoE University-Industry Collaboration Program</strong></p>
 <p>This project intends to adopt a <strong><em>light-weight compression deep learning algorithm</em></strong>, based on Google open source artificial intelligence learning system <strong>TensorFlow</strong>, to propose and implement a set of intelligent processing solutions for mobile remote sensing images (<strong>target detection and semantic segmentation</strong>) on the mobile artificial intelligence computing platform. </p>
 <p>The mobile platform can be carried on the satellite to realize on-orbit <strong>real-time remote sensing</strong> image information extraction, which provides a basis for subsequent data classification and efficient retrieval, and can filter the target <strong>data of interest</strong> according to user instructions for downlink transmission, thereby greatly reducing data. The transmission volume, alleviating the bandwidth pressure of the network link, reducing the energy consumption of data transmission, improving the targeting of the downlink data and the timeliness of information acquisition.</p>
@@ -318,7 +308,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>The Age of Social Sensing</title>
-    <url>/2020/01/22/The-Age-of-Social-Sensing/</url>
+    <url>/2020/01/23/The-Age-of-Social-Sensing/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>Reference: <a href="https://www3.nd.edu/~sslab/pdf/computer-18.pdf" target="_blank" rel="noopener">The Age of Social Sensing</a><br>1st paper review for 2019 <a href="https://international.nd.edu/students-scholars/global-engagement-programs/summer-programs/isure/" target="_blank" rel="noopener">iSURE</a> @ <a href="https://www3.nd.edu/~sslab/" target="_blank" rel="noopener">Social Sensing Lab at University of Notre Dame</a>.</p>
 </blockquote>
@@ -399,7 +389,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>Is Social Media Hurting Your Mental Health?</title>
-    <url>/2020/01/22/Is-Social-Media-Hurting-Your-Mental-Health/</url>
+    <url>/2020/01/23/Is-Social-Media-Hurting-Your-Mental-Health/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe width="560" height="315" src="https://www.youtube.com/embed/Czg_9C7gw0o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2 id="four-of-the-most-common-stressors-on-social-media"><a href="#four-of-the-most-common-stressors-on-social-media" class="headerlink" title="four of the most common stressors on social media"></a>four of the most common stressors on social media</h2><a id="more"></a>
@@ -433,7 +423,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>13 Things Mentally Strong People Don&#39;t Do</title>
-    <url>/2020/01/22/13-Things-Mentally-Strong-People-Don-t-Do/</url>
+    <url>/2020/01/23/13-Things-Mentally-Strong-People-Don-t-Do/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>By Amy Morin</p>
 <p>Mentally strong people have healthy habits. They manage their emotions, thoughts, and behaviors in ways that set them up for success in life. Check out these things that mentally strong people don’t do so that you too can become more mentally strong.</p>
 <a id="more"></a>
@@ -474,7 +464,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>Former Coding Interview Question: Trapping Rain Water [Dynamic Programming]</title>
-    <url>/2020/01/22/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</url>
+    <url>/2020/01/23/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <ol>
 <li><a href="https://techdevguide.withgoogle.com/resources/volume-of-water/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Trapping Rain Water</a></li>
@@ -501,7 +491,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>Former Coding Interview Question: Word Squares</title>
-    <url>/2020/01/22/Former-Coding-Interview-Question-Word-Squares/</url>
+    <url>/2020/01/23/Former-Coding-Interview-Question-Word-Squares/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p><a href="https://techdevguide.withgoogle.com/resources/former-coding-interview-question-word-squares/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Word Squares</a></p>
 </blockquote>
@@ -512,7 +502,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>What makes a good life? - lesson from the Harvard Study of Adult Development</title>
-    <url>/2020/01/22/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</url>
+    <url>/2020/01/23/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This TedTalk by Robert Waldinger describes a study that began in 1938 and followed the lives of 724 men from their adolescence to their death (60% of them were still alive and participating in the study when the talk is given).<br>The Harvard Study of Adult Development is one of the longest studies of adult life which follows two groups of men: </p>
 <ol>
 <li>men who were <strong>sophomores at Harvard</strong></li>
@@ -536,7 +526,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>Bloggers that I am following</title>
-    <url>/2020/01/22/Bloggers-that-I-am-following/</url>
+    <url>/2020/01/23/Bloggers-that-I-am-following/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Eric-Jang"><a href="#Eric-Jang" class="headerlink" title="Eric Jang"></a><a href="http://evjang.com/" target="_blank" rel="noopener">Eric Jang</a></h2><p>He is a research engineer on the Google Brain team.</p>
 <p>Here are some of his articles about internship:</p>
 <ol>
@@ -552,7 +542,7 @@ jupyter notebook --no-browser --port=8889
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/06/14/hello-world/</url>
+    <url>/2019/06/15/hello-world/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This is a previous auto-generated hexo user manual. And I keep adding some new issues.</p>
 <a id="more"></a>
 <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p>About <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>: Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. When getting troubles, find answers in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or ask questions on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
