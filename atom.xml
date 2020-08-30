@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiaxii.github.io/"/>
-  <updated>2020-05-10T17:14:04.421Z</updated>
+  <updated>2020-08-30T20:03:24.639Z</updated>
   <id>https://xiaxii.github.io/</id>
   
   <author>
@@ -17,9 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JPMorgan Chase Software Engineering Virtual Internship 2/4</title>
+    <link href="https://xiaxii.github.io/2020/08/30/JPMorgan-Chase-Software-Engineering-Virtual-Internship-2-4/"/>
+    <id>https://xiaxii.github.io/2020/08/30/JPMorgan-Chase-Software-Engineering-Virtual-Internship-2-4/</id>
+    <published>2020-08-30T20:03:24.639Z</published>
+    <updated>2020-08-30T20:03:24.639Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JPMorgan Chase Software Engineering Virtual Internship 1/4</title>
+    <link href="https://xiaxii.github.io/2020/08/30/JPMorgan-Chase-Software-Engineering-Virtual-Internship-1-4/"/>
+    <id>https://xiaxii.github.io/2020/08/30/JPMorgan-Chase-Software-Engineering-Virtual-Internship-1-4/</id>
+    <published>2020-08-30T19:51:17.202Z</published>
+    <updated>2020-08-30T19:59:55.715Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Task-1-Interface-with-a-stock-price-data-feed"><a href="#Task-1-Interface-with-a-stock-price-data-feed" class="headerlink" title="Task 1: Interface with a stock price data feed"></a>Task 1: Interface with a stock price data feed</h1><h2 id="Local-Setup"><a href="#Local-Setup" class="headerlink" title="Local Setup"></a>Local Setup</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a><strong>Python</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">xiaxii@cecilias-mbp ~ % which python</span><br><span class="line">/usr/bin/python</span><br><span class="line">xiaxii@cecilias-mbp ~ % which python2</span><br><span class="line">/usr/bin/python2</span><br><span class="line">xiaxii@cecilias-mbp ~ % which python3 </span><br><span class="line">/usr/local/bin/python3</span><br><span class="line"></span><br><span class="line">xiaxii@cecilias-mbp ~ % pip --version</span><br><span class="line">pip 20.0.2 from /Library/Python/2.7/site-packages/pip-20.0.2-py2.7.egg/pip (python 2.7)</span><br><span class="line">xiaxii@cecilias-mbp ~ % pip3 --version</span><br><span class="line">pip 20.1.1 from /usr/local/lib/python3.8/site-packages/pip (python 3.8)</span><br></pre></td></tr></table></figure><p>I am using Python3 for this project.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xiaxii@cecilias-mbp ~ % pip3 list</span><br><span class="line">Package         Version</span><br><span class="line">--------------- -------</span><br><span class="line">pip             20.1.1</span><br><span class="line">python-dateutil 2.8.1</span><br><span class="line">setuptools      49.2.0</span><br><span class="line">six             1.15.0</span><br><span class="line">wheel           0.34.2</span><br></pre></td></tr></table></figure><h3 id="Clone-repository"><a href="#Clone-repository" class="headerlink" title="Clone repository"></a><strong>Clone repository</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/insidesherpa/JPMC-tech-task-1-py3.git</span><br></pre></td></tr></table></figure><h3 id="Run-the-script"><a href="#Run-the-script" class="headerlink" title="Run the script"></a><strong>Run the script</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 server3.py</span><br><span class="line">python3 client3.py</span><br></pre></td></tr></table></figure><h2 id="Code-Changes"><a href="#Code-Changes" class="headerlink" title="Code Changes"></a>Code Changes</h2><p>Interface with a stock price data feed and set up your system for analysis of the data</p><h3 id="Prerequest"><a href="#Prerequest" class="headerlink" title="Prerequest"></a><strong>Prerequest</strong></h3><p>Run server and client<br><em>Server</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xiaxii@cecilias-mbp JPMC-tech-task-1-py3 % python3 server3.py   </span><br><span class="line">HTTP server started on port 8080</span><br><span class="line">Query received @ t2019-02-10 10:07:43.237974</span><br><span class="line">Query received @ t2019-02-11 18:12:31.763344</span><br><span class="line">Query received @ t2019-02-13 00:41:03.061658</span><br><span class="line">Query received @ t2019-02-13 19:37:03.654348</span><br><span class="line">Query received @ t2019-02-14 08:26:51.287677</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p><p><em>Client </em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">xiaxii@cecilias-mbp JPMC-tech-task-1-py3 % python3 client3.py</span><br><span class="line">Quoted ABC at (bid:118.13, ask:116.63, price:118.13)</span><br><span class="line">Quoted DEF at (bid:115.14, ask:117.87, price:115.14)</span><br><span class="line">Ratio 1</span><br><span class="line">Quoted ABC at (bid:118.13, ask:116.63, price:118.13)</span><br><span class="line">Quoted DEF at (bid:115.14, ask:117.87, price:115.14)</span><br><span class="line">Ratio 1</span><br><span class="line">Quoted ABC at (bid:118.13, ask:116.63, price:118.13)</span><br><span class="line">Quoted DEF at (bid:115.14, ask:117.87, price:115.14)</span><br><span class="line">Ratio 1</span><br><span class="line">Quoted ABC at (bid:118.13, ask:116.63, price:118.13)</span><br><span class="line">Quoted DEF at (bid:115.14, ask:117.51, price:115.14)</span><br><span class="line">Ratio 1</span><br><span class="line">Quoted ABC at (bid:118.13, ask:116.63, price:118.13)</span><br><span class="line">Quoted DEF at (bid:115.14, ask:117.51, price:115.14)</span><br><span class="line">Ratio 1</span><br></pre></td></tr></table></figure></p><p><strong>Troubleshooting</strong>:<br>AttributeError: module ‘urllib’ has no attribute ‘urlopen’<br><strong>Solution</strong>:<br>import urllib.<strong>request</strong><br>urllib.<strong>request</strong>.urlopen(…)</p><h3 id="Objectives"><a href="#Objectives" class="headerlink" title="Objectives"></a><strong>Objectives</strong></h3><p>There are two incorrect things…</p><ol><li>Ratio is always 1</li><li>The price of each stock is always the same as its bid_price.</li></ol><p>Making changes to client3.py</p><p>(1) <strong>getDataPoint</strong>, change price<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">price = (bid_price + ask_price)/2.</span><br></pre></td></tr></table></figure></p><p>(2) <strong>getRatio</strong>, change the return<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (price_b==0): # avoid ZeroDivisionError</span><br><span class="line">return</span><br><span class="line">return price_a/price_b</span><br></pre></td></tr></table></figure></p><p>(3) <strong>main</strong>, change<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line"></span><br><span class="line"># Query the price once every N seconds.</span><br><span class="line"># Get a price directory where the key-value pair is stock name-price</span><br><span class="line">for _ in range(N):</span><br><span class="line">quotes = json.loads(urllib.request.urlopen(QUERY.format(random.random())).read())</span><br><span class="line"></span><br><span class="line">prices = &#123;&#125;</span><br><span class="line">&quot;&quot;&quot; ----------- Update to get the ratio --------------- &quot;&quot;&quot;</span><br><span class="line">for quote in quotes:</span><br><span class="line">stock, bid_price, ask_price, price = getDataPoint(quote)</span><br><span class="line">prices[stock] = price</span><br><span class="line">print (&quot;Quoted %s at (bid:%s, ask:%s, price:%s)&quot; % (stock, bid_price, ask_price, price))</span><br><span class="line"></span><br><span class="line">print (&quot;Ratio %s&quot; % (getRatio(prices[&apos;ABC&apos;],prices[&apos;DEF&apos;])))</span><br></pre></td></tr></table></figure></p><h3 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h3><p>Run client3.py:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Quoted ABC at (bid:126.12, ask:125.84, price:125.98)</span><br><span class="line">Quoted DEF at (bid:124.66, ask:125.15, price:124.905)</span><br><span class="line">Ratio 1.008606540971138</span><br><span class="line">Quoted ABC at (bid:126.12, ask:125.84, price:125.98)</span><br><span class="line">Quoted DEF at (bid:124.66, ask:125.15, price:124.905)</span><br><span class="line">Ratio 1.008606540971138</span><br><span class="line">Quoted ABC at (bid:126.12, ask:125.05, price:125.58500000000001)</span><br><span class="line">Quoted DEF at (bid:124.66, ask:125.15, price:124.905)</span><br><span class="line">Ratio 1.005444137544534</span><br><span class="line">Quoted ABC at (bid:126.12, ask:125.05, price:125.58500000000001)</span><br><span class="line">Quoted DEF at (bid:124.66, ask:125.15, price:124.905)</span><br><span class="line">Ratio 1.005444137544534</span><br><span class="line">Quoted ABC at (bid:126.12, ask:125.05, price:125.58500000000001)</span><br><span class="line">Quoted DEF at (bid:124.66, ask:125.05, price:124.85499999999999)</span><br><span class="line">Ratio 1.0058467822674304</span><br></pre></td></tr></table></figure></p><h2 id="Bonus-Task-Unit-Test"><a href="#Bonus-Task-Unit-Test" class="headerlink" title="Bonus Task: Unit Test"></a>Bonus Task: Unit Test</h2><h2 id="Pattern-Build-Act-Assert"><a href="#Pattern-Build-Act-Assert" class="headerlink" title="Pattern - Build-Act-Assert:"></a>Pattern - <strong>Build-Act-Assert</strong>:</h2><ul><li><strong>Build</strong>: We first build a simulated test scenario e.g. instantiating the dummy data we will pass in the methods we’ll test, importing the class<br>whose methods we want to test, etc.</li><li><strong>Act</strong>: We then make some operations and call the method we want to test for</li><li><strong>Assert</strong>: We check if the output of the method we’re testing matches the expectation we have (e.g. dummy / static data of the outcome)</li></ul><h2 id="Unittest"><a href="#Unittest" class="headerlink" title="Unittest"></a>Unittest</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line"></span><br><span class="line">class xxxTest(unittest.TestCase):</span><br><span class="line"></span><br><span class="line">    def test1(self):</span><br><span class="line">        self.assertEqual(xx, xxxxx)</span><br><span class="line"></span><br><span class="line">    def test2(self):</span><br><span class="line">        self.assertTrue(xxxxx)</span><br><span class="line">        self.assertFalse(xxxxxx)</span><br><span class="line"></span><br><span class="line">    def test3(self):</span><br><span class="line">        self.assertEqual(xxx, xxxx)</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure><p>A testcase is created by subclassing <code>unittest.TestCase</code>. The three individual tests are defined with methods whose names start with the letters <code>test</code>. This naming convention informs the test runner about which methods represent tests.</p><h2 id="Submit-Patch-file"><a href="#Submit-Patch-file" class="headerlink" title="Submit Patch file"></a>Submit Patch file</h2><ol><li><p>git<br>git is a way for developers to manage code in a project especially if there’s other developers collaborating in that project too.</p></li><li><p>git patch<br>A git patch file is just a file that you can apply to a repository to get the changes / modifications / additions another developer did on his / her machine onto your local machine.<br>This isn’t the only way to do that ofcourse but this is a viable method for a head/lead developer to check your code first before merging it into the repository’s main/master branch.</p></li><li><p>Make a git patch file<br>Fire up a terminal, enter the repository via the terminal you opened (via the cd <repo_name_here> aka change directory command) and do the following commands: (one line, one command)</repo_name_here></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git config user.email &quot;&lt;your_email_address&gt;&quot;</span><br><span class="line">git config user.name &quot;&lt;your_name&gt;&quot;</span><br><span class="line">git commit -m &apos;Create Patch File&apos;</span><br><span class="line">git format-patch -1 HEAD</span><br></pre></td></tr></table></figure></li></ol><p>The final command, i.e. git format-patch -1 HEAD, should produce the .patch file you’d want to submit to complete this module. It will be located in the directory where you executed the command.</p><p>Other Assertions:<br>self.assertIsNone()<br>self.assertGreater(a, b)  …a&gt;b<br>self.assertLess(a, b)     …a&lt;b<br>self.assertRaises(TypeError)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Product Questions</title>
-    <link href="https://xiaxii.github.io/2020/05/11/Product-Questions/"/>
-    <id>https://xiaxii.github.io/2020/05/11/Product-Questions/</id>
+    <link href="https://xiaxii.github.io/2020/05/10/Product-Questions/"/>
+    <id>https://xiaxii.github.io/2020/05/10/Product-Questions/</id>
     <published>2020-05-10T16:17:51.253Z</published>
     <updated>2020-05-10T17:14:04.421Z</updated>
     
@@ -156,11 +200,11 @@
   </entry>
   
   <entry>
-    <title>The Eagle Project Review</title>
-    <link href="https://xiaxii.github.io/2020/02/10/The-Eagle-Project-Review/"/>
-    <id>https://xiaxii.github.io/2020/02/10/The-Eagle-Project-Review/</id>
+    <title>The Eagle Project</title>
+    <link href="https://xiaxii.github.io/2020/02/09/The-Eagle-Project-Review/"/>
+    <id>https://xiaxii.github.io/2020/02/09/The-Eagle-Project-Review/</id>
     <published>2020-02-09T18:23:59.000Z</published>
-    <updated>2020-02-09T18:23:59.000Z</updated>
+    <updated>2020-08-20T03:56:52.322Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="“The-Eagle”-Remote-Sensing-Reconnaissance-System"><a href="#“The-Eagle”-Remote-Sensing-Reconnaissance-System" class="headerlink" title="“The Eagle” Remote Sensing Reconnaissance System"></a>“The Eagle” Remote Sensing Reconnaissance System</h1><p><strong>2018 Google - China MoE University-Industry Collaboration Program</strong></p><p>This project intends to adopt a <strong><em>light-weight compression deep learning algorithm</em></strong>, based on Google open source artificial intelligence learning system <strong>TensorFlow</strong>, to propose and implement a set of intelligent processing solutions for mobile remote sensing images (<strong>target detection and semantic segmentation</strong>) on the mobile artificial intelligence computing platform. </p><p>The mobile platform can be carried on the satellite to realize on-orbit <strong>real-time remote sensing</strong> image information extraction, which provides a basis for subsequent data classification and efficient retrieval, and can filter the target <strong>data of interest</strong> according to user instructions for downlink transmission, thereby greatly reducing data. The transmission volume, alleviating the bandwidth pressure of the network link, reducing the energy consumption of data transmission, improving the targeting of the downlink data and the timeliness of information acquisition.</p><p>Video Preview:</p><iframe width="560" height="315" src="https://www.youtube.com/embed/C8QW7MbQf-g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><a id="more"></a><h2 id="Outcomes"><a href="#Outcomes" class="headerlink" title="Outcomes"></a>Outcomes</h2><p><strong>2018.05</strong> Project Started<br><strong>2018.06</strong> Attending in 2018 Internet+ Innovation &amp; Start-up Competition<br><strong>2018.07</strong> Won the Third-class award in 2018 Internet+ Innovation &amp; Start-up Competition<br><strong>2018.09</strong> Attending in 2018 AI+ Innovation &amp; Start-up Competition (report accessable on <a href="https://github.com/xiaxii/MarkdownMedia/blob/master/Project%20Report_%22Internet%2B%22%20Competition.pdf" target="_blank" rel="noopener">GitHub</a>)<br><strong>2018.10</strong> Won the Third-Class Most Innovative Award in 2018 AI+ Innovation &amp; Start-up Competition<br><strong>2019.05</strong> Won the National Second-Class Award in 2019 National College Student Innovation and Entrepreneurship Competition<br><strong>2019.08.02</strong> Oral presentation on <a href="https://igarss2019.org/Papers/ViewPapers.asp?PaperNum=4321" target="_blank" rel="noopener">IGARSS19</a><br><strong>2019.11.14</strong> Paper “Efficient Multi-Class Semantic Segmentation of High Resolution Aerial Imagery with Dilated LinkNet” was added to <a href="https://ieeexplore.ieee.org/document/8900281" target="_blank" rel="noopener">IEEE Xplore</a></p><p><strong>Code on <a href="https://github.com/QT-Zhu/Eagle_System" target="_blank" rel="noopener">GitHub</a></strong> (managed by <a href="https://qt-zhu.github.io/" target="_blank" rel="noopener">Qingtian Zhu</a>)</p><h2 id="Group-members"><a href="#Group-members" class="headerlink" title="Group members"></a>Group members</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/The%20Eagle%20Group%20Pic.JPG" alt="Group"><br><strong>Xi XIA</strong>, Junli Yang(Supervisor), Xingyi Li, Qingtian Zhu(Leader), Haoran Cui, Yulai Jiang, Yuming Zheng (happen to be absent)</p><p>This photo was taken in the Innovation Center of Beijing University of Posts and Telecommunications.</p>]]></content>
     
@@ -175,13 +219,15 @@
     </summary>
     
     
+      <category term="Project" scheme="https://xiaxii.github.io/categories/Project/"/>
+    
     
   </entry>
   
   <entry>
     <title>The Age of Social Sensing</title>
-    <link href="https://xiaxii.github.io/2020/01/23/The-Age-of-Social-Sensing/"/>
-    <id>https://xiaxii.github.io/2020/01/23/The-Age-of-Social-Sensing/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/The-Age-of-Social-Sensing/"/>
+    <id>https://xiaxii.github.io/2020/01/22/The-Age-of-Social-Sensing/</id>
     <published>2020-01-22T19:11:21.000Z</published>
     <updated>2020-01-22T19:11:21.000Z</updated>
     
@@ -204,8 +250,8 @@
   
   <entry>
     <title>Is Social Media Hurting Your Mental Health?</title>
-    <link href="https://xiaxii.github.io/2020/01/23/Is-Social-Media-Hurting-Your-Mental-Health/"/>
-    <id>https://xiaxii.github.io/2020/01/23/Is-Social-Media-Hurting-Your-Mental-Health/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/Is-Social-Media-Hurting-Your-Mental-Health/"/>
+    <id>https://xiaxii.github.io/2020/01/22/Is-Social-Media-Hurting-Your-Mental-Health/</id>
     <published>2020-01-22T18:54:37.000Z</published>
     <updated>2020-01-22T18:54:37.000Z</updated>
     
@@ -227,8 +273,8 @@
   
   <entry>
     <title>13 Things Mentally Strong People Don&#39;t Do</title>
-    <link href="https://xiaxii.github.io/2020/01/23/13-Things-Mentally-Strong-People-Don-t-Do/"/>
-    <id>https://xiaxii.github.io/2020/01/23/13-Things-Mentally-Strong-People-Don-t-Do/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/13-Things-Mentally-Strong-People-Don-t-Do/"/>
+    <id>https://xiaxii.github.io/2020/01/22/13-Things-Mentally-Strong-People-Don-t-Do/</id>
     <published>2020-01-22T18:53:25.000Z</published>
     <updated>2020-01-22T18:53:25.000Z</updated>
     
@@ -249,8 +295,8 @@
   
   <entry>
     <title>Former Coding Interview Question: Trapping Rain Water [Dynamic Programming]</title>
-    <link href="https://xiaxii.github.io/2020/01/23/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/"/>
-    <id>https://xiaxii.github.io/2020/01/23/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/"/>
+    <id>https://xiaxii.github.io/2020/01/22/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</id>
     <published>2020-01-22T18:46:05.000Z</published>
     <updated>2020-01-22T18:46:05.000Z</updated>
     
@@ -279,8 +325,8 @@
   
   <entry>
     <title>Former Coding Interview Question: Word Squares</title>
-    <link href="https://xiaxii.github.io/2020/01/23/Former-Coding-Interview-Question-Word-Squares/"/>
-    <id>https://xiaxii.github.io/2020/01/23/Former-Coding-Interview-Question-Word-Squares/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/Former-Coding-Interview-Question-Word-Squares/"/>
+    <id>https://xiaxii.github.io/2020/01/22/Former-Coding-Interview-Question-Word-Squares/</id>
     <published>2020-01-22T18:42:57.000Z</published>
     <updated>2020-01-22T18:42:57.000Z</updated>
     
@@ -303,8 +349,8 @@
   
   <entry>
     <title>What makes a good life? - lesson from the Harvard Study of Adult Development</title>
-    <link href="https://xiaxii.github.io/2020/01/23/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/"/>
-    <id>https://xiaxii.github.io/2020/01/23/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/"/>
+    <id>https://xiaxii.github.io/2020/01/22/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</id>
     <published>2020-01-22T18:40:03.000Z</published>
     <updated>2020-01-22T18:40:03.000Z</updated>
     
@@ -329,8 +375,8 @@
   
   <entry>
     <title>Bloggers that I am following</title>
-    <link href="https://xiaxii.github.io/2020/01/23/Bloggers-that-I-am-following/"/>
-    <id>https://xiaxii.github.io/2020/01/23/Bloggers-that-I-am-following/</id>
+    <link href="https://xiaxii.github.io/2020/01/22/Bloggers-that-I-am-following/"/>
+    <id>https://xiaxii.github.io/2020/01/22/Bloggers-that-I-am-following/</id>
     <published>2020-01-22T18:39:03.000Z</published>
     <updated>2020-01-22T18:39:03.000Z</updated>
     
@@ -353,8 +399,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://xiaxii.github.io/2019/06/15/hello-world/"/>
-    <id>https://xiaxii.github.io/2019/06/15/hello-world/</id>
+    <link href="https://xiaxii.github.io/2019/06/14/hello-world/"/>
+    <id>https://xiaxii.github.io/2019/06/14/hello-world/</id>
     <published>2019-06-14T16:19:46.000Z</published>
     <updated>2020-05-10T17:13:17.122Z</updated>
     
