@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="Task 1: Interface with a stock price data feedBackground Information of the task: This task is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks. The tra">
+<meta name="description" content="Task 1: Interface with a stock price data feedBackground Information of the task: This software is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks. The">
 <meta name="keywords" content="Software Engineering">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JPMorgan Chase Software Engineering Virtual Internship 1&#x2F;4">
 <meta property="og:url" content="https://xiaxii.github.io/2020/08/30/JPMorgan-Chase-Software-Engineering-Virtual-Internship-1-4/index.html">
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
-<meta property="og:description" content="Task 1: Interface with a stock price data feedBackground Information of the task: This task is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks. The tra">
+<meta property="og:description" content="Task 1: Interface with a stock price data feedBackground Information of the task: This software is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks. The">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-08-30T20:51:49.908Z">
+<meta property="og:updated_time" content="2020-08-30T23:50:33.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JPMorgan Chase Software Engineering Virtual Internship 1&#x2F;4">
-<meta name="twitter:description" content="Task 1: Interface with a stock price data feedBackground Information of the task: This task is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks. The tra">
+<meta name="twitter:description" content="Task 1: Interface with a stock price data feedBackground Information of the task: This software is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks. The">
 
 
 
@@ -354,7 +354,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2020-08-30T16:51:49-04:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2020-08-30T19:50:33-04:00">
                 2020-08-30
               </time>
             
@@ -389,11 +389,11 @@
 
       
         <h1 id="Task-1-Interface-with-a-stock-price-data-feed"><a href="#Task-1-Interface-with-a-stock-price-data-feed" class="headerlink" title="Task 1: Interface with a stock price data feed"></a>Task 1: Interface with a stock price data feed</h1><p>Background Information of the task:</p>
-<p>This task is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks.</p>
+<p>This software is to add a chart to a trader’s dashboard allowing them to better identify under/over-valued stocks.</p>
 <p>The trader would like to be able to monitor two historically correlated stocks and be able to visualize when the correlation between the two weakens (i.e. one stock moves proportionally more than the historical correlation would imply). This could indicate a potential trade strategy to simultaneously buy the relatively underperforming stock and sell the relatively outperforming stock. Assuming the two prices subsequently converge, the trade should be profitable.</p>
-<p>Most data visualization for our traders is built on JPMorgan Chase’s Perspective data visualization software, which is now open source. See: <a href="https://github.com/finos/perspective" target="_blank" rel="noopener">GitHub Repository</a> of <a href="https://perspective.finos.org/" target="_blank" rel="noopener">Perspective</a>.</p>
-<p>Before implementing this request using perspective, first you’ll need to interface with the relevant <strong>financial data feed</strong> and make the necessary adjustments to facilitate the monitoring of potential trade opportunities.</p>
-<!--read more-->
+<p>Most data visualization for JPMorgan Chase’s traders is built on the data visualization software - <a href="https://perspective.finos.org/" target="_blank" rel="noopener">Perspective</a>, which is now open source. See: <a href="https://github.com/finos/perspective" target="_blank" rel="noopener">GitHub Repository of Perspective</a>. </p>
+<p>Before implementing this request using perspective, the first need is to interface with the relevant <strong>financial data feed</strong> and make the necessary adjustments to facilitate the monitoring of potential trade opportunities.</p>
+<a id="more"></a>
 <h2 id="Local-Setup"><a href="#Local-Setup" class="headerlink" title="Local Setup"></a>Local Setup</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a><strong>Python</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">xiaxii@cecilias-mbp ~ % which python</span><br><span class="line">/usr/bin/python</span><br><span class="line">xiaxii@cecilias-mbp ~ % which python2</span><br><span class="line">/usr/bin/python2</span><br><span class="line">xiaxii@cecilias-mbp ~ % which python3 </span><br><span class="line">/usr/local/bin/python3</span><br><span class="line"></span><br><span class="line">xiaxii@cecilias-mbp ~ % pip --version</span><br><span class="line">pip 20.0.2 from /Library/Python/2.7/site-packages/pip-20.0.2-py2.7.egg/pip (python 2.7)</span><br><span class="line">xiaxii@cecilias-mbp ~ % pip3 --version</span><br><span class="line">pip 20.1.1 from /usr/local/lib/python3.8/site-packages/pip (python 3.8)</span><br></pre></td></tr></table></figure>
 <p>I am using Python3 for this project.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xiaxii@cecilias-mbp ~ % pip3 list</span><br><span class="line">Package         Version</span><br><span class="line">--------------- -------</span><br><span class="line">pip             20.1.1</span><br><span class="line">python-dateutil 2.8.1</span><br><span class="line">setuptools      49.2.0</span><br><span class="line">six             1.15.0</span><br><span class="line">wheel           0.34.2</span><br></pre></td></tr></table></figure>
