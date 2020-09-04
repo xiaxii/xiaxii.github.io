@@ -9,7 +9,7 @@
 <p>This year has been extremely crazy for me. I was back from Beijing to Wuhan for Chinese New Year. However, 2020 started with a night of no sleep instead of the traditional festival. During that night, I was writing my application essay to <a href="https://esteem.nd.edu/" target="_blank" rel="noopener">ESTEEM</a> :) The lucky thing was I got accepeted later. But the happiness only lasted for a short time. Because my howntown was locked down. The first half year of quarantine was tough. Even though we were free after a 76 days of quarantine, my suffering did not end. I planed for the exclusively long jouney: Wuhan -&gt; Shanghai -&gt; Phnom Penh (Cambodia) -&gt; Soul (South Korea) -&gt; New York, NY -&gt; Chicago, IL -&gt; South Bend, IN in order to go back to Notre Dame.</p>
 <p>Now I am sitting in my room at Fischer Graduate Residents. This midnight is quiet and suitable for writing. It’s also a good time to look back and reflect on what I have done to get here (besides the phycial move). <a id="more"></a> I do not have clear memories about my stories before 18. If there is anything, that must be problem sets and exams :) So I’ll start with my time in Beijing.</p>
 <p>I had a great ambition when I was a freshman. After more than 10 interview with different student organizations and departments of Students’ Union. I got 5 jobs. This is too overwheelming, so I only kept two similar jobs which was to design posters for student activities. One was in the technology department of Students’ Union. Another one was in the news and media department of Student Clubs’ Union. I learnt how to use Adobe Photoshop, to make posters, banners and handouts. My final position was a Vice President, responsible for training and staffing new freshman kids.</p>
-<p>I can’t say </p>
+<p>The designer job was a </p>
 ]]></content>
   </entry>
   <entry>
@@ -32,6 +32,9 @@
 <li><a href="https://github.com/finos/perspective/issues" target="_blank" rel="noopener">Perspective’s issue list</a></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Software Engineering</category>
+      </categories>
   </entry>
   <entry>
     <title>JPMorgan Chase Software Engineering Virtual Internship 3/4</title>
@@ -63,10 +66,9 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">DataManipulator</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> generateRow(serverResponds: ServerRespond[]): Row &#123;</span><br><span class="line">    <span class="keyword">const</span> priceABC = (serverResponds[<span class="number">0</span>].top_ask.price + serverResponds[<span class="number">0</span>].top_bid.price) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> priceDEF = (serverResponds[<span class="number">1</span>].top_ask.price + serverResponds[<span class="number">1</span>].top_bid.price) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">const</span> ratio = priceABC / priceDEF;</span><br><span class="line">    <span class="keyword">const</span> uperBound = <span class="number">1</span> + <span class="number">0.05</span>;</span><br><span class="line">    <span class="keyword">const</span> lowerBound = <span class="number">1</span> - <span class="number">0.05</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      price_abc: priceABC,</span><br><span class="line">      price_def: priceDEF,</span><br><span class="line">      ratio,</span><br><span class="line">      timestamp: serverResponds[<span class="number">0</span>].timestamp &gt; serverResponds[<span class="number">1</span>].timestamp ?</span><br><span class="line">          serverResponds[<span class="number">0</span>].timestamp : serverResponds[<span class="number">1</span>].timestamp,</span><br><span class="line">      upper_bound: uperBound,</span><br><span class="line">      lower_bound: lowerBound,</span><br><span class="line">      trigger_alert: (ratio &gt; uperBound || ratio &lt; lowerBound) ? ratio : <span class="literal">undefined</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Finished:<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/JPMC/Task3Final.png" alt><br>with configurations as below:<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/JPMC/Task3Config.png" alt></p>
 ]]></content>
-      <tags>
-        <tag>Software Engineering</tag>
-        <tag>Python</tag>
-      </tags>
+      <categories>
+        <category>Software Engineering</category>
+      </categories>
   </entry>
   <entry>
     <title>Node 14 Caused Trouble in Deployment of Hexo</title>
@@ -111,11 +113,9 @@
 <p><strong>Troubleshoting</strong><br>Problem:<br><a href="https://github.com/insidesherpa/JPMC-tech-task-2/issues/13" target="_blank" rel="noopener">Failed to Compile-Type Error TS2345</a><br>Solution:<br>in the aggregates property, the value should have been enclosed in back ticks i.e. <code>value</code>,<br>so it would look somethine like:<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">elem.setAttribute(<span class="string">'aggregates'</span>, <span class="string">`&#123;"stock":"distinct count","top_ask_price":"avg","top_bid_price":"avg","timestamp":"distinct count"&#125;`</span>);</span><br></pre></td></tr></table></figure></p>
 <h2 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/JPMC/taskFinal.png" alt="Final Task2"></p>
 ]]></content>
-      <tags>
-        <tag>Software Engineering</tag>
-        <tag>Python</tag>
-        <tag>Javascript</tag>
-      </tags>
+      <categories>
+        <category>Software Engineering</category>
+      </categories>
   </entry>
   <entry>
     <title>JPMorgan Chase Software Engineering Virtual Internship 1/4</title>
@@ -164,10 +164,9 @@
 <p>The final command, i.e. git format-patch -1 HEAD, should produce the .patch file you’d want to submit to complete this module. It will be located in the directory where you executed the command.</p>
 <p>Other Assertions:<br>self.assertIsNone()<br>self.assertGreater(a, b)  …a&gt;b<br>self.assertLess(a, b)     …a&lt;b<br>self.assertRaises(TypeError)</p>
 ]]></content>
-      <tags>
-        <tag>Software Engineering</tag>
-        <tag>Python</tag>
-      </tags>
+      <categories>
+        <category>Software Engineering</category>
+      </categories>
   </entry>
   <entry>
     <title>Product Questions</title>
