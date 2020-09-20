@@ -1,6 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leadership Reflections </title>
+    <url>/2020/09/20/Leadership-Reflections/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Customer-facing mission and vision bring effectiveness to the leadership. During our class of Leadeship, we learnt about the Five Questions Plan for businesses. </p>
+<blockquote>
+<ol>
+<li>What is our mission?</li>
+<li>Who is our customer?</li>
+<li>What does the customer value?</li>
+<li>What are our results?</li>
+<li>What is our plan?</li>
+</ol>
+</blockquote>
+<p>I consider identifying customers and their needs the most important. </p>
+<a id="more"></a>
+<p>I am recently watching a TV series called “Silicon Valley”. It’s a parody of Silicon Valley culture, focusing on Richard Hendricks, a programmer who founded a startup company based on his algorithm, and his struggles trying to run his company. One impressive clip is the new CEO Jack Barker, who replaced Richard, argued: “Sales and engineering are the two pillars of the Conjoined Triangles of Success. Engineering and sales must work together to decide what to build.”. This is very true. Without input from customers, Richard and his engineering colleagues produced a very “engineered” product. The technology is fantastic and brings breakthroughs to the industry. But customers don’t buy it. Normal people can’t understand how it works, because the product’s novelty exceeded their common sense. Terrible user experiences can never maintain users.</p>
+<p>According to our courses and what I have seen from Silicon Valley, I am more aware that I should value customer needs as our mission and thus make our strategy effective and efficient. I am going to start interviews for my capstone project next week. We have a good vision of automating officers’ daily work by a virtual assistant on our software. But the first step should be understanding officers’ work and finding what they value most from our product. </p>
+]]></content>
+      <categories>
+        <category>Product Management</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>KPI and Matrix</title>
+    <url>/2020/09/09/KPI-and-Matrix/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="General-mobile-app-KPIs"><a href="#General-mobile-app-KPIs" class="headerlink" title="General mobile app KPIs"></a>General mobile app KPIs</h1><ul>
+<li>User engagement KPIs</li>
+<li>Revenue KPIs</li>
+<li>UX KPIs</li>
+<li>Marketing KPIs</li>
+<li>App store category ranking</li>
+</ul>
+<p>While all six categories are important, you first need to establish the most relevant KPIs and then focus on tracking them. Below are the top three indicators to look for in each category.</p>
+ <a id="more"></a>
+<h2 id="General-mobile-app-KPIs-1"><a href="#General-mobile-app-KPIs-1" class="headerlink" title="General mobile app KPIs"></a>General mobile app KPIs</h2><p>Most people working on the app development team can track these general mobile KPIs. However, how much emphasis to put on each KPI depends on the product so it may vary from one mobile app to another. These indicators are:</p>
+<h3 id="Mobile-downloads"><a href="#Mobile-downloads" class="headerlink" title="Mobile downloads"></a>Mobile downloads</h3><p>The most obvious measurement of success for an app entrepreneur is the number of downloads over a given period. An example of this would be a million users over a two-year span after launch. This KPI measures the app’s popularity.</p>
+<p>The interpretation of the figures might vary from one product to another. For example, one person may consider attracting a million app users over the course of a year to be a success while others may think that’s too slow. Whatever the case, the number of mobile downloads will point you to the areas for improvements, such as UX, or bigger marketing budgets.</p>
+<h3 id="Subscriptions"><a href="#Subscriptions" class="headerlink" title="Subscriptions"></a>Subscriptions</h3><p>If one of the features you offer is content or upgrades subscription, then you should track the number of subscription signups. Unsubscribing helps you monitor the features to be updated or find out about errors that you may not have noticed before. It tells how people find the price/value ratio of the subscription. You can also monitor how long it takes for a person to subscribe after installing your app.</p>
+<h3 id="Upgrades"><a href="#Upgrades" class="headerlink" title="Upgrades"></a>Upgrades</h3><p>If you offer basic and premium versions of your mobile app, then this KPI comes in handy. You need to track the number of people who use the premium version, what percentage of the total they constitute, how long it takes for users to upgrade as well as whether the paid versions get higher ratings than the basic ones. This will help you evaluate whether you have a successful app or not.</p>
+<p>Get a free consultation<br>Would you like to better understand how you can improve the performance of your mobile application? We can set up a quick call with one of our experts who can get you started.We will call you back.<br>Your Name (required)</p>
+<h3 id="Growth-rate"><a href="#Growth-rate" class="headerlink" title="Growth rate"></a>Growth rate</h3><p>You need to know how your base is growing, and whether it is a steady or a spiky growth. For example, does it spike during certain events such as following updates or advertisements, or is the growth slow but steady?</p>
+<h2 id="User-Engagement-KPIs"><a href="#User-Engagement-KPIs" class="headerlink" title="User Engagement KPIs"></a>User Engagement KPIs</h2><p>Another KPI involves measuring engagement. This requires answering questions such as when, how, and where they engage with your product and collect details about it.</p>
+<h3 id="Retention-rate"><a href="#Retention-rate" class="headerlink" title="Retention rate"></a>Retention rate</h3><p>Your retention rate is the number those who return to your app after a specified period. How long does it take for a person to come back? The concept behind this is that if you create a valuable product, people tend to come back to it.</p>
+<p>The monitoring process might help create ideas on how to grow the product. As a general formula, you can calculate the retention rate with the formula below:</p>
+<p>Retention Rate = ((CE — CN) / CS)) X 100</p>
+<p>Where:</p>
+<p>CE = number of customers at the end of a period</p>
+<p>CN = number of new customers acquired during a given period</p>
+<p>CS = number of customers at the beginning of a period</p>
+<h3 id="Sessions-App-Open-Rate"><a href="#Sessions-App-Open-Rate" class="headerlink" title="Sessions (App Open Rate)"></a>Sessions (App Open Rate)</h3><p>Sessions measures how many times someone opened the app and indicates its popularity. Keep in mind that in digital analytics, a session is when a person or device-specific group of interactions that occur within a given period. Of course, it’s important to define what a session means for your app before you start counting.</p>
+<h3 id="Daily-active-users"><a href="#Daily-active-users" class="headerlink" title="Daily active users"></a>Daily active users</h3><p>One of the ways to predict a successful app’s future growth is to calculate the number of daily active users. A DAU is a person who created an account and logged in for any interaction. Web and mobile app businesses typically consider DAU as their primary measure of growth and engagement in successful apps.</p>
+<h3 id="Churn-rate"><a href="#Churn-rate" class="headerlink" title="Churn rate"></a>Churn rate</h3><p>Despite its negative effect, measuring the rate at which people unsubscribe from or uninstall your product will help you improve it. The most common reasons might be the lack of updates or of new content, crash issues as well as general functionality problems. Finding out at what point a person has unsubscribed or uninstalled your app might give you an idea of how to make it better.</p>
+<h2 id="Revenue-KPIs"><a href="#Revenue-KPIs" class="headerlink" title="Revenue KPIs"></a>Revenue KPIs</h2><p>An app is not only built with end-users in mind, but it is also built with money in mind. Therefore, you can measure how your application generates money in the following ways:</p>
+<h3 id="Average-revenue-per-user-ARPU"><a href="#Average-revenue-per-user-ARPU" class="headerlink" title="Average revenue per user (ARPU)"></a>Average revenue per user (ARPU)</h3><p>There are very many forms of monetization such as paid downloads, ad impressions or clicks, in-app purchases as well as subscriptions. The average amount of money or value generated per person multiplied by the size of the total base, could give you a rough idea of your product’s monetary value.</p>
+<h3 id="Customer-acquisition-cost-CAC"><a href="#Customer-acquisition-cost-CAC" class="headerlink" title="Customer acquisition cost (CAC)"></a>Customer acquisition cost (CAC)</h3><p>Customers come at a cost. This might be the cost of advertising, labor as well as other resources. The costs can be determined by dividing the gross revenue by the cost of advertisement and other related costs.</p>
+<h3 id="Customer-lifetime-value-CLC"><a href="#Customer-lifetime-value-CLC" class="headerlink" title="Customer lifetime value (CLC)"></a>Customer lifetime value (CLC)</h3><p>This measures the net profit customers generate, which includes customers in and on the platform in ratio to the cost of acquiring them. The most successful apps tend to have a higher CLC to CAC ratio.</p>
+<p>A general formula for calculating CLC is as follows:</p>
+<p>Avg value of a conversion x avg # of conversions in a time frame x avg customer lifetime.</p>
+<h3 id="Return-on-investment-ROI"><a href="#Return-on-investment-ROI" class="headerlink" title="Return on investment (ROI)"></a>Return on investment (ROI)</h3><p>When you spend money and other resources on the app, such as paid ads you expect to make profits out of it. Therefore, return on investment is measured by dividing the number of gains in customers or revenue that you have generated by how much you have spent on marketing, including the time spent or any other expenses incurred.</p>
+<p>In simple terms:</p>
+<p>(Gain from Investment — Cost of Investment) / Cost of Investment</p>
+<h2 id="UX-KPIs"><a href="#UX-KPIs" class="headerlink" title="UX KPIs"></a>UX KPIs</h2><p>No matter how good you think your app is, the UX wraps it all up. It’s good to remember that you do not create the app for yourself but for other people. Therefore, you should track and measure user experience in order to know the areas that require improvement.</p>
+<p>This can be done by measuring the following elements:</p>
+<h3 id="Load-time"><a href="#Load-time" class="headerlink" title="Load time"></a>Load time</h3><p>Isn’t it annoying when you wait for an app to load? Fast loading speed is key to keeping people’s attention. Some people uninstall an app not because it lacks the features they need, but because they consider it unusable. This is often a symptom of slow loading speeds.</p>
+<p>This includes the transition times from one activity to another within your mobile app. Build the fastest app possible if you want to see app success.</p>
+<h3 id="Devices"><a href="#Devices" class="headerlink" title="Devices"></a>Devices</h3><p>How do people access your app? Which devices do they use: phones, tablets, or laptops? Knowing which devices your customers use to access the app will help you target and improve on the app’s performance.</p>
+<h3 id="Operating-system"><a href="#Operating-system" class="headerlink" title="Operating system"></a>Operating system</h3><p>Your app should be able to work both on Android and iOS. However, if either of them has a high crash rate or high uninstall rate, then you should look into the reasons behind the situation as well as work on a remedy for it.</p>
+<p>A successful mobile app should have a balance between Android and iOS users. If it tends to attract one type over others, you should look into why this is so. This could signal that the experience on one operating system is not performing correctly and you’ll have to fix it.</p>
+<h2 id="Mobile-App-Marketing-KPIs"><a href="#Mobile-App-Marketing-KPIs" class="headerlink" title="Mobile App Marketing KPIs"></a>Mobile App Marketing KPIs</h2><p>There are many effective ways to market your app. Measuring how effective a chosen method is, will help you establish the driving force for the downloads and in result focus on it and maybe get rid of the ones that do not bring in more users.</p>
+<p>You can, therefore, monitor your app store analytics. Some of the best KPIs in this area include:</p>
+<h3 id="Install-source"><a href="#Install-source" class="headerlink" title="Install source"></a>Install source</h3><p>Where did your customers find your app in order to install it? This knowledge is essential and can become a driving force for your campaign. Which sources attract more people to download your app?</p>
+<p>Which sources have better performance and which poor? Are they paid or organic? Such information will allow you to focus on the right marketing strategies.</p>
+<h3 id="Channel-breakdown"><a href="#Channel-breakdown" class="headerlink" title="Channel breakdown"></a>Channel breakdown</h3><p>Channel breakdown involves details concerning the type of channels your customers use to arrive at your mobile app. It involves analyzing their behavior once they start using your app. How do people from a certain channel behave once they land? How does it differ from users who came through other channels? Good mobile apps take this vital data and fold it into the business culture as a whole.</p>
+<h3 id="Geometrics"><a href="#Geometrics" class="headerlink" title="Geometrics"></a>Geometrics</h3><p>Although geometrics is most often ignored, it is important to know your user’s location. It affects the revenues collected from different locations. Analyzing behavior patterns from the different locations will help you understand and specifically focus your sales efforts. You will also know which areas are saturated and are in need of fresh demand-generation ideas.</p>
+<h3 id="Demographics"><a href="#Demographics" class="headerlink" title="Demographics"></a>Demographics</h3><p>Do you know the gender of your target audience? What is their ethnicity and age? By comparing such information to the actual demographics of your customer base will help you analyze the success of your app. If your app was initially targeted for men and you find that a higher percentage of users are female, then it shows that you should re-evaluate your app.</p>
+<h2 id="App-store-category-ranking"><a href="#App-store-category-ranking" class="headerlink" title="App store category ranking"></a>App store category ranking</h2><p>Generally, the higher your rankings in the app store, the better your performance. You should make an effort to monitor and analyze your rankings there. Bear in mind that the category ranking is directly affected by the following elements:</p>
+<h3 id="Keywords"><a href="#Keywords" class="headerlink" title="Keywords"></a>Keywords</h3><p>Tracing how people found your app from the keywords they have typed while searching your app before arriving and downloading your app will shed light on which phrases generate revenue and which don’t.</p>
+<p>The process might even give an idea on which features to update. For example, if someone searched for ‘voice book reader’ then you might provide an update to include voice recognition in your app.</p>
+<h3 id="Reviews"><a href="#Reviews" class="headerlink" title="Reviews"></a>Reviews</h3><p>A customer who takes time to write a review about your app, no matter how long or short it may be, is a sign of being engaged with your app. Note the number of reviews your app has received and what users are saying. Compliments make you feel good about your app also listen to the complaints as they may be more informative.</p>
+<p>Both complaints and positive criticism are key to knowing what to improve or what to include in your app. It will help you get to know the users’ needs. What’s more, it is important not to get discouraged by the extremely negative reviews. For example ‘very useless app.’ with no further comment.</p>
+<h3 id="Ratings"><a href="#Ratings" class="headerlink" title="Ratings"></a>Ratings</h3><p>Just like reviews, the more the ratings you have, the better. However, ratings take less time and effort to fill in, so it does not necessarily show people’s engagement as far as your app goes.</p>
+<p>Sometimes people who rate also write a review. Therefore, it is advisable to check the reviews after the ratings. You might find reasons to introduce premium versions of the app if the ratings are positive, or find a way to bridge the gap if the ratings are poor.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Measuring mobile app success is vital to any mobile app development project. Setting up KPIs and sticking to them will give you a trustworthy base for your app optimization and growth plans. Getting an accurate picture of exactly how your customers use your mobile app will be an invaluable step to continuously delivering valuable, usable tools to your users. If you’d like for one of our experts to take a look at your app, drop us a line and chat with us for a free 15-minute consultation. It can set you on a path toward getting an accurate picture of how successful your app is — and where to improve it to make it even better.</p>
+]]></content>
+      <categories>
+        <category>Product Management</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Writing Efficient Python Code</title>
+    <url>/2020/09/05/Writing-Efficient-Python-Code/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Foundations-for-efficiencies"><a href="#Foundations-for-efficiencies" class="headerlink" title="Foundations for efficiencies"></a>Foundations for efficiencies</h1><ol>
+<li><p>Pythonic: Code that executes quickly for the task at hand, minimizes the memory footprint and follows Python’s coding style principles.</p>
+</li>
+<li><p>Example:</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Collect the names in the above list that have six letters or more.</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> names:</span><br><span class="line">    <span class="keyword">if</span> len(name) &gt;= <span class="number">6</span>:</span><br><span class="line">        better_list.append(name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pythonic Way</span></span><br><span class="line">best_list = [name <span class="keyword">for</span> name <span class="keyword">in</span> names <span class="keyword">if</span> len(name) &gt;= <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Python Standard Library<br>(1) Built-in types: <code>list</code>, <code>tuple</code>, <code>set</code>, <code>dict</code>, and others<br>(2) Built-in functions: <code>print()</code>, <code>len()</code>, <code>range()</code>, <code>round()</code>, <code>enumerate()</code>, <code>map()</code>, <code>zip()</code>, and others<br>(3) Built-in modules: <code>os</code>, <code>sys</code>, <code>itertools</code>, <code>collections</code>, <code>math</code> and others</li>
+</ol>
+<a id="more"></a>
+<p>Examples:</p>
+<ul>
+<li>range() </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Create a range object that goes from 0 to 5</span></span><br><span class="line">nums = range(<span class="number">6</span>)</span><br><span class="line">print(type(nums))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Convert nums to a list</span></span><br><span class="line">nums_list = list(nums)</span><br><span class="line">print(nums_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a new list of odd numbers from 1 to 11 by unpacking a range object</span></span><br><span class="line">nums_list2 = [*range(<span class="number">1</span>,<span class="number">12</span>,<span class="number">2</span>)]</span><br><span class="line">print(nums_list2)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>enumerate()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Rewrite the for loop to use enumerate</span></span><br><span class="line">indexed_names = []</span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(names):</span><br><span class="line">    index_name = (i,name)</span><br><span class="line">    indexed_names.append(index_name) </span><br><span class="line">print(indexed_names)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rewrite the above for loop using list comprehension</span></span><br><span class="line">indexed_names_comp = [(i,name) <span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(names)]</span><br><span class="line">print(indexed_names_comp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Unpack an enumerate object with a starting index of one</span></span><br><span class="line">indexed_names_unpack = [*enumerate(names, <span class="number">1</span>)]</span><br><span class="line">print(indexed_names_unpack)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>map()</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Use map to apply str.upper to each element in names</span></span><br><span class="line">names_map  = map(str.upper, names)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the type of the names_map</span></span><br><span class="line">print(type(names_map))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Unpack names_map into a list</span></span><br><span class="line">names_uppercase = [*names_map]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print the list created above</span></span><br><span class="line">print(names_uppercase)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>zip()<br>combine multiple objects together. It allows us to easily combine two or more objects. If we provide zip() with objects of differing lengths, it will only combine until the smallest lengthed object is exhausted.</li>
+</ul>
+<h1 id="NumPy-arrays"><a href="#NumPy-arrays" class="headerlink" title="NumPy arrays"></a>NumPy arrays</h1><ol>
+<li>Numpy array makes every element the same type</li>
+<li>Mathematical operations are broadcasted to each element of a numpy array by default.<br><strong>NumPy’s broadcasting concept</strong>: broadcasting refers to a numpy array’s ability to vectorize operations, so they are performed on all elements of an object at once.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Print second row of nums</span></span><br><span class="line">print(nums[<span class="number">1</span>,:])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print all elements of nums that are greater than six</span></span><br><span class="line">print(nums[nums &gt; <span class="number">6</span>])</span><br><span class="line"><span class="comment"># nums &gt; 6 create a boolean index for all items in nums that are greater than 6.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Double every element of nums</span></span><br><span class="line">nums_dbl = nums * <span class="number">2</span></span><br><span class="line">print(nums_dbl)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Replace the third column of nums</span></span><br><span class="line">nums[:,<span class="number">2</span>] = nums[:,<span class="number">2</span>] + <span class="number">1</span></span><br><span class="line">print(nums)</span><br></pre></td></tr></table></figure>
+<p>Exercise:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Create a list of arrival times</span><br><span class="line">arrival_times = [*range(10,60,10)]</span><br><span class="line"></span><br><span class="line"># Convert arrival_times to an array and update the times</span><br><span class="line">arrival_times_np = np.array(arrival_times)</span><br><span class="line">new_times = arrival_times_np - 3</span><br><span class="line"></span><br><span class="line"># Use list comprehension and enumerate to pair guests to new times</span><br><span class="line">guest_arrivals = [(names[i],time) for i,time in enumerate(new_times)]</span><br><span class="line"></span><br><span class="line"># Map the welcome_guest function to each (guest,time) pair</span><br><span class="line">welcome_map = map(welcome_guest, guest_arrivals)</span><br><span class="line"># The function provided to map() shouldn&apos;t contain closing parenthesis (i.e., use welcome_guest instead of welcome_guest()).</span><br><span class="line"></span><br><span class="line">guest_welcomes = [*welcome_map]</span><br><span class="line">print(*guest_welcomes, sep=&apos;\n&apos;)</span><br></pre></td></tr></table></figure>
+<h1 id="Examing-the-runtime"><a href="#Examing-the-runtime" class="headerlink" title="Examing the runtime"></a>Examing the runtime</h1><ol>
+<li>Unpacking the range object was faster than list comprehension.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Create a list of integers (0-50) using list comprehension</span><br><span class="line">nums_list_comp = [num for num in range(51)]</span><br><span class="line">print(nums_list_comp)</span><br><span class="line"></span><br><span class="line"># Create a list of integers (0-50) by unpacking range</span><br><span class="line">nums_unpack = [*range(51)]</span><br><span class="line">print(nums_unpack)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Using Python’s literal syntax to define a data structure can speed up your runtime. Consider using the literal syntaxes (like [] instead of list(), {} instead of dict(), or () instead of tuple()), where applicable, to gain some speed.</p>
+</li>
+<li><p>Numpy is more efficient than Array</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>22 Years Old: Reflection on myself</title>
     <url>/2020/09/03/22-Years-Old-Reflection-on-myself/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/reflection-mandarin/1529680349?i=1529681056"></iframe>
