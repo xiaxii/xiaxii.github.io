@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Digital Marketing</title>
-    <url>/2020/10/30/Digital-Marketing/</url>
+    <title>Digital Marketing 2/4 - Inbounding Marketing</title>
+    <url>/2020/11/25/Digital-Marketing-2-4-Inbounding-Marketing/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>Digital Marketing 1/4 - Outbound Marketing</title>
+    <url>/2020/10/30/Digital-Marketing-1-4-Outbounding-Marketing/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
 <p>Harvard Business Review </p>
 </blockquote>
@@ -40,31 +45,153 @@
 <li>Misspellings and Typos</li>
 <li>Rule out negative/unrealated words</li>
 </ul>
-<h3 id="Brnaded-Keywords"><a href="#Brnaded-Keywords" class="headerlink" title="Brnaded Keywords"></a>Brnaded Keywords</h3><p>Bid on one’s own brand - to defend against competitors</p>
+<h3 id="Branded-Keywords"><a href="#Branded-Keywords" class="headerlink" title="Branded Keywords"></a>Branded Keywords</h3><p>Bid on one’s own brand - to defend against competitors</p>
 <h3 id="Generic-Keywords"><a href="#Generic-Keywords" class="headerlink" title="Generic Keywords"></a>Generic Keywords</h3><p>generic and category keywords </p>
 <h3 id="Paying-for-keywords"><a href="#Paying-for-keywords" class="headerlink" title="Paying for keywords"></a>Paying for keywords</h3><p>Golden Triangle - Upper left</p>
-<ul>
-<li>Cost-Per-Click (CPC) bid: per keywords, position -&gt; profitability -&gt; Click Through Rate (CTR)</li>
-<li>Quality Score: CTR, Relevence to consumers, Quality of the landing page</li>
-</ul>
-<h3 id="Assesing-the-Effectiveness"><a href="#Assesing-the-Effectiveness" class="headerlink" title="Assesing the Effectiveness"></a>Assesing the Effectiveness</h3><ol>
-<li>CPC: <code>CPC=Cost/Click</code></li>
-<li>CTR: <code>CTR=Click/Impression</code>(Impression: # of times seen by consumers)</li>
-<li>Convertion Rate: <code>Convertion Rate=Applicationc Completed/Click</code> </li>
-<li>Search Ad Profit = (impressions x click-through-rate x conversion rate x margin) - search ad cost</li>
-<li>ROI: <code>ROI = Profit / Cost</code></li>
+<h4 id="Cost-Per-Click-CPC-bid"><a href="#Cost-Per-Click-CPC-bid" class="headerlink" title="Cost-Per-Click (CPC) bid"></a>Cost-Per-Click (CPC) bid</h4><blockquote>
+<p>Google uses the “generalized second-price auction”, which is based on the extension of the Nobel-prize winning research of Willian Vickery, where the highest bidder get the first ad position but pays the bid amount of the second bidder, who in turn get the second place but pays the bid amount of the third-highest bidder, and so on. Research shows that this mechanism leads to “truth telling” whereby advertisers bid the maximum amount on the basis of their own willingness to pay.</p>
+</blockquote>
+<ol>
+<li><strong>The top position != The most profitable</strong></li>
+<li>CTR descrease with a lower position, but the conversion rate may increase because consumers who click on links at lower positions implicitly express higher interest in those companies.</li>
+<li><strong>Continuous testing, measurement, and analytics</strong> -&gt; find the best position </li>
+</ol>
+<h4 id="Quality-Score"><a href="#Quality-Score" class="headerlink" title="Quality Score"></a>Quality Score</h4><p>Factors:</p>
+<ol>
+<li>Potential CTR of an ad</li>
+<li>Relevence to consumers</li>
+<li>Quality of the landing page</li>
+</ol>
+<h3 id="Assesing-the-Effectiveness"><a href="#Assesing-the-Effectiveness" class="headerlink" title="Assesing the Effectiveness"></a>Assesing the Effectiveness</h3><p>Matrics used for search ads:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Site</th>
+<th style="text-align:center">Media</th>
+<th style="text-align:center">Impressions</th>
+<th style="text-align:center">Clicks</th>
+<th style="text-align:center">Applications Completed</th>
+<th style="text-align:center">Click-Through Rate (CTR)</th>
+<th style="text-align:center">Conversion Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Google</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+</tr>
+<tr>
+<td style="text-align:center">MSN</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+</tr>
+<tr>
+<td style="text-align:center">SuperPages</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+</tr>
+<tr>
+<td style="text-align:center">Yahoo</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+</tr>
+<tr>
+<td style="text-align:center">Unified Marktplace</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+</tr>
+<tr>
+<td style="text-align:center">Total</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+<td style="text-align:center">.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>[Brand Awareness] <strong>Impressions (Impr.)</strong>: Each time your ad shows on a search results page or other site on the Google Network, an impression is counted. Impressions are most important if your goal is to raise brand awareness.</li>
+<li><strong>Clicks</strong>: When someone clicks your ad, a click is counted. Clicks can help you understand how well your ad appeals to people who see it. Relevant ads are more likely to receive clicks.</li>
+<li>[Traffic] <strong>Click-through Rate (CTR)</strong>: <code>CTR=Click/Impression</code>(Impression: # of times seen by consumers)</li>
+<li><strong>Convertion Rate</strong>: <code>Convertion Rate = Applicationc Completed / Click</code> </li>
+<li><strong>Cost per Click (CPC)</strong>: <code>CPC = ost / Click</code></li>
+<li><strong>Search Ad Profit</strong> = <code>(impressions x click-through-rate x conversion rate x margin) - search ad cost</code></li>
+<li>[ROI] <strong>Return of Investment (ROI)</strong>: <code>ROI = Profit / Cost</code><br>Supplemental Reading: <a href="https://support.google.com/google-ads/answer/9451527?hl=en&amp;ref_topic=3121936" target="_blank" rel="noopener">Use data to optimize your search campaigns</a></li>
 </ol>
 <h2 id="Display-Ads"><a href="#Display-Ads" class="headerlink" title="Display Ads"></a>Display Ads</h2><ol>
-<li>Banner Ads</li>
-<li>Insertitial Ads</li>
-<li>Expandable Ads</li>
+<li><strong>Banner Ads</strong></li>
+<li><strong>Insertitial Ads</strong>: capture greater user attention but also more intrusive</li>
+<li><strong>Expandable Ads</strong>: banner ads that automatically expand to a large portion</li>
 </ol>
+<p>Impact: Bannner &lt; Expandable &lt; Insertial</p>
 <h3 id="Display-Ads-Industry"><a href="#Display-Ads-Industry" class="headerlink" title="Display Ads Industry"></a>Display Ads Industry</h3><ol>
-<li>Content Publishers: e.g. New York Times, small blogs</li>
-<li>Ad Networks: e.g. AdSense by Google (aggregate supply on multiple advertising space and optimally place ads on various websites)</li>
-<li>Ad Exchange: e.g. Rubicon (automate the matching between advertiser and publishers i.e. a programming buying using real-time biding ~ “RTB”) </li>
+<li><strong>Content Publishers</strong>: e.g. New York Times, small blogs</li>
+<li><strong>Ad Networks</strong>: e.g. AdSense by Google (aggregate supply on multiple advertising space and optimally place ads on various websites)</li>
+<li><strong>Ad Exchange</strong>: e.g. Rubicon (automate the matching between advertiser and publishers i.e. a programming buying using real-time biding ~ “RTB”) </li>
 </ol>
-<h2 id="Video-Ads"><a href="#Video-Ads" class="headerlink" title="Video Ads"></a>Video Ads</h2><h2 id="Measuring-the-Effectiveness"><a href="#Measuring-the-Effectiveness" class="headerlink" title="Measuring the Effectiveness"></a>Measuring the Effectiveness</h2><h1 id="Inbound-Marketing"><a href="#Inbound-Marketing" class="headerlink" title="Inbound Marketing"></a>Inbound Marketing</h1><h2 id="Getting-Found"><a href="#Getting-Found" class="headerlink" title="Getting Found"></a>Getting Found</h2><h2 id="Creating-Content"><a href="#Creating-Content" class="headerlink" title="Creating Content"></a>Creating Content</h2><h2 id="Optimizing-Landing-Page"><a href="#Optimizing-Landing-Page" class="headerlink" title="Optimizing Landing Page"></a>Optimizing Landing Page</h2><h1 id="Social-Media"><a href="#Social-Media" class="headerlink" title="Social Media"></a>Social Media</h1><h2 id="Listening-to-Social-Media"><a href="#Listening-to-Social-Media" class="headerlink" title="Listening to Social Media"></a>Listening to Social Media</h2><h2 id="Participating-in-Social-Discussions"><a href="#Participating-in-Social-Discussions" class="headerlink" title="Participating in Social Discussions"></a>Participating in Social Discussions</h2><h2 id="Leveraging-Social-Media-and-Amplifying-the-Message"><a href="#Leveraging-Social-Media-and-Amplifying-the-Message" class="headerlink" title="Leveraging Social Media and Amplifying the Message"></a>Leveraging Social Media and Amplifying the Message</h2><h2 id="Mesuaring-Social-Media"><a href="#Mesuaring-Social-Media" class="headerlink" title="Mesuaring Social Media"></a>Mesuaring Social Media</h2><h2 id="Managing-Social-Media"><a href="#Managing-Social-Media" class="headerlink" title="Managing Social Media"></a>Managing Social Media</h2><h1 id="Mobile-Technoloy"><a href="#Mobile-Technoloy" class="headerlink" title="Mobile Technoloy"></a>Mobile Technoloy</h1>]]></content>
+<h3 id="Assessing-the-Effectiveness-of-Displayed-Ads"><a href="#Assessing-the-Effectiveness-of-Displayed-Ads" class="headerlink" title="Assessing the Effectiveness of Displayed Ads"></a>Assessing the Effectiveness of Displayed Ads</h3><p>2 ways to buy displayed ads:</p>
+<ol>
+<li>Based on <strong>Impressions</strong>, using the Cost Per Thousand Impressions (CPM) matric. The Goal is to <strong><em>build brand awareness or brand image</em></strong></li>
+<li>Based on <strong>Clicks</strong>. The goal is to <strong><em>maximize clicks and conversion rates</em></strong>.</li>
+</ol>
+<p>Measurements:<br>Same as search ads, CTR and Conversion Rate</p>
+<ol>
+<li>CPM display ad profit = impressions <em> [(click-through-rate </em> conversion rate * margin) - cost per thousand impressions or CPM/1000]</li>
+<li>CPC display ad profit = impressions * click-through-rate x [(conversion rate x margin) - cost per click] …Facebook</li>
+</ol>
+<h2 id="Video-Ads"><a href="#Video-Ads" class="headerlink" title="Video Ads"></a>Video Ads</h2><ol>
+<li>Digital platforms like Youtube or Facebook</li>
+<li>Smart TV and streaming devices like Hulu</li>
+</ol>
+<p>Formats on Youtube:</p>
+<ol>
+<li>Skippable in-stream ad: before/during/after the main video</li>
+<li>Non-skippable in-stream ad: 15-20 seconds</li>
+<li>Bumper ad: non-skippable, 6 seconds</li>
+</ol>
+<h3 id="Measure-the-effectiveness"><a href="#Measure-the-effectiveness" class="headerlink" title="Measure the effectiveness"></a>Measure the effectiveness</h3><p>CPM<br>Social Shares (only on digital platform)<br>Post-view engagement (only on digital platform)<br>Impressions<br>Completed views<br>Sales !!!</p>
+<h2 id="Measuring-the-Effectiveness-of-Outbound-Marketing"><a href="#Measuring-the-Effectiveness-of-Outbound-Marketing" class="headerlink" title="Measuring the Effectiveness of Outbound Marketing"></a>Measuring the Effectiveness of Outbound Marketing</h2><h3 id="Correlations-versus-Causation"><a href="#Correlations-versus-Causation" class="headerlink" title="Correlations versus Causation"></a>Correlations versus Causation</h3><ul>
+<li>Online advertising <strong><em>cause</em></strong> an increase in sales?</li>
+<li><strong><em>Corellate</em></strong> clicks and sales?<br>Too mant factors -&gt; Need experiments </li>
+</ul>
+<h3 id="Attribution"><a href="#Attribution" class="headerlink" title="Attribution"></a>Attribution</h3><p>Influnce in different stages of a purchase decision<br><img src="https://2.bp.blogspot.com/--vU0x_9IAOU/UXjbWXIZ9-I/AAAAAAAABaA/6UnslTQ7B1E/s1600/BLOG_POST_Channels_US.png" alt="Google"><br>Source: <a href="https://adwords.googleblog.com/2013/04/the-customer-journey-to-online-purchase.html" target="_blank" rel="noopener">Google Adwords</a><br>Advertising channels (like display ads and search ads) do not work in isolation. The attribution model need to take their interaction into account.</p>
+<p>Extented reading of models: <a href="https://support.google.com/analytics/answer/1662518?hl=en" target="_blank" rel="noopener">Google Analytics</a></p>
+<h3 id="Dynamics-Delayed-Impact-of-Advertising"><a href="#Dynamics-Delayed-Impact-of-Advertising" class="headerlink" title="Dynamics (Delayed Impact of Advertising)"></a>Dynamics (Delayed Impact of Advertising)</h3><p>How to measure long-term effects?<br>Factors change over time<br>Ignoring dynamic or long term effects -&gt; <strong>Underestimate ROI</strong> by up to 40%<br>Dynamic effects are stronger for <strong>search ads</strong> than display ads</p>
+<h3 id="Online-Offline-Interation"><a href="#Online-Offline-Interation" class="headerlink" title="Online-Offline Interation"></a>Online-Offline Interation</h3><p>Key challenges:</p>
+<ol>
+<li><strong>Interation or potential synergy between online and offline marketing</strong>: Costomer base purchase dicsions on both online and offline information. Offline shopping -&gt; personal fit and real-life experience.</li>
+<li><strong>Assessing the impact of online marketing on offline marketing and vice versa</strong> (also called <em>omnichannel shopping</em>)</li>
+</ol>
+<p>Need to plan together!</p>
+<h3 id="Omnichannel-Shopping"><a href="#Omnichannel-Shopping" class="headerlink" title="Omnichannel Shopping"></a>Omnichannel Shopping</h3><p>Different distribution channels (retailers)<br>Online ads -&gt; offline shopping</p>
+<h3 id="Customer-Lifetime-Value"><a href="#Customer-Lifetime-Value" class="headerlink" title="Customer Lifetime Value"></a>Customer Lifetime Value</h3><p>CTR (click-through-rate) and CPI (cost per install)?<br>-&gt; <strong>Long-term paying customers</strong>?</p>
+<p>Focus on the <strong>CLV (customer life value)</strong> to evaluate the effetiveness of digital campaigns, and change the budget allocation to various advertising channels.</p>
+]]></content>
       <categories>
         <category>Product Mangement</category>
       </categories>
