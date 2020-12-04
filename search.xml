@@ -93,7 +93,7 @@
 <li>Standard deviation is usually used instead of variance</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">weights = [0.25, 0.25, 0.25, 0.25]</span><br><span class="line">portfolio_variance = np.transpose(weights) @ covariance @ weights</span><br><span class="line">portfolio_volatility = np.sart(protforlio_variance)</span><br></pre></td></tr></table></figure>
-<h2 id="Volotilityy-time-series"><a href="#Volotilityy-time-series" class="headerlink" title="Volotilityy time series"></a>Volotilityy time series</h2><ul>
+<h2 id="Volotility-time-series"><a href="#Volotility-time-series" class="headerlink" title="Volotility time series"></a>Volotility time series</h2><ul>
 <li>Can also calculate portfolio volatility over time</li>
 <li>Use a ‘window’ to comput volatiity over a fixed time period (e.g. a week, 30-day ‘month’)</li>
 <li><code>series.rolling()</code> creates a window</li>
@@ -201,10 +201,9 @@
 <h2 id="The-rules-of-engagements"><a href="#The-rules-of-engagements" class="headerlink" title="The rules of engagements"></a>The rules of engagements</h2><ol>
 <li>Ethicness (addictiveness of mobile phone, opaqueness of algorithms)</li>
 <li>Bias and testing — How to validate the dicisions made by machine (give the reason)</li>
-<li></li>
 </ol>
-<h1 id="Microsoft"><a href="#Microsoft" class="headerlink" title="Microsoft"></a>Microsoft</h1><blockquote>
-<p>Microsoft Azure - Products: <a href="https://azure.microsoft.com/en-us/overview/ai-platform/" target="_blank" rel="noopener">AI + Machine Learning</a>, <a href="https://azure.microsoft.com/en-us/product-categories/iot/" target="_blank" rel="noopener">IoT</a></p>
+<h1 id="Microsoft-Azure-Ecosystem"><a href="#Microsoft-Azure-Ecosystem" class="headerlink" title="Microsoft Azure Ecosystem"></a>Microsoft Azure Ecosystem</h1><blockquote>
+<p>Microsoft Azure - Products:<br><a href="https://azure.microsoft.com/en-us/overview/ai-platform/" target="_blank" rel="noopener">AI + Machine Learning</a><br><a href="https://azure.microsoft.com/en-us/product-categories/iot/" target="_blank" rel="noopener">IoT</a></p>
 </blockquote>
 ]]></content>
   </entry>
