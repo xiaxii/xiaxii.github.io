@@ -9,6 +9,7 @@
 <li>use specialized Python libraries including pandas, scipy, and pypfopt. </li>
 <li>how to mitigate risk exposure using the Black-Scholes model to hedge an options portfolio.</li>
 </ol>
+<a id="more"></a>
 <h1 id="Measuring-Risk"><a href="#Measuring-Risk" class="headerlink" title="Measuring Risk"></a>Measuring Risk</h1><h2 id="The-Loss-Distribution"><a href="#The-Loss-Distribution" class="headerlink" title="The Loss Distribution"></a>The Loss Distribution</h2><p>Forex example:<br>EUR and USD (exchange rate is r)<br>r EUR = 1 USD<br>Loss = EUR 100 x (1-r)<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png" alt="Loss Distribution"></p>
 <p>random realization of <strong>r</strong> =&gt; <strong>distribution</strong> of portfolio losses in the future</p>
 <h2 id="Maximum-loss"><a href="#Maximum-loss" class="headerlink" title="Maximum loss"></a>Maximum loss</h2><p>What’s the max loss of a portforlio?<br>Losses cannot be bounded with 100% certainty<br>Confidence level: replace 100% certainty with likelyhood of upper bound<br>Can express questions like “what’s the maximum loss that would take place 95% of the time?”</p>
