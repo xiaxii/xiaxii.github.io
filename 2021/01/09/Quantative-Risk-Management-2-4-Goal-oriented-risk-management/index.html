@@ -88,14 +88,21 @@
 
 
 
+<meta name="description" content="2/4 Object:  expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) use specialized Python libraries including pandas, scipy, an">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Quantative Risk Management 2&#x2F;4 - Goal-oriented risk management">
 <meta property="og:url" content="https://xiaxii.github.io/2021/01/09/Quantative-Risk-Management-2-4-Goal-oriented-risk-management/index.html">
 <meta property="og:site_name" content="Xi XIA&#39;s Blog">
+<meta property="og:description" content="2/4 Object:  expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) use specialized Python libraries including pandas, scipy, an">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-01-09T07:55:47.193Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20VaR.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/8.%20CVaR.png">
+<meta property="og:updated_time" content="2021-01-09T20:57:38.153Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Quantative Risk Management 2&#x2F;4 - Goal-oriented risk management">
+<meta name="twitter:description" content="2/4 Object:  expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR) use specialized Python libraries including pandas, scipy, an">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png">
 
 
 
@@ -350,7 +357,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2021-01-09T02:55:47-05:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2021-01-09T15:57:38-05:00">
                 2021-01-09
               </time>
             
@@ -384,7 +391,26 @@
       
 
       
-        
+        <p><strong>2/4 Object:</strong></p>
+<ol>
+<li>expand your portfolio optimization toolkit with risk measures such as Value at Risk (VaR) and Conditional Value at Risk (CVaR)</li>
+<li>use specialized Python libraries including pandas, scipy, and pypfopt. </li>
+<li>how to mitigate risk exposure using the Black-Scholes model to hedge an options portfolio.</li>
+</ol>
+<h1 id="Measuring-Risk"><a href="#Measuring-Risk" class="headerlink" title="Measuring Risk"></a>Measuring Risk</h1><h2 id="The-Loss-Distribution"><a href="#The-Loss-Distribution" class="headerlink" title="The Loss Distribution"></a>The Loss Distribution</h2><p>Forex example:<br>EUR and USD (exchange rate is r)<br>r EUR = 1 USD<br>Loss = EUR 100 x (1-r)<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20Loss%20Distribution.png" alt="Loss Distribution"></p>
+<p>random realization of <strong>r</strong> =&gt; <strong>distribution</strong> of portfolio losses in the future</p>
+<h2 id="Maximum-loss"><a href="#Maximum-loss" class="headerlink" title="Maximum loss"></a>Maximum loss</h2><p>What’s the max loss of a portforlio?<br>Losses cannot be bounded with 100% certainty<br>Confidence level: replace 100% certainty with likelyhood of upper bound<br>Can express questions like “what’s the maximum loss that would take place 95% of the time?”</p>
+<ul>
+<li>here the confidence level is 95%</li>
+</ul>
+<h2 id="Value-at-risk-VaR"><a href="#Value-at-risk-VaR" class="headerlink" title="Value at risk (VaR)"></a>Value at risk (VaR)</h2><p><strong>VaR</strong>（风险价值）: statistic measuring maximum portfolio loss at a particular confidence level </p>
+<p>某一置信度下的最大损失</p>
+<p>Typical confidence levels: 95%, 99%, and 99.5% (usually represented as decimals)</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/7.%20VaR.png" alt="VaR"><br>Forex example: </p>
+<h2 id="Conditional-Value-at-Risk-CVaR"><a href="#Conditional-Value-at-Risk-CVaR" class="headerlink" title="Conditional Value at Risk (CVaR)"></a>Conditional Value at Risk (CVaR)</h2><p><strong>CVaR</strong>（条件风险价值）: measures expected loss given a minimum loss equal to the VaR. It equals expected value of the tail of the loss distribution </p>
+<p>VaR的一个问题是他不考虑超过该置信度后的损失情况, 而CVaR表示投资组合的损失超过某个给定VaR值的条件下，该投资组合的平均损失值。</p>
+<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/8.%20CVaR.png" alt="CVaR"></p>
+
       
     </div>
     
@@ -468,8 +494,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -554,6 +589,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Measuring-Risk"><span class="nav-number">1.</span> <span class="nav-text">Measuring Risk</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Loss-Distribution"><span class="nav-number">1.1.</span> <span class="nav-text">The Loss Distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maximum-loss"><span class="nav-number">1.2.</span> <span class="nav-text">Maximum loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Value-at-risk-VaR"><span class="nav-number">1.3.</span> <span class="nav-text">Value at risk (VaR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Value-at-Risk-CVaR"><span class="nav-number">1.4.</span> <span class="nav-text">Conditional Value at Risk (CVaR)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
