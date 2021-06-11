@@ -125,6 +125,9 @@
 </table>
 </div>
 ]]></content>
+      <categories>
+        <category>Business</category>
+      </categories>
   </entry>
   <entry>
     <title>Quantative Risk Management - Warp-up</title>
@@ -134,6 +137,9 @@
 <h1 id="Toolkit"><a href="#Toolkit" class="headerlink" title="Toolkit"></a>Toolkit</h1><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/52.%20Toolkit.png" alt></p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/53.%20Reference.png" alt></p>
 ]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
   </entry>
   <entry>
     <title>Quantative Risk Management 4/4 - Advanced risk management</title>
@@ -259,6 +265,9 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Create neural network model</span></span><br><span class="line">model = Sequential()</span><br><span class="line">model.add(Dense(<span class="number">128</span>, input_dim = <span class="number">4</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">64</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line">model.add(Dense(<span class="number">4</span>, activation = <span class="string">'relu'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the pre-trained model to predict portfolio weights given new asset returns</span></span><br><span class="line">asset_returns = np.array([<span class="number">0.001060</span>, <span class="number">0.003832</span>, <span class="number">0.000726</span>, <span class="number">-0.002787</span>])</span><br><span class="line">asset_returns.shape = (<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line">print(<span class="string">"Predicted minimum volatility portfolio: "</span>, pre_trained_model.predict(asset_returns))</span><br></pre></td></tr></table></figure>
 <p>结果<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Predicted minimum volatility portfolio:  [[0.         0.28107247 0.         0.7649856 ]]</span><br></pre></td></tr></table></figure></p>
 ]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
   </entry>
   <entry>
     <title>Quantative Risk Management 3/4 Estimating and identifying risk</title>
@@ -374,6 +383,9 @@
 <p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/31.%20Extreme%20values%20and%20backtesting.svg" alt></p>
 <p>结果<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">VaR_95:  0.04986983664383684 ; Backtest:  0.06547619047619048</span><br></pre></td></tr></table></figure></p>
 ]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
   </entry>
   <entry>
     <title>Quantative Risk Management 2/4 - Goal-oriented risk management</title>
@@ -518,6 +530,9 @@
 <h3 id="Using-options-for-hedging"><a href="#Using-options-for-hedging" class="headerlink" title="Using options for hedging"></a>Using options for hedging</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Compute the annualized standard deviation of `IBM` returns</span></span><br><span class="line">sigma = np.sqrt(<span class="number">252</span>) * IBM_returns.std()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the Black-Scholes value at IBM spot price 70</span></span><br><span class="line">value = black_scholes(S = <span class="number">70</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                      sigma = sigma, option_type = <span class="string">"put"</span>)</span><br><span class="line"><span class="comment"># Find the delta of the option at IBM spot price 70</span></span><br><span class="line">delta = bs_delta(S = <span class="number">70</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                 sigma = sigma, option_type = <span class="string">"put"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the option value change when the price of IBM falls to 69.5</span></span><br><span class="line">value_change = black_scholes(S = <span class="number">69.5</span>, X = <span class="number">80</span>, T = <span class="number">0.5</span>, r = <span class="number">0.02</span>, </span><br><span class="line">                             sigma = sigma, option_type = <span class="string">"put"</span>) - value</span><br><span class="line"></span><br><span class="line">print( (<span class="number">69.5</span> - <span class="number">70</span>) + (<span class="number">1</span>/delta) * value_change )</span><br></pre></td></tr></table></figure>
 <p>结果为<code>0.00459428051019628</code></p>
 ]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
   </entry>
   <entry>
     <title>Quantative Risk Management 1/4 - Risk and Return</title>
@@ -762,6 +777,9 @@
 <p>Expected returns <code>returns_during</code> and the efficient covariance matrix <code>ecov_during</code> are available, as is the <code>CLA</code> object from <code>pypfopt</code>. (Remember that DataCamp plots can be expanded to their own window, which can increase readability.)<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Initialize the Crtical Line Algorithm object</span></span><br><span class="line">efficient_portfolio_during = CLA(returns_during, ecov_during)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the minimum volatility portfolio weights and display them</span></span><br><span class="line">print(efficient_portfolio_during.min_volatility())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Compute the efficient frontier</span></span><br><span class="line">(ret, vol, weights) = efficient_portfolio_during.efficient_frontier()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add the frontier to the plot showing the 'before' and 'after' frontiers</span></span><br><span class="line">plt.scatter(vol, ret, s = <span class="number">4</span>, c = <span class="string">'g'</span>, marker = <span class="string">'.'</span>, label = <span class="string">'During'</span>)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/risk%20management/6.%20The%20efficient%20frontier.svg" alt="The efficient frontier"></p>
 ]]></content>
+      <categories>
+        <category>Projects</category>
+      </categories>
   </entry>
   <entry>
     <title>Data &amp; AI</title>
@@ -861,6 +879,9 @@
 <p>Microsoft Azure - Products:<br><a href="https://azure.microsoft.com/en-us/overview/ai-platform/" target="_blank" rel="noopener">AI + Machine Learning</a><br><a href="https://azure.microsoft.com/en-us/product-categories/iot/" target="_blank" rel="noopener">IoT</a></p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
   </entry>
   <entry>
     <title>Digital Marketing 2/2 - Inbounding Marketing</title>
@@ -934,6 +955,9 @@
 <h2 id="test-control-methodology"><a href="#test-control-methodology" class="headerlink" title="test-control methodology"></a>test-control methodology</h2><p>A controlled experiment in which subjects are randomized into either test or control groups.</p>
 <h2 id="word-of-mouth-marketing"><a href="#word-of-mouth-marketing" class="headerlink" title="word-of-mouth marketing"></a>word-of-mouth marketing</h2><p>A marketing method that relies on consumers spreading information about a product or service.</p>
 ]]></content>
+      <categories>
+        <category>Business</category>
+      </categories>
   </entry>
   <entry>
     <title>Digital Marketing 1/2 - Outbound Marketing</title>
@@ -1124,53 +1148,8 @@
 <p>Focus on the <strong>CLV (customer life value)</strong> to evaluate the effetiveness of digital campaigns, and change the budget allocation to various advertising channels.</p>
 ]]></content>
       <categories>
-        <category>Product Management</category>
+        <category>Business</category>
       </categories>
-  </entry>
-  <entry>
-    <title>AWS Solotions Architect Associate Prep 01</title>
-    <url>/2020/10/01/AWS-Solotions-Architect-Associate-Prep-01/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h1><p>On-demand delivery of a service (or set of services) via a platform on the internet</p>
-<p>Users &lt;-&gt; Cloud Service &lt;-&gt; Cloud Computing</p>
-<p>Advantages of Cloud Computing:</p>
-<ol>
-<li><strong>Less Capital Expenditure</strong>: No waste if this cloud service is obly used for a period of time, Pay less</li>
-<li><strong>Pay-per-use</strong>: Only pay when it’s needed</li>
-<li>Easy to update, less fee for upgrading the service</li>
-<li><strong>Benefit of massive ecomonies of scale</strong>: Easy to switch region, Easy to share, Moniter the access to your service</li>
-<li><strong>Focus more on the application, rather than maintaining the infrastructure</strong>: No need to keep the resource as your own property, Sercurity garanteed</li>
-</ol>
-<h1 id="AWS"><a href="#AWS" class="headerlink" title="AWS"></a>AWS</h1><p>Why AWS?</p>
-<ol>
-<li>Clear market leader</li>
-<li>Breadth of services: computing, storage, network </li>
-<li>Security: physical, operational</li>
-<li>Flexibility: database, language, web-application platform -&gt; easy migration process</li>
-<li>Easy to use</li>
-<li>Cost-effective</li>
-<li>Reliability</li>
-<li>Scalability and high performance</li>
-<li>Hybrid Capabilities</li>
-</ol>
-<h1 id="AWS-Certified-Solutions-Architect-–-Associate"><a href="#AWS-Certified-Solutions-Architect-–-Associate" class="headerlink" title="AWS Certified Solutions Architect – Associate"></a>AWS Certified Solutions Architect – Associate</h1><p>AWS Services (focus in the <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank" rel="noopener">exam</a>)</p>
-<ol>
-<li>Compute: AWS EC2. Elastic Registry, AWS Lambda</li>
-<li>Storage: Amazon S3, Amazon Glacier</li>
-<li>Database: Amazon RDS. Amazon DynamoDB, Amazon Redshift</li>
-<li>Network and Content Delivery: Amazon VPC, Amazon CloudFront, AWS Direct Connect, Elatic Load Balancing, Amazon Route 53</li>
-<li>Security, Identioty &amp; Compliance: AWS Idendtity &amp; Access Management</li>
-<li>Management and Governance: CloudWatch, Cloud Trial, Aotoscaling, CloudFormation, Config, Truste Advisor</li>
-<li>Analytics: Anmazon Kinesis</li>
-<li>Application Integration: SQS, SNS, SWF</li>
-</ol>
-<p>Study Resources:<br><a href="https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&amp;wa-lens-whitepapers.sort-order=desc" target="_blank" rel="noopener">AWS Well-Architected Framework</a> (white papers!!!)<br><a href="https://aws.amazon.com/faqs/" target="_blank" rel="noopener">AWS FAQ</a></p>
-]]></content>
-      <categories>
-        <category>Cloud</category>
-      </categories>
-      <tags>
-        <tag>AWS</tag>
-      </tags>
   </entry>
   <entry>
     <title>Leadership Reflections </title>
@@ -1191,7 +1170,7 @@
 <p>According to our courses and what I have seen from Silicon Valley, I am more aware that I should value customer needs as our mission and thus make our strategy effective and efficient. I am going to start interviews for my capstone project next week. We have a good vision of automating officers’ daily work by a virtual assistant on our software. But the first step should be understanding officers’ work and finding what they value most from our product. </p>
 ]]></content>
       <categories>
-        <category>Product Management</category>
+        <category>Reflections</category>
       </categories>
   </entry>
   <entry>
@@ -1257,7 +1236,7 @@
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Measuring mobile app success is vital to any mobile app development project. Setting up KPIs and sticking to them will give you a trustworthy base for your app optimization and growth plans. Getting an accurate picture of exactly how your customers use your mobile app will be an invaluable step to continuously delivering valuable, usable tools to your users. If you’d like for one of our experts to take a look at your app, drop us a line and chat with us for a free 15-minute consultation. It can set you on a path toward getting an accurate picture of how successful your app is — and where to improve it to make it even better.</p>
 ]]></content>
       <categories>
-        <category>Product Management</category>
+        <category>Business</category>
       </categories>
   </entry>
   <entry>
@@ -1308,6 +1287,9 @@
 </li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
   </entry>
   <entry>
     <title>22 Years Old: Reflection on myself</title>
@@ -1329,6 +1311,9 @@
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/Conjoined%20Triangles%20of%20Success.jpg" alt="Subtitles"></p>
 ]]></content>
+      <categories>
+        <category>Reflections</category>
+      </categories>
   </entry>
   <entry>
     <title>JPMorgan Chase Software Engineering Virtual Internship 4/4</title>
@@ -1351,7 +1336,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>JPMorgan Chase Software Engineering Virtual Internship</category>
+        <category>Projects</category>
       </categories>
   </entry>
   <entry>
@@ -1385,7 +1370,7 @@
 <p>Finished:<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/JPMC/Task3Final.png" alt><br>with configurations as below:<br><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/JPMC/Task3Config.png" alt></p>
 ]]></content>
       <categories>
-        <category>JPMorgan Chase Software Engineering Virtual Internship</category>
+        <category>Projects</category>
       </categories>
   </entry>
   <entry>
@@ -1400,6 +1385,9 @@
 <li>Run <code>npm update</code> in terminal</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>Maintainance</category>
+      </categories>
   </entry>
   <entry>
     <title>JPMorgan Chase Software Engineering Virtual Internship 2/4</title>
@@ -1436,7 +1424,7 @@
 <h2 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h2><p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/JPMC/taskFinal.png" alt="Final Task2"></p>
 ]]></content>
       <categories>
-        <category>JPMorgan Chase Software Engineering Virtual Internship</category>
+        <category>Projects</category>
       </categories>
   </entry>
   <entry>
@@ -1487,7 +1475,7 @@
 <p>Other Assertions:<br>self.assertIsNone()<br>self.assertGreater(a, b)  …a&gt;b<br>self.assertLess(a, b)     …a&lt;b<br>self.assertRaises(TypeError)</p>
 ]]></content>
       <categories>
-        <category>JPMorgan Chase Software Engineering Virtual Internship</category>
+        <category>Projects</category>
       </categories>
   </entry>
   <entry>
@@ -1572,7 +1560,7 @@
 </ol>
 ]]></content>
       <categories>
-        <category>Product Management</category>
+        <category>Management</category>
       </categories>
   </entry>
   <entry>
@@ -1679,106 +1667,7 @@ jupyter notebook --no-browser --port=8889
 <h1 id="Local-Environment"><a href="#Local-Environment" class="headerlink" title="Local Environment"></a>Local Environment</h1><p>similar but without ssh steps</p>
 ]]></content>
       <categories>
-        <category>Fianl Year Project</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>LeetCode #1 Two Sum</title>
-    <url>/2020/03/24/LeetCode-1-Two-Sum/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Link: <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener">1. Two Sum</a></p>
-<h1 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h1><p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,<br>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-<h1 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h1><p><strong>Clarification</strong></p>
-<ul>
-<li><code>indices</code> not the position, start from 0</li>
-<li><code>exactly one solution</code> any pair that matches requirements, not need a full solution; every test cases should have at least one answer (can be ignored)</li>
-<li><code>not use the same element twice</code> the result indeces are different from each other</li>
-</ul>
-<p><strong>Assumption</strong><br>Throw exception when no such an answer</p>
-<a id="more"></a>
-<h1 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h1><p>If we use the Brute Force method to have a double loop – for each element <code>x</code> in the array, find another element <code>target-x</code>, the time complexity would be <code>O(n^2)</code>.</p>
-<p>Brute force<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[j] == target - nums[i]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, j &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>HashMap would help to save time.</p>
-<p><strong>Cases</strong>:<br>generate a HashMap for the array <code>nums</code><br>for <code>i</code> in <code>nums</code><br>if <code>target-i</code> in HashMap<br>return the two indeces</p>
-<p><strong>Data structures &amp; Physical definitions</strong><br><code>Hashmap&lt;Integer, Integer&gt; map</code> -&gt; array of the nums<br><code>&lt;key, value&gt;</code> in the map -&gt; <code>&lt;value, index&gt;</code> in the array</p>
-<h1 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h1><ul>
-<li>Time <code>O(n)</code></li>
-<li>Space <code>O(n)</code></li>
-</ul>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><p>Two-pass hash table - get the last answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement) &amp;&amp; map.get(complement) != i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; i, map.get(complement) &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>One-pass hashtable - get the first answer<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> complement = target - nums[i];</span><br><span class="line">        <span class="keyword">if</span> (map.containsKey(complement)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; map.get(complement), i &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"No two sum solution"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="Follow-ups"><a href="#Follow-ups" class="headerlink" title="Follow-ups"></a>Follow-ups</h1><p><a href="https://www.jianshu.com/p/8c5b7a596105" target="_blank" rel="noopener">LeetCode中HashTable章节</a><br><a href="https://www.cnblogs.com/heyonggang/p/9112731.html" target="_blank" rel="noopener">面试必备：HashMap、Hashtable、ConcurrentHashMap的原理与区别</a></p>
-<p>HashMap maps values to keys <code>&lt;key ← value&gt;</code><br>Time complexity of HashMap: <code>O(1)</code></p>
-<h2 id="Methods-in-HashMap"><a href="#Methods-in-HashMap" class="headerlink" title="Methods in HashMap"></a>Methods in HashMap</h2><p><strong>init</strong><br>HashMap<string, integer> hash_map = new HashMap<string, integer>();<br>HashMap<integer, string> hash_map = new HashMap<integer, string>(); </integer,></integer,></string,></string,></p>
-<p><strong>set &amp; get</strong><br>Hash_Map.put(key, value)</p>
-<p>Hash_Map.get(Object key_element)</p>
-<p>Object get(Object key): It is used to retrieve or fetch the value mapped by a particular key.<br>Set keySet(): It is used to return a set view of the keys.</p>
-<p><strong>remove</strong><br>Hash_Map.remove(Object key)</p>
-<p><strong>copy</strong><br>new_hash_map.putAll(exist_hash_map)</p>
-<p><strong>conditions</strong><br>boolean containsKey(Object key): Used to return True if for a specified key, mapping is present in the map.<br>boolean containsValue(Object value): Used to return true if one or more key is mapped to a specified value.</p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Array</tag>
-        <tag>Hashtable</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Templet</title>
-    <url>/2020/03/17/Templet/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>With the Ebbinghaus curve, this templet has 3 stages: <em>First Ocurrence</em>, the <em>72h</em> and <em>1week</em> revision.</p>
-<ul>
-<li>Start with the top 100 Liked Questions, in the order of question number.</li>
-<li>Record <em>mistakes, difficulty, feelings and time</em> every time</li>
-</ul>
-<h1 id="First-Occurrence"><a href="#First-Occurrence" class="headerlink" title="First Occurrence"></a>First Occurrence</h1><p>Link: <a href>n. xxx</a></p>
-<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="Think-out-loud"><a href="#Think-out-loud" class="headerlink" title="Think out loud"></a>Think out loud</h2><p><strong>Clarification</strong>:</p>
-<p><strong>Assumption</strong>:</p>
-<h2 id="Cracking-the-problem"><a href="#Cracking-the-problem" class="headerlink" title="Cracking the problem"></a>Cracking the problem</h2><p><strong>Cases</strong>:<br>if<br>if<br>…<br>else</p>
-<p><strong>Data structures &amp; Physical definitions</strong></p>
-<h2 id="Complexity"><a href="#Complexity" class="headerlink" title="Complexity"></a>Complexity</h2><ul>
-<li>Time <code>O(logn)</code></li>
-<li>Space <code>O(1)</code></li>
-</ul>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>()</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Follow-Ups"><a href="#Follow-Ups" class="headerlink" title="Follow-Ups"></a>Follow-Ups</h2><p>(relative questions… what if some assumptions are changed?)</p>
-<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>these are in my notes (app: auditory for mac)</p>
-<h3 id="72h"><a href="#72h" class="headerlink" title="72h"></a>72h</h3><p>72小时后再做一遍，录制语音，语音中交代以下信息：一句话的high-level idea, 数据结构和物理意义， 数据结构的开闭区间定义，初始化，每一步干什么，终止条件，是否需要判重</p>
-<h3 id="1week"><a href="#1week" class="headerlink" title="1week"></a>1week</h3><p>一周后再做一遍，边写边说</p>
-<h1 id="Memo"><a href="#Memo" class="headerlink" title="Memo"></a>Memo</h1><p>(the way to memorize)</p>
-<h1 id="Acknowledge"><a href="#Acknowledge" class="headerlink" title="Acknowledge"></a>Acknowledge</h1><p>This idea was partly borrowed from 榛子’s templet on Trello <a href="https://trello.com/b/zAEZhbrD/ace-in-algorithm-interviews/xiaxi9889/recommend" target="_blank" rel="noopener">Ace in Algorithm Interviews</a>. And she posted a Wechat article about time management <a href="https://mp.weixin.qq.com/s/TMD4AsZCalyxGqYX6ImjCA" target="_blank" rel="noopener">“在家办公”五年，总结出五个时间管理秘诀</a></p>
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Former Coding Interview Question: Compression and Decompression</title>
-    <url>/2020/03/17/Former-Coding-Interview-Question-Compression-and-Decompression/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<ol>
-<li><a href="https://techdevguide.withgoogle.com/paths/advanced/compress-decompression/#code-challenge" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Compression and Decompression</a></li>
-<li><a href="http://massivealgorithms.blogspot.com/2016/09/leetcode-394-decode-string.html" target="_blank" rel="noopener">Massive Algorithms — LeetCode 394 - Decode String</a></li>
-<li><a href="http://massivealgorithms.blogspot.com/2016/12/leetcode-471-encode-string-with.html" target="_blank" rel="noopener">Massive Algorithms — LeetCode 471 - Encode String with Shortest Length</a></li>
-</ol>
-</blockquote>
-<p>The Probem is similar to the question like:<br>Given the string of an arithmatic caculation<br>eg: {3 x [13 x 21 - (11 + 1) / 3]} / (13 - 2)<br>Output the result<br>For the problem above, 2 stacks are needed for decoding (one or operations, another for digital numbers)</p>
-<p>Solution of Decoding:</p>
-<blockquote>
-<p>1.使用两个栈，countStack存子串的重复次数，resStack存中间结果<br>2.读取完一个数字，把数量入countStack栈<br>3.读取到[时，把n[前面的结果计算出来并入resStack栈<br>4.读取到]时，取出最近一次n[res]前面的中间计算结果，也就是resStack的栈顶，再append n次res，n为countStack的栈顶，res为最近一次[]中间的子串<br>5.其他情况，将字符追加到res末尾</p>
-</blockquote>
-<a id="more"></a>
-<p><img src="https://raw.githubusercontent.com/xiaxii/MarkdownPhotos/master/decoding%20steps.png" alt="decoing steps"></p>
-<blockquote>
-<p><a href="https://leetcode.com/problems/decode-string/discuss/87534/simple-java-solution-using-stack" target="_blank" rel="noopener">LeetCode — Simple Java Solution using Stack</a></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decodeString</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">       String res = <span class="string">""</span>;</span><br><span class="line">       Stack&lt;Integer&gt; countStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">       Stack&lt;String&gt; resStack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">       <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">       <span class="keyword">while</span> (idx &lt; s.length()) &#123;</span><br><span class="line">           <span class="keyword">if</span> (Character.isDigit(s.charAt(idx))) &#123;</span><br><span class="line">               <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">               <span class="keyword">while</span> (Character.isDigit(s.charAt(idx))) &#123;</span><br><span class="line">                   count = <span class="number">10</span> * count + (s.charAt(idx) - <span class="string">'0'</span>);</span><br><span class="line">                   idx++;</span><br><span class="line">               &#125;</span><br><span class="line">               countStack.push(count);</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> <span class="keyword">if</span> (s.charAt(idx) == <span class="string">'['</span>) &#123;</span><br><span class="line">               resStack.push(res);</span><br><span class="line">               res = <span class="string">""</span>;</span><br><span class="line">               idx++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> <span class="keyword">if</span> (s.charAt(idx) == <span class="string">']'</span>) &#123;</span><br><span class="line">               StringBuilder temp = <span class="keyword">new</span> StringBuilder (resStack.pop());</span><br><span class="line">               <span class="keyword">int</span> repeatTimes = countStack.pop();</span><br><span class="line">               <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; repeatTimes; i++) &#123;</span><br><span class="line">                   temp.append(res);</span><br><span class="line">               &#125;</span><br><span class="line">               res = temp.toString();</span><br><span class="line">               idx++;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">               res += s.charAt(idx++);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> res;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>2019 Google NEXT</category>
+        <category>Projects</category>
       </categories>
   </entry>
   <entry>
@@ -1799,7 +1688,7 @@ jupyter notebook --no-browser --port=8889
 <p>This photo was taken in the Innovation Center of Beijing University of Posts and Telecommunications.</p>
 ]]></content>
       <categories>
-        <category>Entrepreneurial Project</category>
+        <category>Projects</category>
       </categories>
   </entry>
   <entry>
@@ -1959,44 +1848,6 @@ jupyter notebook --no-browser --port=8889
       </categories>
   </entry>
   <entry>
-    <title>Former Coding Interview Question: Trapping Rain Water [Dynamic Programming]</title>
-    <url>/2020/01/22/Former-Coding-Interview-Question-Trapping-Rain-Water-Dynamic-Programming/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<ol>
-<li><a href="https://techdevguide.withgoogle.com/resources/volume-of-water/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Trapping Rain Water</a></li>
-<li><a href="https://leetcode.com/articles/trapping-rain-water/" target="_blank" rel="noopener">LeetCode — 42.Trapping Rain Water</a></li>
-<li><a href="https://www.geeksforgeeks.org/trapping-rain-water/" target="_blank" rel="noopener">geeksforgeeks — Trapping Rain Water</a></li>
-<li><a href="https://youtu.be/8BHqSdwyODs" target="_blank" rel="noopener">Youtube</a></li>
-<li><a href="https://aaronice.gitbooks.io/lintcode/two_pointers/trapping_rain_water.html" target="_blank" rel="noopener">gitbook</a></li>
-</ol>
-</blockquote>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8BHqSdwyODs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<a id="more"></a>
-<p>Use two array to record</p>
-<ol>
-<li><strong>left[ ]</strong>: the highest left bar for this index</li>
-<li><strong>right[ ]</strong>the highest right bar for this index</li>
-</ol>
-<p>For each index, the water can be traped is min{left[i], right[j]}-height[i]</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// JAVA Code For Trapping Rain Water </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> heights: an array of integers</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span>: a integer</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trapRainWater</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (heights == <span class="keyword">null</span> || heights.length &lt; <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> length = heights.length;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">        <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> trapped = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// For heights[0] or heights[length - 1], the max left/right height is 0</span></span><br><span class="line">        left[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        right[length - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Keep track of the max height on the left of height[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; i++) &#123;</span><br><span class="line">            left[i] = Math.max(left[i - <span class="number">1</span>], heights[i - <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Keep track of the max height on the right of height[i]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = length - <span class="number">2</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            right[j] = Math.max(right[j + <span class="number">1</span>], heights[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Calculate the total trapped water</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; length; k++) &#123;</span><br><span class="line">            trapped += Math.max(Math.min(left[k], right[k]) - heights[k], <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> trapped;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>2019 Google NEXT</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Former Coding Interview Question: Word Squares</title>
-    <url>/2020/01/22/Former-Coding-Interview-Question-Word-Squares/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote>
-<p><a href="https://techdevguide.withgoogle.com/resources/former-coding-interview-question-word-squares/?types=coding-interview-question#!" target="_blank" rel="noopener">Google tech guide — Former Coding Interview Question: Word Squares</a></p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkIfWordSquare</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = (<span class="keyword">int</span>)Math.sqrt((<span class="keyword">double</span>)str.length());</span><br><span class="line">        <span class="keyword">char</span>[] x = str.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; x.length; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> n = ((k%len) * len) + (<span class="keyword">int</span>)k/len; <span class="comment">//calculate compare position</span></span><br><span class="line">            <span class="keyword">if</span>(x[k]!=x[n])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>2019 Google NEXT</category>
-      </categories>
-  </entry>
-  <entry>
     <title>What makes a good life? - lesson from the Harvard Study of Adult Development</title>
     <url>/2020/01/22/What-makes-a-good-life-lesson-from-the-Harvard-Study-of-Adult-Development/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>This TedTalk by Robert Waldinger describes a study that began in 1938 and followed the lives of 724 men from their adolescence to their death (60% of them were still alive and participating in the study when the talk is given).<br>The Harvard Study of Adult Development is one of the longest studies of adult life which follows two groups of men: </p>
@@ -2018,22 +1869,6 @@ jupyter notebook --no-browser --port=8889
 ]]></content>
       <categories>
         <category>TED</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Bloggers that I am following</title>
-    <url>/2020/01/22/Bloggers-that-I-am-following/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Eric-Jang"><a href="#Eric-Jang" class="headerlink" title="Eric Jang"></a><a href="http://evjang.com/" target="_blank" rel="noopener">Eric Jang</a></h2><p>He is a research engineer on the Google Brain team.</p>
-<p>Here are some of his articles about internship:</p>
-<ol>
-<li><a href="https://blog.evjang.com/2016/07/how-to-get-internship.html" target="_blank" rel="noopener">How to Get an Internship</a></li>
-<li><a href="https://blog.evjang.com/2016/06/my-internship-experiences-at-pixar.html" target="_blank" rel="noopener">My Internship Experiences at Pixar, Google, and Two Sigma</a></li>
-</ol>
-<h2 id="Bozhao（Joshua）Li"><a href="#Bozhao（Joshua）Li" class="headerlink" title="Bozhao（Joshua）Li"></a><a href="http://joshuablog.herokuapp.com/" target="_blank" rel="noopener">Bozhao（Joshua）Li</a></h2><p>He is a Software Engineer at Google. </p>
-<p>His <a href="http://www.bozhaoli.info/" target="_blank" rel="noopener">presentation page</a> is well-designed and he has a fantastic group projects:<br><a href="http://www.bozhaoli.info/project/" target="_blank" rel="noopener">ENERGY IN U.S. - Consumption and impact of different type of energy</a></p>
-]]></content>
-      <categories>
-        <category>Role Model</category>
       </categories>
   </entry>
   <entry>
@@ -2092,6 +1927,9 @@ jupyter notebook --no-browser --port=8889
 <h2 id="Data-Visualization"><a href="#Data-Visualization" class="headerlink" title="Data Visualization"></a>Data Visualization</h2><h3 id="D3-js"><a href="#D3-js" class="headerlink" title="D3.js"></a><a href="https://d3js.org" target="_blank" rel="noopener">D3.js</a></h3><p>See: <a href="https://curran.github.io/dataviz-course-2018/" target="_blank" rel="noopener">Online course on data visualization analysis, design &amp; construction with D3.js</a></p>
 <h2 id="Interaction"><a href="#Interaction" class="headerlink" title="Interaction"></a>Interaction</h2><h3 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a><a href="https://jquery.com" target="_blank" rel="noopener">JQuery</a></h3><p>JQury can be used to build an interactive table rather than the common HTML table.</p>
 ]]></content>
+      <categories>
+        <category>Maintainance</category>
+      </categories>
   </entry>
   <entry>
     <title>Towards Scalable and Dynamic Social Sensing Using A Distributed Computing Framework</title>
